@@ -76,8 +76,8 @@ describe(`IPv6`, () => {
               value: address,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toEqual(address);
       }
     });
@@ -87,24 +87,26 @@ describe(`IPv6`, () => {
     describe(`not a valid IPv6 address`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLIPv6.serialize(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLIPv6.serialize(`this is not an ipv6 address`)).toThrow(/Value is not a valid IPv6 address/);
+        expect(() => GraphQLIPv6.serialize(`this is not an ipv6 address`)).toThrow(
+          /Value is not a valid IPv6 address/,
+        );
       });
 
       it(`parseValue`, () => {
         expect(() => GraphQLIPv6.serialize(123)).toThrow(/Value is not string/);
         expect(() => GraphQLIPv6.parseValue(`this is not an ipv6 address`)).toThrow(
-          /Value is not a valid IPv6 address/
+          /Value is not a valid IPv6 address/,
         );
       });
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLIPv6.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as IPv6 addresses but got a/
+          /Can only validate strings as IPv6 addresses but got a/,
         );
 
-        expect(() => GraphQLIPv6.parseLiteral({ value: `this is not an ipv6 address`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid IPv6 address/
-        );
+        expect(() =>
+          GraphQLIPv6.parseLiteral({ value: `this is not an ipv6 address`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid IPv6 address/);
       });
     });
   });

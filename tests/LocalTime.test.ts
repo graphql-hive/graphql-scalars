@@ -45,8 +45,8 @@ describe(`LocalTime`, () => {
               value: testValue,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toEqual(testValue);
       });
     });
@@ -59,7 +59,9 @@ describe(`LocalTime`, () => {
 
         expect(() => GraphQLLocalTime.serialize(false)).toThrow(/Value is not string/);
         INVALID_LOCAL_TIMES.forEach(testValue => {
-          expect(() => GraphQLLocalTime.serialize(testValue)).toThrow(/Value is not a valid LocalTime/);
+          expect(() => GraphQLLocalTime.serialize(testValue)).toThrow(
+            /Value is not a valid LocalTime/,
+          );
         });
       });
 
@@ -68,22 +70,24 @@ describe(`LocalTime`, () => {
 
         expect(() => GraphQLLocalTime.parseValue(false)).toThrow(/Value is not string/);
         INVALID_LOCAL_TIMES.forEach(testValue => {
-          expect(() => GraphQLLocalTime.parseValue(testValue)).toThrow(/Value is not a valid LocalTime/);
+          expect(() => GraphQLLocalTime.parseValue(testValue)).toThrow(
+            /Value is not a valid LocalTime/,
+          );
         });
       });
 
       it(`parseLiteral`, () => {
-        expect(() => GraphQLLocalTime.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as local times but got a/
-        );
+        expect(() =>
+          GraphQLLocalTime.parseLiteral({ value: 123, kind: Kind.INT } as any, {}),
+        ).toThrow(/Can only validate strings as local times but got a/);
 
-        expect(() => GraphQLLocalTime.parseLiteral({ value: false, kind: Kind.BOOLEAN }, {})).toThrow(
-          /Can only validate strings as local times but got a/
-        );
+        expect(() =>
+          GraphQLLocalTime.parseLiteral({ value: false, kind: Kind.BOOLEAN }, {}),
+        ).toThrow(/Can only validate strings as local times but got a/);
         INVALID_LOCAL_TIMES.forEach(testValue => {
-          expect(() => GraphQLLocalTime.parseLiteral({ value: testValue, kind: Kind.STRING }, {})).toThrow(
-            /Value is not a valid LocalTime/
-          );
+          expect(() =>
+            GraphQLLocalTime.parseLiteral({ value: testValue, kind: Kind.STRING }, {}),
+          ).toThrow(/Value is not a valid LocalTime/);
         });
       });
     });

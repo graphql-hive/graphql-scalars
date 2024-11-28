@@ -1,9 +1,9 @@
 {
-    "compilerOptions": {
-        "target": "esnext",
-        "lib": ["esnext"],
-        "module": "esnext",
-        "moduleResolution": "node"
-    },
-    "include": ["*.test.ts"]
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "moduleResolution": "node"
+  },
+  "include": ["*.test.ts"]
 }

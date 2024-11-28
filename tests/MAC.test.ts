@@ -27,8 +27,8 @@ describe(`MAC`, () => {
               value: address,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toEqual(address);
       }
     });
@@ -38,22 +38,26 @@ describe(`MAC`, () => {
     describe(`not a valid MAC address`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLMAC.serialize(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLMAC.serialize(`this is not an mac address`)).toThrow(/Value is not a valid MAC address/);
+        expect(() => GraphQLMAC.serialize(`this is not an mac address`)).toThrow(
+          /Value is not a valid MAC address/,
+        );
       });
 
       it(`parseValue`, () => {
         expect(() => GraphQLMAC.serialize(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLMAC.parseValue(`this is not an mac address`)).toThrow(/Value is not a valid MAC address/);
+        expect(() => GraphQLMAC.parseValue(`this is not an mac address`)).toThrow(
+          /Value is not a valid MAC address/,
+        );
       });
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLMAC.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as MAC addresses but got a/
+          /Can only validate strings as MAC addresses but got a/,
         );
 
-        expect(() => GraphQLMAC.parseLiteral({ value: `this is not an mac address`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid MAC address/
-        );
+        expect(() =>
+          GraphQLMAC.parseLiteral({ value: `this is not an mac address`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid MAC address/);
       });
     });
   });

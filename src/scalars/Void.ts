@@ -9,11 +9,11 @@ export const GraphQLVoid = /*#__PURE__*/ new GraphQLScalarType({
     return '';
   },
 
-  parseValue() {
+  parseValue(): null {
     return null;
   },
 
-  parseLiteral() {
+  parseLiteral(): null {
     return null;
   },
   extensions: {

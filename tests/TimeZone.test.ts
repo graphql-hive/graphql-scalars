@@ -1,7 +1,6 @@
 /* global describe, test, expect */
 
 import { Kind } from 'graphql/language';
-
 import { GraphQLTimeZone } from '../src/scalars/TimeZone.js';
 
 describe('TimeZone', () => {
@@ -17,7 +16,9 @@ describe('TimeZone', () => {
     });
 
     test('parseLiteral', () => {
-      expect(GraphQLTimeZone.parseLiteral({ value: TEST_REGION, kind: Kind.STRING }, {})).toBe(TEST_REGION);
+      expect(GraphQLTimeZone.parseLiteral({ value: TEST_REGION, kind: Kind.STRING }, {})).toBe(
+        TEST_REGION,
+      );
     });
   });
 
@@ -33,7 +34,9 @@ describe('TimeZone', () => {
     });
 
     test('parseLiteral', () => {
-      expect(GraphQLTimeZone.parseLiteral({ value: TEST_OFFSET, kind: Kind.STRING }, {})).toBe(TEST_OFFSET);
+      expect(GraphQLTimeZone.parseLiteral({ value: TEST_OFFSET, kind: Kind.STRING }, {})).toBe(
+        TEST_OFFSET,
+      );
     });
   });
 
@@ -41,17 +44,21 @@ describe('TimeZone', () => {
     const TEST_INVALID_TZ = 'notatimezone';
 
     test('serialize', () => {
-      expect(() => GraphQLTimeZone.serialize(TEST_INVALID_TZ)).toThrow(/Value is not a valid IANA time zone:/);
+      expect(() => GraphQLTimeZone.serialize(TEST_INVALID_TZ)).toThrow(
+        /Value is not a valid IANA time zone:/,
+      );
     });
 
     test(`parseValue`, () => {
-      expect(() => GraphQLTimeZone.parseValue(TEST_INVALID_TZ)).toThrow(/Value is not a valid IANA time zone:/);
+      expect(() => GraphQLTimeZone.parseValue(TEST_INVALID_TZ)).toThrow(
+        /Value is not a valid IANA time zone:/,
+      );
     });
 
     test(`parseLiteral`, () => {
-      expect(() => GraphQLTimeZone.parseLiteral({ value: TEST_INVALID_TZ, kind: Kind.STRING }, {})).toThrow(
-        /Value is not a valid IANA time zone:/
-      );
+      expect(() =>
+        GraphQLTimeZone.parseLiteral({ value: TEST_INVALID_TZ, kind: Kind.STRING }, {}),
+      ).toThrow(/Value is not a valid IANA time zone:/);
     });
   });
 

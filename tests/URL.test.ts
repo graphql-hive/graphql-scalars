@@ -1,9 +1,8 @@
 /* global describe, test, expect */
 
-import { Kind } from 'graphql/language';
-
-import { GraphQLURL } from '../src/scalars/URL.js';
 import { URL } from 'url';
+import { Kind } from 'graphql/language';
+import { GraphQLURL } from '../src/scalars/URL.js';
 
 /*
  * these test cases are picked up from https://mathiasbynens.be/demo/url-regex
@@ -16,13 +15,15 @@ describe('URL', () => {
     });
 
     test('parseValue', () => {
-      expect(GraphQLURL.parseValue('http://localhost/')).toMatchObject(new URL('http://localhost/'));
+      expect(GraphQLURL.parseValue('http://localhost/')).toMatchObject(
+        new URL('http://localhost/'),
+      );
     });
 
     test('parseLiteral', () => {
-      expect(GraphQLURL.parseLiteral({ value: 'http://localhost/', kind: Kind.STRING }, {})).toMatchObject(
-        new URL('http://localhost/')
-      );
+      expect(
+        GraphQLURL.parseLiteral({ value: 'http://localhost/', kind: Kind.STRING }, {}),
+      ).toMatchObject(new URL('http://localhost/'));
     });
   });
 
@@ -32,13 +33,15 @@ describe('URL', () => {
     });
 
     test('parseValue', () => {
-      expect(GraphQLURL.parseValue('http://localhost:3000/')).toMatchObject(new URL('http://localhost:3000/'));
+      expect(GraphQLURL.parseValue('http://localhost:3000/')).toMatchObject(
+        new URL('http://localhost:3000/'),
+      );
     });
 
     test('parseLiteral', () => {
-      expect(GraphQLURL.parseLiteral({ value: 'http://localhost:3000/', kind: Kind.STRING }, {})).toMatchObject(
-        new URL('http://localhost:3000/')
-      );
+      expect(
+        GraphQLURL.parseLiteral({ value: 'http://localhost:3000/', kind: Kind.STRING }, {}),
+      ).toMatchObject(new URL('http://localhost:3000/'));
     });
   });
 
@@ -52,9 +55,9 @@ describe('URL', () => {
     });
 
     test(`parseLiteral invalidurlexample`, () => {
-      expect(() => GraphQLURL.parseLiteral({ value: 'invalidurlexample', kind: Kind.STRING }, {})).toThrow(
-        /Invalid URL/
-      );
+      expect(() =>
+        GraphQLURL.parseLiteral({ value: 'invalidurlexample', kind: Kind.STRING }, {}),
+      ).toThrow(/Invalid URL/);
     });
   });
 

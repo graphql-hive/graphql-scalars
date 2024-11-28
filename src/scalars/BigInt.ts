@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import { GraphQLScalarType, GraphQLScalarTypeConfig, print } from 'graphql';
 import { createGraphQLError } from '../error.js';
 import { serializeObject } from './utilities.js';

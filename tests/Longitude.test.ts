@@ -31,14 +31,18 @@ describe(`Longitude`, () => {
     it(`serialize`, () => {
       for (const longitude of LONGITUDES) {
         expect(GraphQLLongitude.serialize(longitude.dd)).toEqual(longitude.dd);
-        expect(toPrecision(GraphQLLongitude.serialize(longitude.dms), longitude.precision)).toEqual(longitude.dd);
+        expect(toPrecision(GraphQLLongitude.serialize(longitude.dms), longitude.precision)).toEqual(
+          longitude.dd,
+        );
       }
     });
 
     it(`parseValue`, () => {
       for (const longitude of LONGITUDES) {
         expect(GraphQLLongitude.serialize(longitude.dd)).toEqual(longitude.dd);
-        expect(toPrecision(GraphQLLongitude.serialize(longitude.dms), longitude.precision)).toEqual(longitude.dd);
+        expect(toPrecision(GraphQLLongitude.serialize(longitude.dms), longitude.precision)).toEqual(
+          longitude.dd,
+        );
       }
     });
 
@@ -50,8 +54,8 @@ describe(`Longitude`, () => {
               value: longitude.dd.toString(),
               kind: Kind.FLOAT,
             },
-            {}
-          )
+            {},
+          ),
         ).toEqual(longitude.dd);
         expect(
           toPrecision(
@@ -60,10 +64,10 @@ describe(`Longitude`, () => {
                 value: longitude.dms.toString(),
                 kind: Kind.STRING,
               },
-              {}
+              {},
             ),
-            longitude.precision
-          )
+            longitude.precision,
+          ),
         ).toEqual(longitude.dd);
       }
     });
@@ -72,25 +76,44 @@ describe(`Longitude`, () => {
   describe('invalid', () => {
     describe(`not a valid longitude`, () => {
       it(`serialize`, () => {
-        expect(() => GraphQLLongitude.serialize(true)).toThrow(/Value is neither a number nor a string/);
-        expect(() => GraphQLLongitude.serialize(`this is not a longitude`)).toThrow(/Value is not a valid longitude/);
-        expect(() => GraphQLLongitude.serialize(-180.00000001)).toThrow(/Value must be between -180 and 180/);
-        expect(() => GraphQLLongitude.serialize(180.00000001)).toThrow(/Value must be between -180 and 180/);
+        expect(() => GraphQLLongitude.serialize(true)).toThrow(
+          /Value is neither a number nor a string/,
+        );
+        expect(() => GraphQLLongitude.serialize(`this is not a longitude`)).toThrow(
+          /Value is not a valid longitude/,
+        );
+        expect(() => GraphQLLongitude.serialize(-180.00000001)).toThrow(
+          /Value must be between -180 and 180/,
+        );
+        expect(() => GraphQLLongitude.serialize(180.00000001)).toThrow(
+          /Value must be between -180 and 180/,
+        );
       });
 
       it(`parseValue`, () => {
-        expect(() => GraphQLLongitude.parseValue(true)).toThrow(/Value is neither a number nor a string/);
-        expect(() => GraphQLLongitude.parseValue(`this is not a longitude`)).toThrow(/Value is not a valid longitude/);
-        expect(() => GraphQLLongitude.parseValue(-180.00000001)).toThrow(/Value must be between -180 and 180/);
-        expect(() => GraphQLLongitude.parseValue(180.00000001)).toThrow(/Value must be between -180 and 180/);
+        expect(() => GraphQLLongitude.parseValue(true)).toThrow(
+          /Value is neither a number nor a string/,
+        );
+        expect(() => GraphQLLongitude.parseValue(`this is not a longitude`)).toThrow(
+          /Value is not a valid longitude/,
+        );
+        expect(() => GraphQLLongitude.parseValue(-180.00000001)).toThrow(
+          /Value must be between -180 and 180/,
+        );
+        expect(() => GraphQLLongitude.parseValue(180.00000001)).toThrow(
+          /Value must be between -180 and 180/,
+        );
       });
 
       it(`parseLiteral`, () => {
-        expect(() => GraphQLLongitude.parseLiteral({ value: true, kind: Kind.BOOLEAN } as any, {})).toThrow(
-          /Can only validate floats or strings as longitude but got a/
-        );
         expect(() =>
-          GraphQLLongitude.parseLiteral({ value: `this is not a longitude`, kind: Kind.STRING }, {})
+          GraphQLLongitude.parseLiteral({ value: true, kind: Kind.BOOLEAN } as any, {}),
+        ).toThrow(/Can only validate floats or strings as longitude but got a/);
+        expect(() =>
+          GraphQLLongitude.parseLiteral(
+            { value: `this is not a longitude`, kind: Kind.STRING },
+            {},
+          ),
         ).toThrow(/Value is not a valid longitude/);
         expect(() =>
           GraphQLLongitude.parseLiteral(
@@ -98,8 +121,8 @@ describe(`Longitude`, () => {
               value: '-180.00000001',
               kind: Kind.FLOAT,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Value must be between -180 and 180/);
         expect(() =>
           GraphQLLongitude.parseLiteral(
@@ -107,8 +130,8 @@ describe(`Longitude`, () => {
               value: '180.00000001',
               kind: Kind.FLOAT,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Value must be between -180 and 180/);
       });
     });

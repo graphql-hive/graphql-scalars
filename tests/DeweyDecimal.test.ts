@@ -36,35 +36,49 @@ describe('DID', () => {
 
     test('parseLiteral', () => {
       expect(GraphQLDeweyDecimal.parseLiteral({ value: '1', kind: Kind.STRING }, {})).toBe('1');
-      expect(GraphQLDeweyDecimal.parseLiteral({ value: '1.2345', kind: Kind.STRING }, {})).toBe('1.2345');
+      expect(GraphQLDeweyDecimal.parseLiteral({ value: '1.2345', kind: Kind.STRING }, {})).toBe(
+        '1.2345',
+      );
       expect(GraphQLDeweyDecimal.parseLiteral({ value: '01', kind: Kind.STRING }, {})).toBe('01');
-      expect(GraphQLDeweyDecimal.parseLiteral({ value: '01.2345', kind: Kind.STRING }, {})).toBe('01.2345');
+      expect(GraphQLDeweyDecimal.parseLiteral({ value: '01.2345', kind: Kind.STRING }, {})).toBe(
+        '01.2345',
+      );
       expect(GraphQLDeweyDecimal.parseLiteral({ value: '001', kind: Kind.STRING }, {})).toBe('001');
-      expect(GraphQLDeweyDecimal.parseLiteral({ value: '001.2345', kind: Kind.STRING }, {})).toBe('001.2345');
+      expect(GraphQLDeweyDecimal.parseLiteral({ value: '001.2345', kind: Kind.STRING }, {})).toBe(
+        '001.2345',
+      );
       expect(GraphQLDeweyDecimal.parseLiteral({ value: '10', kind: Kind.STRING }, {})).toBe('10');
-      expect(GraphQLDeweyDecimal.parseLiteral({ value: '10.2345', kind: Kind.STRING }, {})).toBe('10.2345');
+      expect(GraphQLDeweyDecimal.parseLiteral({ value: '10.2345', kind: Kind.STRING }, {})).toBe(
+        '10.2345',
+      );
       expect(GraphQLDeweyDecimal.parseLiteral({ value: '010', kind: Kind.STRING }, {})).toBe('010');
-      expect(GraphQLDeweyDecimal.parseLiteral({ value: '010.2345', kind: Kind.STRING }, {})).toBe('010.2345');
+      expect(GraphQLDeweyDecimal.parseLiteral({ value: '010.2345', kind: Kind.STRING }, {})).toBe(
+        '010.2345',
+      );
       expect(GraphQLDeweyDecimal.parseLiteral({ value: '100', kind: Kind.STRING }, {})).toBe('100');
-      expect(GraphQLDeweyDecimal.parseLiteral({ value: '100.2345', kind: Kind.STRING }, {})).toBe('100.2345');
+      expect(GraphQLDeweyDecimal.parseLiteral({ value: '100.2345', kind: Kind.STRING }, {})).toBe(
+        '100.2345',
+      );
     });
   });
 
   describe('invalid', () => {
     describe('not a Dewey Decimal', () => {
-      expect(() => GraphQLDeweyDecimal.serialize('invaliddid')).toThrow(/Value is not a valid Dewey Decimal Number/);
+      expect(() => GraphQLDeweyDecimal.serialize('invaliddid')).toThrow(
+        /Value is not a valid Dewey Decimal Number/,
+      );
     });
 
     test(`parseValue invaliddidexample`, () => {
       expect(() => GraphQLDeweyDecimal.parseValue('invaliddidexample')).toThrow(
-        /Value is not a valid Dewey Decimal Number/
+        /Value is not a valid Dewey Decimal Number/,
       );
     });
 
     test(`parseLiteral invaliddidexample`, () => {
-      expect(() => GraphQLDeweyDecimal.parseLiteral({ value: 'invaliddidexample', kind: Kind.STRING }, {})).toThrow(
-        /Value is not a valid Dewey Decimal Number/
-      );
+      expect(() =>
+        GraphQLDeweyDecimal.parseLiteral({ value: 'invaliddidexample', kind: Kind.STRING }, {}),
+      ).toThrow(/Value is not a valid Dewey Decimal Number/);
     });
   });
 
@@ -78,7 +92,9 @@ describe('DID', () => {
     });
 
     test('parseLiteral', () => {
-      expect(() => GraphQLDeweyDecimal.parseLiteral({ value: '123', kind: Kind.INT }, {})).toThrow();
+      expect(() =>
+        GraphQLDeweyDecimal.parseLiteral({ value: '123', kind: Kind.INT }, {}),
+      ).toThrow();
     });
   });
 
@@ -92,7 +108,9 @@ describe('DID', () => {
     });
 
     test('parseLiteral', () => {
-      expect(() => GraphQLDeweyDecimal.parseLiteral({ value: '', kind: Kind.STRING }, {})).toThrow();
+      expect(() =>
+        GraphQLDeweyDecimal.parseLiteral({ value: '', kind: Kind.STRING }, {}),
+      ).toThrow();
     });
   });
 });

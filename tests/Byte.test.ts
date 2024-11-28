@@ -72,8 +72,8 @@ describe.each<[string, Buffer | string, string | number]>([
               value,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toEqual(byte);
       } else {
         const bufferJson = value.toJSON();
@@ -84,10 +84,10 @@ describe.each<[string, Buffer | string, string | number]>([
               bufferJson.data.map(value => ({
                 kind: Kind.INT,
                 value: value.toString(),
-              }))
+              })),
             ),
-            {}
-          )
+            {},
+          ),
         ).toEqual(byte);
       }
     });
@@ -110,8 +110,8 @@ describe.each<[string, Buffer | string, string | number]>([
               value: notValue,
               kind: Kind.INT,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Can only parse/);
       } else {
         expect(() => {

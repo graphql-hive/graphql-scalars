@@ -19,8 +19,8 @@ describe(`HSL`, () => {
             value: `hsl(270, 60%, 70%)`,
             kind: Kind.STRING,
           },
-          {}
-        )
+          {},
+        ),
       ).toEqual(`hsl(270, 60%, 70%)`);
     });
   });
@@ -29,22 +29,26 @@ describe(`HSL`, () => {
     describe(`not a valid HSL color`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLHSL.serialize(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLHSL.serialize(`this is not an hsl color`)).toThrow(/Value is not a valid HSL color/);
+        expect(() => GraphQLHSL.serialize(`this is not an hsl color`)).toThrow(
+          /Value is not a valid HSL color/,
+        );
       });
 
       it(`parseValue`, () => {
         expect(() => GraphQLHSL.serialize(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLHSL.parseValue(`this is not an hsl color`)).toThrow(/Value is not a valid HSL color/);
+        expect(() => GraphQLHSL.parseValue(`this is not an hsl color`)).toThrow(
+          /Value is not a valid HSL color/,
+        );
       });
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLHSL.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as HSL colors but got a/
+          /Can only validate strings as HSL colors but got a/,
         );
 
-        expect(() => GraphQLHSL.parseLiteral({ value: `this is not an hsl color`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid HSL color/
-        );
+        expect(() =>
+          GraphQLHSL.parseLiteral({ value: `this is not an hsl color`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid HSL color/);
       });
     });
   });

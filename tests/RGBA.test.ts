@@ -19,8 +19,8 @@ describe(`RGBA`, () => {
             value: `rgba(51, 170, 51, .7)`,
             kind: Kind.STRING,
           },
-          {}
-        )
+          {},
+        ),
       ).toEqual(`rgba(51, 170, 51, .7)`);
     });
   });
@@ -29,22 +29,26 @@ describe(`RGBA`, () => {
     describe(`not a valid RGBA color`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLRGBA.serialize(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLRGBA.serialize(`this is not an rgba color`)).toThrow(/Value is not a valid RGBA color/);
+        expect(() => GraphQLRGBA.serialize(`this is not an rgba color`)).toThrow(
+          /Value is not a valid RGBA color/,
+        );
       });
 
       it(`parseValue`, () => {
         expect(() => GraphQLRGBA.serialize(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLRGBA.parseValue(`this is not an rgba color`)).toThrow(/Value is not a valid RGBA color/);
+        expect(() => GraphQLRGBA.parseValue(`this is not an rgba color`)).toThrow(
+          /Value is not a valid RGBA color/,
+        );
       });
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLRGBA.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as RGBA colors but got a/
+          /Can only validate strings as RGBA colors but got a/,
         );
 
-        expect(() => GraphQLRGBA.parseLiteral({ value: `this is not an rgba color`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid RGBA color/
-        );
+        expect(() =>
+          GraphQLRGBA.parseLiteral({ value: `this is not an rgba color`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid RGBA color/);
       });
     });
   });

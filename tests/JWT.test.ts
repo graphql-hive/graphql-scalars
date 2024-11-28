@@ -39,8 +39,8 @@ describe(`JWT`, () => {
             value: JWT,
             kind: Kind.STRING,
           },
-          {}
-        )
+          {},
+        ),
       ).toEqual(JWT);
     });
   });
@@ -57,28 +57,32 @@ describe(`JWT`, () => {
 
       it(`parseValue`, () => {
         expect(() => GraphQLJWT.parseValue(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLJWT.parseValue(`this is not a JWT`)).toThrow(/Value is not a valid JWT/);
-        expect(() => GraphQLJWT.parseValue(`missing.signature`)).toThrow(/Value is not a valid JWT/);
+        expect(() => GraphQLJWT.parseValue(`this is not a JWT`)).toThrow(
+          /Value is not a valid JWT/,
+        );
+        expect(() => GraphQLJWT.parseValue(`missing.signature`)).toThrow(
+          /Value is not a valid JWT/,
+        );
         expect(() => GraphQLJWT.parseValue(`missing.`)).toThrow(/Value is not a valid JWT/);
         expect(() => GraphQLJWT.parseValue(`missing`)).toThrow(/Value is not a valid JWT/);
       });
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLJWT.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as JWT but got a/
+          /Can only validate strings as JWT but got a/,
         );
 
-        expect(() => GraphQLJWT.parseLiteral({ value: `this is not a JWT`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid JWT/
-        );
+        expect(() =>
+          GraphQLJWT.parseLiteral({ value: `this is not a JWT`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid JWT/);
         expect(() =>
           GraphQLJWT.parseLiteral(
             {
               value: `missing.signature`,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Value is not a valid JWT/);
         expect(() =>
           GraphQLJWT.parseLiteral(
@@ -86,8 +90,8 @@ describe(`JWT`, () => {
               value: `missing.`,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Value is not a valid JWT/);
         expect(() =>
           GraphQLJWT.parseLiteral(
@@ -95,8 +99,8 @@ describe(`JWT`, () => {
               value: `missing`,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Value is not a valid JWT/);
       });
     });

@@ -56,8 +56,8 @@ describe(`IPv4`, () => {
               value: address,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toEqual(address);
       }
     });
@@ -67,24 +67,26 @@ describe(`IPv4`, () => {
     describe(`not a valid IPv4 address`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLIPv4.serialize(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLIPv4.serialize(`this is not an ipv4 address`)).toThrow(/Value is not a valid IPv4 address/);
+        expect(() => GraphQLIPv4.serialize(`this is not an ipv4 address`)).toThrow(
+          /Value is not a valid IPv4 address/,
+        );
       });
 
       it(`parseValue`, () => {
         expect(() => GraphQLIPv4.serialize(123)).toThrow(/Value is not string/);
         expect(() => GraphQLIPv4.parseValue(`this is not an ipv4 address`)).toThrow(
-          /Value is not a valid IPv4 address/
+          /Value is not a valid IPv4 address/,
         );
       });
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLIPv4.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as IPv4 addresses but got a/
+          /Can only validate strings as IPv4 addresses but got a/,
         );
 
-        expect(() => GraphQLIPv4.parseLiteral({ value: `this is not an ipv4 address`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid IPv4 address/
-        );
+        expect(() =>
+          GraphQLIPv4.parseLiteral({ value: `this is not an ipv4 address`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid IPv4 address/);
       });
     });
   });

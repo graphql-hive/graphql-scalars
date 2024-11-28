@@ -8,11 +8,11 @@
  */
 
 import {
-  validateTime,
   validateDate,
   validateDateTime,
-  validateUnixTimestamp,
   validateJSDate,
+  validateTime,
+  validateUnixTimestamp,
 } from '../../src/scalars/iso-date/validator.js';
 
 describe('validator', () => {
@@ -130,7 +130,13 @@ describe('validator', () => {
       });
     });
 
-    [Number.NaN, Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY, 2147483648, -2147483649].forEach(timestamp => {
+    [
+      Number.NaN,
+      Number.POSITIVE_INFINITY,
+      Number.POSITIVE_INFINITY,
+      2147483648,
+      -2147483649,
+    ].forEach(timestamp => {
       it(`identifies ${timestamp} as an invalid Unix timestamp`, () => {
         expect(validateUnixTimestamp(timestamp)).toEqual(false);
       });

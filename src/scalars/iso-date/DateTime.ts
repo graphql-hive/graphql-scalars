@@ -34,7 +34,7 @@ export const GraphQLDateTimeConfig: GraphQLScalarTypeConfig<Date, Date> = /*#__P
     } else if (typeof value === 'number') {
       try {
         return new Date(value);
-      } catch (e) {
+      } catch {
         throw createGraphQLError('DateTime cannot represent an invalid Unix timestamp ' + value);
       }
     } else {

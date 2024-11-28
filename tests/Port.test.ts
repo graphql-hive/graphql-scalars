@@ -45,7 +45,7 @@ describe(`Port`, () => {
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLPort.parseLiteral({ value: -1, kind: Kind.INT } as any, {})).toThrow(
-          /Value is not a valid TCP port: -1/
+          /Value is not a valid TCP port: -1/,
         );
       });
     });
@@ -61,7 +61,7 @@ describe(`Port`, () => {
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLPort.parseLiteral({ value: 65536, kind: Kind.INT } as any, {})).toThrow(
-          /Value is not a valid TCP port: 65536/
+          /Value is not a valid TCP port: 65536/,
         );
       });
     });
@@ -77,7 +77,7 @@ describe(`Port`, () => {
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLPort.parseLiteral({ value: null, kind: Kind.INT } as any, {})).toThrow(
-          /Value is not a number: null/
+          /Value is not a number: null/,
         );
       });
     });
@@ -92,20 +92,26 @@ describe(`Port`, () => {
       });
 
       it(`parseLiteral`, () => {
-        expect(() => GraphQLPort.parseLiteral({ value: undefined, kind: Kind.INT } as any, {})).toThrow(
+        expect(() =>
+          GraphQLPort.parseLiteral({ value: undefined, kind: Kind.INT } as any, {}),
+        ).toThrow(
           // eslint-disable-line
-          /Value is not a number: undefined/
+          /Value is not a number: undefined/,
         );
       });
     });
 
     describe(`infinity`, () => {
       it(`serialize`, () => {
-        expect(() => GraphQLPort.serialize(Number.POSITIVE_INFINITY)).toThrow(/Value is not a finite number/);
+        expect(() => GraphQLPort.serialize(Number.POSITIVE_INFINITY)).toThrow(
+          /Value is not a finite number/,
+        );
       });
 
       it(`parseValue`, () => {
-        expect(() => GraphQLPort.parseValue(Number.POSITIVE_INFINITY)).toThrow(/Value is not a finite number/);
+        expect(() => GraphQLPort.parseValue(Number.POSITIVE_INFINITY)).toThrow(
+          /Value is not a finite number/,
+        );
       });
 
       it(`parseLiteral`, () => {
@@ -115,8 +121,8 @@ describe(`Port`, () => {
               value: Number.POSITIVE_INFINITY,
               kind: Kind.INT,
             } as any,
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Value is not a finite number/);
       });
     });
@@ -137,8 +143,8 @@ describe(`Port`, () => {
               value: `not a number`,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Can only validate integers as TCP ports but got a/);
       });
     });
@@ -153,9 +159,9 @@ describe(`Port`, () => {
       });
 
       it(`parseLiteral`, () => {
-        expect(() => GraphQLPort.parseLiteral({ value: Number.NaN, kind: Kind.STRING } as any, {})).toThrow(
-          /Can only validate integers as TCP ports but got a/
-        );
+        expect(() =>
+          GraphQLPort.parseLiteral({ value: Number.NaN, kind: Kind.STRING } as any, {}),
+        ).toThrow(/Can only validate integers as TCP ports but got a/);
       });
     });
   });

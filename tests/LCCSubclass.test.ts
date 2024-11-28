@@ -25,17 +25,21 @@ describe('DID', () => {
 
   describe('invalid', () => {
     describe('not an LCC Class A', () => {
-      expect(() => GraphQLLCCSubclass.serialize('invalidexample')).toThrow(/Value is not a valid LCC Subclass/);
+      expect(() => GraphQLLCCSubclass.serialize('invalidexample')).toThrow(
+        /Value is not a valid LCC Subclass/,
+      );
     });
 
     test(`parseValue invaliddidexample`, () => {
-      expect(() => GraphQLLCCSubclass.parseValue('invaliddidexample')).toThrow(/Value is not a valid LCC Subclass/);
+      expect(() => GraphQLLCCSubclass.parseValue('invaliddidexample')).toThrow(
+        /Value is not a valid LCC Subclass/,
+      );
     });
 
     test(`parseLiteral invaliddidexample`, () => {
-      expect(() => GraphQLLCCSubclass.parseLiteral({ value: 'invaliddidexample', kind: Kind.STRING }, {})).toThrow(
-        /Value is not a valid LCC Subclass/
-      );
+      expect(() =>
+        GraphQLLCCSubclass.parseLiteral({ value: 'invaliddidexample', kind: Kind.STRING }, {}),
+      ).toThrow(/Value is not a valid LCC Subclass/);
     });
   });
 

@@ -104,8 +104,8 @@ describe(`IP`, () => {
               value: address,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toEqual(address);
       }
     });
@@ -116,25 +116,25 @@ describe(`IP`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLIP.serialize(123)).toThrow(/Value is not string/);
         expect(() => GraphQLIP.serialize(`this is not an ipv4 address`)).toThrow(
-          /Value is not a valid IPv4 or IPv6 address/
+          /Value is not a valid IPv4 or IPv6 address/,
         );
       });
 
       it(`parseValue`, () => {
         expect(() => GraphQLIP.serialize(123)).toThrow(/Value is not string/);
         expect(() => GraphQLIP.parseValue(`this is not an ipv4 address`)).toThrow(
-          /Value is not a valid IPv4 or IPv6 address/
+          /Value is not a valid IPv4 or IPv6 address/,
         );
       });
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLIP.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as IP addresses but got a/
+          /Can only validate strings as IP addresses but got a/,
         );
 
-        expect(() => GraphQLIP.parseLiteral({ value: `this is not an ipv4 address`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid IPv4 or IPv6 address/
-        );
+        expect(() =>
+          GraphQLIP.parseLiteral({ value: `this is not an ipv4 address`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid IPv4 or IPv6 address/);
       });
     });
 
@@ -142,25 +142,25 @@ describe(`IP`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLIP.serialize(123)).toThrow(/Value is not string/);
         expect(() => GraphQLIP.serialize(`this is not an ipv6 address`)).toThrow(
-          /Value is not a valid IPv4 or IPv6 address/
+          /Value is not a valid IPv4 or IPv6 address/,
         );
       });
 
       it(`parseValue`, () => {
         expect(() => GraphQLIP.serialize(123)).toThrow(/Value is not string/);
         expect(() => GraphQLIP.parseValue(`this is not an ipv6 address`)).toThrow(
-          /Value is not a valid IPv4 or IPv6 address/
+          /Value is not a valid IPv4 or IPv6 address/,
         );
       });
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLIP.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as IP addresses but got a/
+          /Can only validate strings as IP addresses but got a/,
         );
 
-        expect(() => GraphQLIP.parseLiteral({ value: `this is not an ipv6 address`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid IPv4 or IPv6 address/
-        );
+        expect(() =>
+          GraphQLIP.parseLiteral({ value: `this is not an ipv6 address`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid IPv4 or IPv6 address/);
       });
     });
   });

@@ -19,8 +19,8 @@ describe(`Hexadecimal`, () => {
             value: `123456789AbCdEf`,
             kind: Kind.STRING,
           },
-          {}
-        )
+          {},
+        ),
       ).toEqual(`123456789AbCdEf`);
     });
   });
@@ -30,24 +30,27 @@ describe(`Hexadecimal`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLHexadecimal.serialize(123)).toThrow(/Value is not string/);
         expect(() => GraphQLHexadecimal.serialize(`this is not a hex color code`)).toThrow(
-          /Value is not a valid hexadecimal value/
+          /Value is not a valid hexadecimal value/,
         );
       });
 
       it(`parseValue`, () => {
         expect(() => GraphQLHexadecimal.serialize(123)).toThrow(/Value is not string/);
         expect(() => GraphQLHexadecimal.parseValue(`this is not a hex color code`)).toThrow(
-          /Value is not a valid hexadecimal value/
+          /Value is not a valid hexadecimal value/,
         );
       });
 
       it(`parseLiteral`, () => {
-        expect(() => GraphQLHexadecimal.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as a hexadecimal but got a/
-        );
+        expect(() =>
+          GraphQLHexadecimal.parseLiteral({ value: 123, kind: Kind.INT } as any, {}),
+        ).toThrow(/Can only validate strings as a hexadecimal but got a/);
 
         expect(() =>
-          GraphQLHexadecimal.parseLiteral({ value: `this is not a hex color code`, kind: Kind.STRING }, {})
+          GraphQLHexadecimal.parseLiteral(
+            { value: `this is not a hex color code`, kind: Kind.STRING },
+            {},
+          ),
         ).toThrow(/Value is not a valid hexadecimal value/);
       });
     });

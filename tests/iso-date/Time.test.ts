@@ -7,17 +7,21 @@
  *
  */
 
-import { GraphQLTime } from '../../src/scalars/iso-date/Time.js';
 import { Kind } from 'graphql';
-// flowlint-next-line untyped-import:off
-import MockDate from 'mockdate';
-// flowlint-next-line untyped-import:off
 import { stringify } from 'jest-matcher-utils';
+import MockDate from 'mockdate';
+import { GraphQLTime } from '../../src/scalars/iso-date/Time.js';
 
 // Mock the new Date() call so it always returns 2017-01-01T00:00:00.000Z
 MockDate.set(new Date(Date.UTC(2017, 0, 1)));
 
-const invalidDates = ['Invalid date', '2016-01-01T00:00:00.223Z', '10:30:02.Z', '00:00:00.45+0130', '00:00:00.45+01'];
+const invalidDates = [
+  'Invalid date',
+  '2016-01-01T00:00:00.223Z',
+  '10:30:02.Z',
+  '00:00:00.45+0130',
+  '00:00:00.45+01',
+];
 
 const validDates = [
   ['00:00:00Z', new Date(Date.UTC(2017, 0, 1))],
@@ -104,6 +108,7 @@ describe('GraphQLTime', () => {
       };
 
       it(`parses literal ${stringify(literal)} into javascript Date ${stringify(expected)}`, () => {
+        // @ts-expect-error - intentional invalid input
         expect(GraphQLTime.parseLiteral(literal, {})).toEqual(expected);
       });
     });
@@ -114,6 +119,7 @@ describe('GraphQLTime', () => {
         value,
       };
       it(`errors when parsing invalid literal ${stringify(invalidLiteral)}`, () => {
+        // @ts-expect-error - intentional invalid input
         expect(() => GraphQLTime.parseLiteral(invalidLiteral, {})).toThrowErrorMatchingSnapshot();
       });
     });
@@ -125,10 +131,10 @@ describe('GraphQLTime', () => {
       },
       {
         kind: Kind.DOCUMENT,
-        // flowlint-next-line unclear-type:off
-      } as any,
+      },
     ].forEach(literal => {
       it(`errors when parsing invalid literal ${stringify(literal)}`, () => {
+        // @ts-expect-error - intentional invalid input
         expect(() => GraphQLTime.parseLiteral(literal, {})).toThrowError();
       });
     });

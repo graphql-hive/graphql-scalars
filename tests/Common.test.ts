@@ -1,7 +1,7 @@
+import { graphql, GraphQLSchema } from 'graphql';
+import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge';
 import { makeExecutableSchema } from '@graphql-tools/schema';
-import { typeDefs as scalarTypeDefs, resolvers as scalarResolvers } from '../src/index.js';
-import { mergeTypeDefs, mergeResolvers } from '@graphql-tools/merge';
-import { GraphQLSchema, graphql } from 'graphql';
+import { resolvers as scalarResolvers, typeDefs as scalarTypeDefs } from '../src/index.js';
 
 const FOO = { bar: 'QUX' };
 const fooQuery = /* GraphQL */ `

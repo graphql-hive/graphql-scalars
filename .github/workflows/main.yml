@@ -14,7 +14,7 @@ jobs:
     uses: the-guild-org/shared-config/.github/workflows/ci-node-matrix.yml@main
     with:
       script: yarn test
-      nodeVersions: '[16,18,21]'
+      nodeVersions: '[18,20,22]'
   lint:
     uses: the-guild-org/shared-config/.github/workflows/lint.yml@main
     with:

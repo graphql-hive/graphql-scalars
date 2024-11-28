@@ -7,10 +7,9 @@
  *
  */
 
-import { graphql, GraphQLObjectType, GraphQLSchema, GraphQLError } from 'graphql';
-import { GraphQLTime } from '../../src/scalars/iso-date/Time.js';
-// flowlint-next-line untyped-import:off
+import { graphql, GraphQLObjectType, GraphQLSchema } from 'graphql';
 import MockDate from 'mockdate';
+import { GraphQLTime } from '../../src/scalars/iso-date/Time.js';
 
 // Mock the new Date() call so it always returns 2017-01-01T00:00:00.000Z
 MockDate.set(new Date(Date.UTC(2017, 0, 1)));

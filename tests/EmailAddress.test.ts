@@ -24,8 +24,8 @@ describe('EmailAddress', () => {
             value: 'test@test.com',
             kind: Kind.STRING,
           },
-          {}
-        )
+          {},
+        ),
       ).toBe('test@test.com');
     });
 
@@ -36,8 +36,8 @@ describe('EmailAddress', () => {
             value: 'test@test',
             kind: Kind.STRING,
           },
-          {}
-        )
+          {},
+        ),
       ).toBe('test@test');
     });
   });
@@ -46,13 +46,13 @@ describe('EmailAddress', () => {
     describe('not an email address', () => {
       test('serialize', () => {
         expect(() => GraphQLEmailAddress.serialize('this is not an email address')).toThrow(
-          /Value is not a valid email address/
+          /Value is not a valid email address/,
         );
       });
 
       test('parseValue', () => {
         expect(() => GraphQLEmailAddress.parseValue('this is not an email address')).toThrow(
-          /Value is not a valid email address/
+          /Value is not a valid email address/,
         );
       });
 
@@ -63,8 +63,8 @@ describe('EmailAddress', () => {
               value: 'this is not an email address',
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Value is not a valid email address/);
       });
     });
@@ -79,9 +79,9 @@ describe('EmailAddress', () => {
       });
 
       test('parseLiteral', () => {
-        expect(() => GraphQLEmailAddress.parseLiteral({ value: '123', kind: Kind.INT }, {})).toThrow(
-          /Can only validate strings as email addresses but got a/
-        );
+        expect(() =>
+          GraphQLEmailAddress.parseLiteral({ value: '123', kind: Kind.INT }, {}),
+        ).toThrow(/Can only validate strings as email addresses but got a/);
       });
     });
   });

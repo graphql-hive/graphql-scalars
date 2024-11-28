@@ -31,14 +31,18 @@ describe(`Latitude`, () => {
     it(`serialize`, () => {
       for (const latitude of LATITUDES) {
         expect(GraphQLLatitude.serialize(latitude.dd)).toEqual(latitude.dd);
-        expect(toPrecision(GraphQLLatitude.serialize(latitude.dms), latitude.precision)).toEqual(latitude.dd);
+        expect(toPrecision(GraphQLLatitude.serialize(latitude.dms), latitude.precision)).toEqual(
+          latitude.dd,
+        );
       }
     });
 
     it(`parseValue`, () => {
       for (const latitude of LATITUDES) {
         expect(GraphQLLatitude.serialize(latitude.dd)).toEqual(latitude.dd);
-        expect(toPrecision(GraphQLLatitude.serialize(latitude.dms), latitude.precision)).toEqual(latitude.dd);
+        expect(toPrecision(GraphQLLatitude.serialize(latitude.dms), latitude.precision)).toEqual(
+          latitude.dd,
+        );
       }
     });
 
@@ -50,8 +54,8 @@ describe(`Latitude`, () => {
               value: latitude.dd.toString(),
               kind: Kind.FLOAT,
             },
-            {}
-          )
+            {},
+          ),
         ).toEqual(latitude.dd);
         expect(
           toPrecision(
@@ -60,10 +64,10 @@ describe(`Latitude`, () => {
                 value: latitude.dms.toString(),
                 kind: Kind.STRING,
               },
-              {}
+              {},
             ),
-            latitude.precision
-          )
+            latitude.precision,
+          ),
         ).toEqual(latitude.dd);
       }
     });
@@ -72,34 +76,50 @@ describe(`Latitude`, () => {
   describe('invalid', () => {
     describe(`not a valid latitude`, () => {
       it(`serialize`, () => {
-        expect(() => GraphQLLatitude.serialize(true)).toThrow(/Value is neither a number nor a string/);
-        expect(() => GraphQLLatitude.serialize(`this is not a latitude`)).toThrow(/Value is not a valid latitude/);
-        expect(() => GraphQLLatitude.serialize(-90.00000001)).toThrow(/Value must be between -90 and 90/);
-        expect(() => GraphQLLatitude.serialize(90.00000001)).toThrow(/Value must be between -90 and 90/);
+        expect(() => GraphQLLatitude.serialize(true)).toThrow(
+          /Value is neither a number nor a string/,
+        );
+        expect(() => GraphQLLatitude.serialize(`this is not a latitude`)).toThrow(
+          /Value is not a valid latitude/,
+        );
+        expect(() => GraphQLLatitude.serialize(-90.00000001)).toThrow(
+          /Value must be between -90 and 90/,
+        );
+        expect(() => GraphQLLatitude.serialize(90.00000001)).toThrow(
+          /Value must be between -90 and 90/,
+        );
       });
 
       it(`parseValue`, () => {
-        expect(() => GraphQLLatitude.parseValue(true)).toThrow(/Value is neither a number nor a string/);
-        expect(() => GraphQLLatitude.parseValue(`this is not a latitude`)).toThrow(/Value is not a valid latitude/);
-        expect(() => GraphQLLatitude.parseValue(-90.00000001)).toThrow(/Value must be between -90 and 90/);
-        expect(() => GraphQLLatitude.parseValue(90.00000001)).toThrow(/Value must be between -90 and 90/);
+        expect(() => GraphQLLatitude.parseValue(true)).toThrow(
+          /Value is neither a number nor a string/,
+        );
+        expect(() => GraphQLLatitude.parseValue(`this is not a latitude`)).toThrow(
+          /Value is not a valid latitude/,
+        );
+        expect(() => GraphQLLatitude.parseValue(-90.00000001)).toThrow(
+          /Value must be between -90 and 90/,
+        );
+        expect(() => GraphQLLatitude.parseValue(90.00000001)).toThrow(
+          /Value must be between -90 and 90/,
+        );
       });
 
       it(`parseLiteral`, () => {
-        expect(() => GraphQLLatitude.parseLiteral({ value: true, kind: Kind.BOOLEAN } as any, {})).toThrow(
-          /Can only validate floats or strings as latitude but got a/
-        );
-        expect(() => GraphQLLatitude.parseLiteral({ value: `this is not a latitude`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid latitude/
-        );
+        expect(() =>
+          GraphQLLatitude.parseLiteral({ value: true, kind: Kind.BOOLEAN } as any, {}),
+        ).toThrow(/Can only validate floats or strings as latitude but got a/);
+        expect(() =>
+          GraphQLLatitude.parseLiteral({ value: `this is not a latitude`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid latitude/);
         expect(() =>
           GraphQLLatitude.parseLiteral(
             {
               value: '-90.00000001',
               kind: Kind.FLOAT,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Value must be between -90 and 90/);
         expect(() =>
           GraphQLLatitude.parseLiteral(
@@ -107,8 +127,8 @@ describe(`Latitude`, () => {
               value: '90.00000001',
               kind: Kind.FLOAT,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Value must be between -90 and 90/);
       });
     });

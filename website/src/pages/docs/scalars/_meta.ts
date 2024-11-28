@@ -3,6 +3,7 @@ export default {
   'big-int': 'BigInt',
   byte: 'Byte',
   'country-code': 'CountryCode',
+  'country-name': 'CountryName',
   cuid: 'Cuid',
   currency: 'Currency',
   date: 'Date',

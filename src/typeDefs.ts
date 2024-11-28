@@ -1,4 +1,5 @@
 export const GeoJSON = 'scalar GeoJSON';
+export const CountryName = 'scalar CountryName';
 export const BigInt = 'scalar BigInt';
 export const Byte = 'scalar Byte';
 export const Date = 'scalar Date';
@@ -76,6 +77,7 @@ export const typeDefs = [
   BigInt,
   Byte,
   CountryCode,
+  CountryName,
   Cuid,
   Currency,
   Date,

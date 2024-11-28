@@ -67,8 +67,8 @@ describe(`ISBN`, () => {
               value,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toEqual(value);
       }
     });
@@ -78,22 +78,26 @@ describe(`ISBN`, () => {
     describe(`not a valid ISBN address`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLISBN.serialize(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLISBN.serialize(`this is not an ISBN number`)).toThrow(/Value is not a valid ISBN number/);
+        expect(() => GraphQLISBN.serialize(`this is not an ISBN number`)).toThrow(
+          /Value is not a valid ISBN number/,
+        );
       });
 
       it(`parseValue`, () => {
         expect(() => GraphQLISBN.serialize(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLISBN.parseValue(`this is not an ISBN number`)).toThrow(/Value is not a valid ISBN number/);
+        expect(() => GraphQLISBN.parseValue(`this is not an ISBN number`)).toThrow(
+          /Value is not a valid ISBN number/,
+        );
       });
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLISBN.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as ISBN numbers but got a/
+          /Can only validate strings as ISBN numbers but got a/,
         );
 
-        expect(() => GraphQLISBN.parseLiteral({ value: `this is not an ISBN number`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid ISBN number/
-        );
+        expect(() =>
+          GraphQLISBN.parseLiteral({ value: `this is not an ISBN number`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid ISBN number/);
       });
     });
   });

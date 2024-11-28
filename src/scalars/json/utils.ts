@@ -5,7 +5,6 @@ export function identity<T>(value: T): T {
   return value;
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 export function ensureObject(value: any, ast?: ValueNode): object {
   if (typeof value !== 'object' || value === null || Array.isArray(value)) {
     throw createGraphQLError(

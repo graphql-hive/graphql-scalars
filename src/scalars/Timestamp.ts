@@ -20,7 +20,7 @@ function parseDate(value: any) {
 
   try {
     return new Date(value);
-  } catch (err) {
+  } catch {
     return null;
   }
 }

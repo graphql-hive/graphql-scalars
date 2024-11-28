@@ -7,10 +7,9 @@
  *
  */
 
-import { GraphQLDateTime } from '../../src/scalars/iso-date/DateTime.js';
 import { Kind } from 'graphql';
-// flowlint-next-line untyped-import:off
 import { stringify } from 'jest-matcher-utils';
+import { GraphQLDateTime } from '../../src/scalars/iso-date/DateTime.js';
 
 const invalidDates = [
   // General
@@ -64,7 +63,9 @@ describe('GraphQLDateTime', () => {
     });
 
     it(`throws error when serializing invalid date`, () => {
-      expect(() => GraphQLDateTime.serialize(new Date('invalid date'))).toThrowErrorMatchingSnapshot();
+      expect(() =>
+        GraphQLDateTime.serialize(new Date('invalid date')),
+      ).toThrowErrorMatchingSnapshot();
     });
 
     [
@@ -127,6 +128,7 @@ describe('GraphQLDateTime', () => {
       };
 
       it(`parses literal ${stringify(literal)} into javascript Date ${stringify(expected)}`, () => {
+        // @ts-expect-error - intentional invalid input
         expect(GraphQLDateTime.parseLiteral(literal, {})).toEqual(expected);
       });
     });
@@ -137,7 +139,10 @@ describe('GraphQLDateTime', () => {
         value,
       };
       it(`errors when parsing invalid literal ${stringify(invalidLiteral)}`, () => {
-        expect(() => GraphQLDateTime.parseLiteral(invalidLiteral, {})).toThrowErrorMatchingSnapshot();
+        expect(() =>
+          // @ts-expect-error - intentional invalid input
+          GraphQLDateTime.parseLiteral(invalidLiteral, {}),
+        ).toThrowErrorMatchingSnapshot();
       });
     });
 
@@ -148,7 +153,6 @@ describe('GraphQLDateTime', () => {
       },
       {
         kind: Kind.DOCUMENT,
-        // flowlint-next-line unclear-type:off
       } as any,
     ].forEach(literal => {
       it(`errors when parsing invalid literal ${stringify(literal)}`, () => {

@@ -103,8 +103,8 @@ describe(`IBAN`, () => {
               value,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toEqual(value);
       }
     });
@@ -114,7 +114,9 @@ describe(`IBAN`, () => {
     describe(`not a valid IBAN`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLIBAN.serialize(123)).toThrow(/Value is not string/);
-        expect(() => GraphQLIBAN.serialize(`this is not an IBAN`)).toThrow(/Value is not a valid IBAN/);
+        expect(() => GraphQLIBAN.serialize(`this is not an IBAN`)).toThrow(
+          /Value is not a valid IBAN/,
+        );
       });
 
       it(`parseValue`, () => {
@@ -124,12 +126,12 @@ describe(`IBAN`, () => {
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLIBAN.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as IBANs but got a/
+          /Can only validate strings as IBANs but got a/,
         );
 
-        expect(() => GraphQLIBAN.parseLiteral({ value: `this is not an IBAN number`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid IBAN/
-        );
+        expect(() =>
+          GraphQLIBAN.parseLiteral({ value: `this is not an IBAN number`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid IBAN/);
       });
     });
   });

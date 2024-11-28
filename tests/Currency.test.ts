@@ -19,8 +19,8 @@ describe(`Currency`, () => {
             value: `USD`,
             kind: Kind.STRING,
           },
-          {}
-        )
+          {},
+        ),
       ).toEqual(`USD`);
     });
   });
@@ -30,25 +30,25 @@ describe(`Currency`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLCurrency.serialize(123)).toThrow(/Value is not string/);
         expect(() => GraphQLCurrency.serialize(`this is not a currency`)).toThrow(
-          /Value is not a valid currency value/
+          /Value is not a valid currency value/,
         );
       });
 
       it(`parseValue`, () => {
         expect(() => GraphQLCurrency.serialize(123)).toThrow(/Value is not string/);
         expect(() => GraphQLCurrency.parseValue(`this is not a currency`)).toThrow(
-          /Value is not a valid currency value/
+          /Value is not a valid currency value/,
         );
       });
 
       it(`parseLiteral`, () => {
-        expect(() => GraphQLCurrency.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as a currency but got a/
-        );
+        expect(() =>
+          GraphQLCurrency.parseLiteral({ value: 123, kind: Kind.INT } as any, {}),
+        ).toThrow(/Can only validate strings as a currency but got a/);
 
-        expect(() => GraphQLCurrency.parseLiteral({ value: `this is not a currency`, kind: Kind.STRING }, {})).toThrow(
-          /Value is not a valid currency value/
-        );
+        expect(() =>
+          GraphQLCurrency.parseLiteral({ value: `this is not a currency`, kind: Kind.STRING }, {}),
+        ).toThrow(/Value is not a valid currency value/);
       });
     });
   });

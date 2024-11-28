@@ -1,7 +1,6 @@
 /* global describe, test, expect */
 
 import { Kind } from 'graphql/language';
-
 import { GraphQLPostalCode } from '../src/scalars/PostalCode.js';
 
 describe('PostalCode', () => {
@@ -17,7 +16,9 @@ describe('PostalCode', () => {
         });
 
         test('parseLiteral', () => {
-          expect(GraphQLPostalCode.parseLiteral({ value: '60031', kind: Kind.STRING }, {})).toBe('60031');
+          expect(GraphQLPostalCode.parseLiteral({ value: '60031', kind: Kind.STRING }, {})).toBe(
+            '60031',
+          );
         });
       });
       describe('plus 4', () => {
@@ -30,7 +31,9 @@ describe('PostalCode', () => {
         });
 
         test('parseLiteral', () => {
-          expect(GraphQLPostalCode.parseLiteral({ value: '60031-1234', kind: Kind.STRING }, {})).toBe('60031-1234');
+          expect(
+            GraphQLPostalCode.parseLiteral({ value: '60031-1234', kind: Kind.STRING }, {}),
+          ).toBe('60031-1234');
         });
       });
     });
@@ -47,7 +50,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: 'NW8 9AY', kind: Kind.STRING }, {})).toBe('NW8 9AY');
+        expect(GraphQLPostalCode.parseLiteral({ value: 'NW8 9AY', kind: Kind.STRING }, {})).toBe(
+          'NW8 9AY',
+        );
       });
     });
 
@@ -61,7 +66,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '10318', kind: Kind.STRING }, {})).toBe('10318');
+        expect(GraphQLPostalCode.parseLiteral({ value: '10318', kind: Kind.STRING }, {})).toBe(
+          '10318',
+        );
       });
     });
 
@@ -75,7 +82,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: 'M5T 1G2', kind: Kind.STRING }, {})).toBe('M5T 1G2');
+        expect(GraphQLPostalCode.parseLiteral({ value: 'M5T 1G2', kind: Kind.STRING }, {})).toBe(
+          'M5T 1G2',
+        );
       });
     });
 
@@ -90,7 +99,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '34000', kind: Kind.STRING }, {})).toBe('34000');
+        expect(GraphQLPostalCode.parseLiteral({ value: '34000', kind: Kind.STRING }, {})).toBe(
+          '34000',
+        );
       });
     });
 
@@ -105,7 +116,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '30123', kind: Kind.STRING }, {})).toBe('30123');
+        expect(GraphQLPostalCode.parseLiteral({ value: '30123', kind: Kind.STRING }, {})).toBe(
+          '30123',
+        );
       });
     });
 
@@ -120,7 +133,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '4217', kind: Kind.STRING }, {})).toBe('4217');
+        expect(GraphQLPostalCode.parseLiteral({ value: '4217', kind: Kind.STRING }, {})).toBe(
+          '4217',
+        );
       });
     });
 
@@ -134,7 +149,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '1011 AC', kind: Kind.STRING }, {})).toBe('1011 AC');
+        expect(GraphQLPostalCode.parseLiteral({ value: '1011 AC', kind: Kind.STRING }, {})).toBe(
+          '1011 AC',
+        );
       });
     });
 
@@ -148,7 +165,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '28009', kind: Kind.STRING }, {})).toBe('28009');
+        expect(GraphQLPostalCode.parseLiteral({ value: '28009', kind: Kind.STRING }, {})).toBe(
+          '28009',
+        );
       });
     });
 
@@ -162,7 +181,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '2100', kind: Kind.STRING }, {})).toBe('2100');
+        expect(GraphQLPostalCode.parseLiteral({ value: '2100', kind: Kind.STRING }, {})).toBe(
+          '2100',
+        );
       });
     });
 
@@ -176,7 +197,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '114 55', kind: Kind.STRING }, {})).toBe('114 55');
+        expect(GraphQLPostalCode.parseLiteral({ value: '114 55', kind: Kind.STRING }, {})).toBe(
+          '114 55',
+        );
       });
     });
 
@@ -190,7 +213,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '1043', kind: Kind.STRING }, {})).toBe('1043');
+        expect(GraphQLPostalCode.parseLiteral({ value: '1043', kind: Kind.STRING }, {})).toBe(
+          '1043',
+        );
       });
     });
 
@@ -204,7 +229,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '110003', kind: Kind.STRING }, {})).toBe('110003');
+        expect(GraphQLPostalCode.parseLiteral({ value: '110003', kind: Kind.STRING }, {})).toBe(
+          '110003',
+        );
       });
     });
 
@@ -218,7 +245,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '1345678987', kind: Kind.STRING }, {})).toBe('1345678987');
+        expect(GraphQLPostalCode.parseLiteral({ value: '1345678987', kind: Kind.STRING }, {})).toBe(
+          '1345678987',
+        );
       });
     });
 
@@ -232,7 +261,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '123-4567', kind: Kind.STRING }, {})).toBe('123-4567');
+        expect(GraphQLPostalCode.parseLiteral({ value: '123-4567', kind: Kind.STRING }, {})).toBe(
+          '123-4567',
+        );
       });
     });
 
@@ -246,7 +277,9 @@ describe('PostalCode', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLPostalCode.parseLiteral({ value: '08001', kind: Kind.STRING }, {})).toBe('08001');
+        expect(GraphQLPostalCode.parseLiteral({ value: '08001', kind: Kind.STRING }, {})).toBe(
+          '08001',
+        );
       });
     });
   });
@@ -255,19 +288,22 @@ describe('PostalCode', () => {
     describe('not a postal code', () => {
       test('serialize', () => {
         expect(() => GraphQLPostalCode.serialize('this is not a postal code')).toThrow(
-          /^Value is not a valid postal code/
+          /^Value is not a valid postal code/,
         );
       });
 
       test('parseValue', () => {
         expect(() => GraphQLPostalCode.parseValue('this is not a postal code')).toThrow(
-          /^Value is not a valid postal code/
+          /^Value is not a valid postal code/,
         );
       });
 
       test('parseLiteral', () => {
         expect(() =>
-          GraphQLPostalCode.parseLiteral({ value: 'this is not a postal code', kind: Kind.STRING }, {})
+          GraphQLPostalCode.parseLiteral(
+            { value: 'this is not a postal code', kind: Kind.STRING },
+            {},
+          ),
         ).toThrow(/^Value is not a valid postal code/);
       });
     });
@@ -283,7 +319,7 @@ describe('PostalCode', () => {
 
       test('parseLiteral', () => {
         expect(() => GraphQLPostalCode.parseLiteral({ value: '123', kind: Kind.INT }, {})).toThrow(
-          /Can only validate strings as postal codes but got a/
+          /Can only validate strings as postal codes but got a/,
         );
       });
     });

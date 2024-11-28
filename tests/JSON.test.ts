@@ -1,8 +1,7 @@
 import { graphql, GraphQLInt, GraphQLObjectType, GraphQLSchema } from 'graphql';
-
+import { GraphQLJSON } from '../src/scalars/json/JSON.js';
 // eslint-disable-next-line import/no-named-as-default
 import { GraphQLJSONObject } from '../src/scalars/json/JSONObject.js';
-import { GraphQLJSON } from '../src/scalars/json/JSON.js';
 
 const FIXTURE = {
   string: 'string',
@@ -99,7 +98,14 @@ describe('GraphQLJSON', () => {
                 true: true
                 false: false
                 null: null
-                object: { string: "string", int: $intValue, float: 3.14, true: true, false: false, null: null }
+                object: {
+                  string: "string"
+                  int: $intValue
+                  float: 3.14
+                  true: true
+                  false: false
+                  null: null
+                }
                 array: ["string", $intValue, 3.14, true, false, null]
               }
             )
@@ -270,7 +276,14 @@ describe('GraphQLJSONObject', () => {
                 true: true
                 false: false
                 null: null
-                object: { string: "string", int: $intValue, float: 3.14, true: true, false: false, null: null }
+                object: {
+                  string: "string"
+                  int: $intValue
+                  float: 3.14
+                  true: true
+                  false: false
+                  null: null
+                }
                 array: ["string", $intValue, 3.14, true, false, null]
               }
             )

@@ -1,7 +1,6 @@
 /* global describe, test, expect */
 
 import { Kind } from 'graphql/language';
-
 import { GraphQLNegativeFloat } from '../src/scalars/NegativeFloat.js';
 
 describe('NegativeFloat', () => {
@@ -16,7 +15,9 @@ describe('NegativeFloat', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLNegativeFloat.parseLiteral({ value: '-123.45', kind: Kind.FLOAT }, {})).toBe(-123.45);
+        expect(GraphQLNegativeFloat.parseLiteral({ value: '-123.45', kind: Kind.FLOAT }, {})).toBe(
+          -123.45,
+        );
       });
     });
 
@@ -30,7 +31,9 @@ describe('NegativeFloat', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLNegativeFloat.parseLiteral({ value: '-123.45', kind: Kind.FLOAT }, {})).toBe(-123.45);
+        expect(GraphQLNegativeFloat.parseLiteral({ value: '-123.45', kind: Kind.FLOAT }, {})).toBe(
+          -123.45,
+        );
       });
     });
   });
@@ -46,9 +49,9 @@ describe('NegativeFloat', () => {
       });
 
       test('parseLiteral', () => {
-        expect(() => GraphQLNegativeFloat.parseLiteral({ value: null, kind: Kind.FLOAT }, {})).toThrow(
-          /Value is not a number/
-        );
+        expect(() =>
+          GraphQLNegativeFloat.parseLiteral({ value: null, kind: Kind.FLOAT }, {}),
+        ).toThrow(/Value is not a number/);
       });
     });
 
@@ -65,42 +68,50 @@ describe('NegativeFloat', () => {
       // });
 
       test('parseLiteral', () => {
-        expect(() => GraphQLNegativeFloat.parseLiteral({ value: undefined, kind: Kind.FLOAT }, {})).toThrow(
-          /Value is not a number/
-        );
+        expect(() =>
+          GraphQLNegativeFloat.parseLiteral({ value: undefined, kind: Kind.FLOAT }, {}),
+        ).toThrow(/Value is not a number/);
       });
     });
 
     describe('zero', () => {
       describe('as float', () => {
         test('serialize', () => {
-          expect(() => GraphQLNegativeFloat.serialize(0.0)).toThrow(/Value is not a negative number/);
+          expect(() => GraphQLNegativeFloat.serialize(0.0)).toThrow(
+            /Value is not a negative number/,
+          );
         });
 
         test('parseValue', () => {
-          expect(() => GraphQLNegativeFloat.parseValue(0.0)).toThrow(/Value is not a negative number/);
+          expect(() => GraphQLNegativeFloat.parseValue(0.0)).toThrow(
+            /Value is not a negative number/,
+          );
         });
 
         test('parseLiteral', () => {
-          expect(() => GraphQLNegativeFloat.parseLiteral({ value: '0.0', kind: Kind.FLOAT }, {})).toThrow(
-            /Value is not a negative number/
-          );
+          expect(() =>
+            GraphQLNegativeFloat.parseLiteral({ value: '0.0', kind: Kind.FLOAT }, {}),
+          ).toThrow(/Value is not a negative number/);
         });
       });
 
       describe('as string', () => {
         test('serialize', () => {
-          expect(() => GraphQLNegativeFloat.serialize('0.0')).toThrow(/Value is not a negative number/);
+          expect(() => GraphQLNegativeFloat.serialize('0.0')).toThrow(
+            /Value is not a negative number/,
+          );
         });
 
         test('parseValue', () => {
-          expect(() => GraphQLNegativeFloat.parseValue('0.0')).toThrow(/Value is not a negative number/);
+          expect(() => GraphQLNegativeFloat.parseValue('0.0')).toThrow(
+            /Value is not a negative number/,
+          );
         });
 
         test('parseLiteral', () => {
-          expect(() => GraphQLNegativeFloat.parseLiteral({ value: '0.0', kind: Kind.FLOAT }, {})).toThrow(
-            /Value is not a negative number/
-          );
+          expect(() =>
+            GraphQLNegativeFloat.parseLiteral({ value: '0.0', kind: Kind.FLOAT }, {}),
+          ).toThrow(/Value is not a negative number/);
         });
       });
     });
@@ -108,44 +119,56 @@ describe('NegativeFloat', () => {
     describe('less than zero', () => {
       describe('as float', () => {
         test('serialize', () => {
-          expect(() => GraphQLNegativeFloat.serialize(1.0)).toThrow(/Value is not a negative number/);
+          expect(() => GraphQLNegativeFloat.serialize(1.0)).toThrow(
+            /Value is not a negative number/,
+          );
         });
 
         test('parseValue', () => {
-          expect(() => GraphQLNegativeFloat.parseValue(1.0)).toThrow(/Value is not a negative number/);
+          expect(() => GraphQLNegativeFloat.parseValue(1.0)).toThrow(
+            /Value is not a negative number/,
+          );
         });
 
         test('parseLiteral', () => {
-          expect(() => GraphQLNegativeFloat.parseLiteral({ value: '1.0', kind: Kind.FLOAT }, {})).toThrow(
-            /Value is not a negative number/
-          );
+          expect(() =>
+            GraphQLNegativeFloat.parseLiteral({ value: '1.0', kind: Kind.FLOAT }, {}),
+          ).toThrow(/Value is not a negative number/);
         });
       });
 
       describe('as string', () => {
         test('serialize', () => {
-          expect(() => GraphQLNegativeFloat.serialize('1.0')).toThrow(/Value is not a negative number/);
+          expect(() => GraphQLNegativeFloat.serialize('1.0')).toThrow(
+            /Value is not a negative number/,
+          );
         });
 
         test('parseValue', () => {
-          expect(() => GraphQLNegativeFloat.parseValue('1.0')).toThrow(/Value is not a negative number/);
+          expect(() => GraphQLNegativeFloat.parseValue('1.0')).toThrow(
+            /Value is not a negative number/,
+          );
         });
 
         test('parseLiteral', () => {
-          expect(() => GraphQLNegativeFloat.parseLiteral({ value: '1.0', kind: Kind.FLOAT }, {})).toThrow(
-            /Value is not a negative number/
-          );
+          expect(() =>
+            GraphQLNegativeFloat.parseLiteral({ value: '1.0', kind: Kind.FLOAT }, {}),
+          ).toThrow(/Value is not a negative number/);
         });
       });
     });
 
     describe('infinity', () => {
       test('serialize', () => {
-        expect(() => GraphQLNegativeFloat.serialize(Number.NEGATIVE_INFINITY)).toThrow(/Value is not a finite number/);
+        expect(() => GraphQLNegativeFloat.serialize(Number.NEGATIVE_INFINITY)).toThrow(
+          /Value is not a finite number/,
+        );
       });
 
       test('parseValue', () => {
-        expect(() => GraphQLNegativeFloat.parseValue(Number.NEGATIVE_INFINITY)).toThrow(/Value is not a finite number/);
+        expect(() => GraphQLNegativeFloat.parseValue(Number.NEGATIVE_INFINITY)).toThrow(
+          /Value is not a finite number/,
+        );
       });
 
       test('parseLiteral', () => {
@@ -155,19 +178,23 @@ describe('NegativeFloat', () => {
               value: Number.NEGATIVE_INFINITY.toString(),
               kind: Kind.FLOAT,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Value is not a finite number/);
       });
     });
 
     describe('not a number', () => {
       test('serialize', () => {
-        expect(() => GraphQLNegativeFloat.serialize('not a number')).toThrow(/Value is not a number/);
+        expect(() => GraphQLNegativeFloat.serialize('not a number')).toThrow(
+          /Value is not a number/,
+        );
       });
 
       test('parseValue', () => {
-        expect(() => GraphQLNegativeFloat.parseValue('not a number')).toThrow(/Value is not a number/);
+        expect(() => GraphQLNegativeFloat.parseValue('not a number')).toThrow(
+          /Value is not a number/,
+        );
       });
 
       test('parseLiteral', () => {
@@ -177,9 +204,11 @@ describe('NegativeFloat', () => {
               value: 'not a number',
               kind: Kind.STRING,
             },
-            {}
-          )
-        ).toThrow(/Can only validate floating point numbers as negative floating point numbers but got a/);
+            {},
+          ),
+        ).toThrow(
+          /Can only validate floating point numbers as negative floating point numbers but got a/,
+        );
       });
     });
 
@@ -197,8 +226,13 @@ describe('NegativeFloat', () => {
 
       test('parseLiteral', () => {
         expect(() =>
-          GraphQLNegativeFloat.parseLiteral({ value: Number.NaN.toString(), kind: Kind.STRING }, {})
-        ).toThrow(/Can only validate floating point numbers as negative floating point numbers but got a/);
+          GraphQLNegativeFloat.parseLiteral(
+            { value: Number.NaN.toString(), kind: Kind.STRING },
+            {},
+          ),
+        ).toThrow(
+          /Can only validate floating point numbers as negative floating point numbers but got a/,
+        );
       });
     });
   });

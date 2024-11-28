@@ -102,8 +102,8 @@ describe(`SemVer`, () => {
               value: version,
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toEqual(version);
       }
     });
@@ -114,32 +114,39 @@ describe(`SemVer`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLSemVer.serialize(123)).toThrow(/Value is not string/);
         expect(() => GraphQLSemVer.serialize(`this is not a Semantic Version`)).toThrow(
-          /Value is not a valid Semantic Version/
+          /Value is not a valid Semantic Version/,
         );
 
         for (const version of invalidSemanticVersions) {
-          expect(() => GraphQLSemVer.serialize(version)).toThrow(/Value is not a valid Semantic Version/);
+          expect(() => GraphQLSemVer.serialize(version)).toThrow(
+            /Value is not a valid Semantic Version/,
+          );
         }
       });
 
       it(`parseValue`, () => {
         expect(() => GraphQLSemVer.parseValue(123)).toThrow(/Value is not string/);
         expect(() => GraphQLSemVer.parseValue(`this is not a Semantic Version`)).toThrow(
-          /Value is not a valid Semantic Version/
+          /Value is not a valid Semantic Version/,
         );
 
         for (const version of invalidSemanticVersions) {
-          expect(() => GraphQLSemVer.parseValue(version)).toThrow(/Value is not a valid Semantic Version/);
+          expect(() => GraphQLSemVer.parseValue(version)).toThrow(
+            /Value is not a valid Semantic Version/,
+          );
         }
       });
 
       it(`parseLiteral`, () => {
         expect(() => GraphQLSemVer.parseLiteral({ value: 123, kind: Kind.INT } as any, {})).toThrow(
-          /Can only validate strings as Semantic Version but got a/
+          /Can only validate strings as Semantic Version but got a/,
         );
 
         expect(() =>
-          GraphQLSemVer.parseLiteral({ value: `this is not a Semantic Version`, kind: Kind.STRING }, {})
+          GraphQLSemVer.parseLiteral(
+            { value: `this is not a Semantic Version`, kind: Kind.STRING },
+            {},
+          ),
         ).toThrow(/Value is not a valid Semantic Version/);
       });
     });

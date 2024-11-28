@@ -1,7 +1,6 @@
 /* global describe, test, expect */
 
 import { Kind } from 'graphql/language';
-
 import { GraphQLNegativeInt } from '../src/scalars/NegativeInt.js';
 
 describe('NegativeInt', () => {
@@ -16,7 +15,9 @@ describe('NegativeInt', () => {
       });
 
       test('parseLiteral', () => {
-        expect(GraphQLNegativeInt.parseLiteral({ value: (-123).toString(), kind: Kind.INT }, {})).toBe(-123);
+        expect(
+          GraphQLNegativeInt.parseLiteral({ value: (-123).toString(), kind: Kind.INT }, {}),
+        ).toBe(-123);
       });
     });
 
@@ -47,7 +48,7 @@ describe('NegativeInt', () => {
 
       test('parseLiteral', () => {
         expect(() => GraphQLNegativeInt.parseLiteral({ value: null, kind: Kind.INT }, {})).toThrow(
-          /Value is not a number/
+          /Value is not a number/,
         );
       });
     });
@@ -65,9 +66,9 @@ describe('NegativeInt', () => {
       // });
 
       test('parseLiteral', () => {
-        expect(() => GraphQLNegativeInt.parseLiteral({ value: undefined, kind: Kind.INT }, {})).toThrow(
-          /Value is not a number/
-        );
+        expect(() =>
+          GraphQLNegativeInt.parseLiteral({ value: undefined, kind: Kind.INT }, {}),
+        ).toThrow(/Value is not a number/);
       });
     });
 
@@ -81,9 +82,9 @@ describe('NegativeInt', () => {
       });
 
       test('parseLiteral', () => {
-        expect(() => GraphQLNegativeInt.parseLiteral({ value: (2 ** 53).toString(), kind: Kind.INT }, {})).toThrow(
-          /Value is not a safe integer/
-        );
+        expect(() =>
+          GraphQLNegativeInt.parseLiteral({ value: (2 ** 53).toString(), kind: Kind.INT }, {}),
+        ).toThrow(/Value is not a safe integer/);
       });
     });
 
@@ -99,7 +100,7 @@ describe('NegativeInt', () => {
 
         test('parseLiteral', () => {
           expect(() => GraphQLNegativeInt.parseLiteral({ value: '0', kind: Kind.INT }, {})).toThrow(
-            /Value is not a negative number/
+            /Value is not a negative number/,
           );
         });
       });
@@ -110,12 +111,14 @@ describe('NegativeInt', () => {
         });
 
         test('parseValue', () => {
-          expect(() => GraphQLNegativeInt.parseValue('0')).toThrow(/Value is not a negative number/);
+          expect(() => GraphQLNegativeInt.parseValue('0')).toThrow(
+            /Value is not a negative number/,
+          );
         });
 
         test('parseLiteral', () => {
           expect(() => GraphQLNegativeInt.parseLiteral({ value: '0', kind: Kind.INT }, {})).toThrow(
-            /Value is not a negative number/
+            /Value is not a negative number/,
           );
         });
       });
@@ -133,7 +136,7 @@ describe('NegativeInt', () => {
 
         test('parseLiteral', () => {
           expect(() => GraphQLNegativeInt.parseLiteral({ value: '1', kind: Kind.INT }, {})).toThrow(
-            /Value is not a negative number/
+            /Value is not a negative number/,
           );
         });
       });
@@ -144,12 +147,14 @@ describe('NegativeInt', () => {
         });
 
         test('parseValue', () => {
-          expect(() => GraphQLNegativeInt.parseValue('1')).toThrow(/Value is not a negative number/);
+          expect(() => GraphQLNegativeInt.parseValue('1')).toThrow(
+            /Value is not a negative number/,
+          );
         });
 
         test('parseLiteral', () => {
           expect(() => GraphQLNegativeInt.parseLiteral({ value: '1', kind: Kind.INT }, {})).toThrow(
-            /Value is not a negative number/
+            /Value is not a negative number/,
           );
         });
       });
@@ -157,11 +162,15 @@ describe('NegativeInt', () => {
 
     describe('infinity', () => {
       test('serialize', () => {
-        expect(() => GraphQLNegativeInt.serialize(Number.NEGATIVE_INFINITY)).toThrow(/Value is not a finite number/);
+        expect(() => GraphQLNegativeInt.serialize(Number.NEGATIVE_INFINITY)).toThrow(
+          /Value is not a finite number/,
+        );
       });
 
       test('parseValue', () => {
-        expect(() => GraphQLNegativeInt.parseValue(Number.NEGATIVE_INFINITY)).toThrow(/Value is not a finite number/);
+        expect(() => GraphQLNegativeInt.parseValue(Number.NEGATIVE_INFINITY)).toThrow(
+          /Value is not a finite number/,
+        );
       });
 
       test('parseLiteral', () => {
@@ -171,8 +180,8 @@ describe('NegativeInt', () => {
               value: Number.NEGATIVE_INFINITY.toString(),
               kind: Kind.INT,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Value is not a finite number/);
       });
     });
@@ -183,7 +192,9 @@ describe('NegativeInt', () => {
       });
 
       test('parseValue', () => {
-        expect(() => GraphQLNegativeInt.parseValue('not a number')).toThrow(/Value is not a number/);
+        expect(() => GraphQLNegativeInt.parseValue('not a number')).toThrow(
+          /Value is not a number/,
+        );
       });
 
       test('parseLiteral', () => {
@@ -193,8 +204,8 @@ describe('NegativeInt', () => {
               value: 'not a number',
               kind: Kind.STRING,
             },
-            {}
-          )
+            {},
+          ),
         ).toThrow(/Can only validate integers as negative integers but got a/);
       });
     });
@@ -212,9 +223,9 @@ describe('NegativeInt', () => {
       // });
 
       test('parseLiteral', () => {
-        expect(() => GraphQLNegativeInt.parseLiteral({ value: Number.NaN.toString(), kind: Kind.STRING }, {})).toThrow(
-          /Can only validate integers as negative integers but got a/
-        );
+        expect(() =>
+          GraphQLNegativeInt.parseLiteral({ value: Number.NaN.toString(), kind: Kind.STRING }, {}),
+        ).toThrow(/Can only validate integers as negative integers but got a/);
       });
     });
   });
