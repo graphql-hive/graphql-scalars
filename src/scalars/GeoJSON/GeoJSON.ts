@@ -1,7 +1,6 @@
 import { GraphQLScalarType, Kind, ValueNode } from 'graphql';
 import { createGraphQLError } from '../../error.js';
-import { generateGeoJSONType } from './codegenScalarType.js';
-import { geojsonSchema } from './jsonSchema.js';
+//import { geojsonSchema } from './jsonSchema.js';
 import { GeoJSONObject } from './types.js';
 import {
   isValidBBox,
@@ -110,7 +109,11 @@ export const GraphQLGeoJSON = /*#__PURE__*/ new GraphQLScalarType({
   },
 
   extensions: {
-    codegenScalarType: generateGeoJSONType(),
-    jsonSchema: geojsonSchema,
+    codegenScalarType: 'GeoJSONObject',
+    //jsonSchema: geojsonSchema,
+    /*jsonSchema: async () => {
+      const { geojsonSchema } = await import('./jsonSchema.js');
+      return geojsonSchema;
+    },*/
   },
 });
