@@ -64,7 +64,7 @@
     "@theguild/prettier-config": "3.0.1",
     "@types/jest": "29.5.14",
     "@types/mongodb": "4.0.7",
-    "@types/node": "22.13.14",
+    "@types/node": "22.13.17",
     "@typescript-eslint/eslint-plugin": "8.28.0",
     "@typescript-eslint/parser": "8.28.0",
     "bob-the-bundler": "7.0.1",
@@ -85,7 +85,7 @@
     "mongodb": "6.15.0",
     "prettier": "3.5.3",
     "semver": "7.7.1",
-    "ts-jest": "29.3.0",
+    "ts-jest": "29.3.1",
     "typescript": "5.8.2"
   },
   "publishConfig": {
