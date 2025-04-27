@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "bundlesize": "0.18.2",
-    "webpack": "5.99.6",
+    "webpack": "5.99.7",
     "webpack-cli": "6.0.1"
   },
   "resolutions": {
