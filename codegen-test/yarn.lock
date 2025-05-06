@@ -213,15 +213,15 @@
     "@graphql-codegen/plugin-helpers" "^5.0.3"
     tslib "~2.6.0"
 
-"@graphql-codegen/cli@5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-5.0.5.tgz#9a29b2c7a459e333fbae025dff951927fafe5d2f"
-  integrity sha512-9p9SI5dPhJdyU+O6p1LUqi5ajDwpm6pUhutb1fBONd0GZltLFwkgWFiFtM6smxkYXlYVzw61p1kTtwqsuXO16w==
+"@graphql-codegen/cli@5.0.6":
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-5.0.6.tgz#586bd45ef7620406950687d0ed080ff383340e0a"
+  integrity sha512-1r5dtZ2l1jiCF/4qLMTcT7mEoWWWeqQlmn7HcPHgnV/OXIEodwox7XRGAmOKUygoabRjFF3S0jd0TWbkq5Otsw==
   dependencies:
     "@babel/generator" "^7.18.13"
     "@babel/template" "^7.18.10"
     "@babel/types" "^7.18.13"
-    "@graphql-codegen/client-preset" "^4.6.0"
+    "@graphql-codegen/client-preset" "^4.8.1"
     "@graphql-codegen/core" "^4.0.2"
     "@graphql-codegen/plugin-helpers" "^5.0.3"
     "@graphql-tools/apollo-engine-loader" "^8.0.0"
@@ -230,7 +230,7 @@
     "@graphql-tools/github-loader" "^8.0.0"
     "@graphql-tools/graphql-file-loader" "^8.0.0"
     "@graphql-tools/json-file-loader" "^8.0.0"
-    "@graphql-tools/load" "^8.0.0"
+    "@graphql-tools/load" "^8.1.0"
     "@graphql-tools/prisma-loader" "^8.0.0"
     "@graphql-tools/url-loader" "^8.0.0"
     "@graphql-tools/utils" "^10.0.0"
@@ -254,10 +254,10 @@
     yaml "^2.3.1"
     yargs "^17.0.0"
 
-"@graphql-codegen/client-preset@^4.6.0":
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/client-preset/-/client-preset-4.8.0.tgz#600f5fa5a1326fa765743268cefe08fae7678ce9"
-  integrity sha512-IVtTl7GsPMbQihk5+l5fDYksnPPOoC52sKxzquyIyuecZLEB7W3nNLV29r6+y+tjXTRPA774FR7CHGA2adzhjw==
+"@graphql-codegen/client-preset@^4.8.1":
+  version "4.8.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/client-preset/-/client-preset-4.8.1.tgz#2743875bb4884f9936c875d903f507c6aa77a5e6"
+  integrity sha512-XLF2V7WKLnepvrGE44JP+AvjS+Oz9AT0oYgTl/6d9btQ+2VYFcmwQPjNAuMVHipqE9I6h8hSEfH9hUrzUptB1g==
   dependencies:
     "@babel/helper-plugin-utils" "^7.20.2"
     "@babel/template" "^7.20.7"
@@ -266,7 +266,7 @@
     "@graphql-codegen/plugin-helpers" "^5.1.0"
     "@graphql-codegen/typed-document-node" "^5.1.1"
     "@graphql-codegen/typescript" "^4.1.6"
-    "@graphql-codegen/typescript-operations" "^4.6.0"
+    "@graphql-codegen/typescript-operations" "^4.6.1"
     "@graphql-codegen/visitor-plugin-common" "^5.8.0"
     "@graphql-tools/documents" "^1.0.0"
     "@graphql-tools/utils" "^10.0.0"
@@ -326,10 +326,10 @@
     change-case-all "1.0.15"
     tslib "~2.6.0"
 
-"@graphql-codegen/typescript-operations@^4.6.0":
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-4.6.0.tgz#29b277647ec16b00019e03c083a93262b79d978a"
-  integrity sha512-/EltSdE/uPoEAblRTVLABVDhsrE//Kl3pCflyG1PWl4gWL9/OzQXYGjo6TF6bPMVn/QBWoO0FeboWf+bk84SXA==
+"@graphql-codegen/typescript-operations@^4.6.1":
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-4.6.1.tgz#763eda28c77fddee2b9ae9bd7baad050cffff0a5"
+  integrity sha512-k92laxhih7s0WZ8j5WMIbgKwhe64C0As6x+PdcvgZFMudDJ7rPJ/hFqJ9DCRxNjXoHmSjnr6VUuQZq4lT1RzCA==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^5.1.0"
     "@graphql-codegen/typescript" "^4.1.6"
@@ -550,10 +550,10 @@
     tslib "^2.4.0"
     unixify "^1.0.0"
 
-"@graphql-tools/load@^8.0.0":
-  version "8.0.19"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/load/-/load-8.0.19.tgz#d01258388cd80f9356535c203ff6dfb1c309c1fc"
-  integrity sha512-YA3T9xTy2B6dNTnqsCzqSclA23j4v3p3A2Vdn0jEbZPGLMRPzWW8MJu2nlgQ8uua1IpYD/J8xgyrFxxAo3qPmQ==
+"@graphql-tools/load@^8.0.0", "@graphql-tools/load@^8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/load/-/load-8.1.0.tgz#4aa03f071a8777e314b10289b7d6097daaaf8783"
+  integrity sha512-OGfOm09VyXdNGJS/rLqZ6ztCiG2g6AMxhwtET8GZXTbnjptFc17GtKwJ3Jv5w7mjJ8dn0BHydvIuEKEUK4ciYw==
   dependencies:
     "@graphql-tools/schema" "^10.0.23"
     "@graphql-tools/utils" "^10.8.6"
