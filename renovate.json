@@ -1,21 +1,29 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>the-guild-org/shared-config:renovate"],
-  "automerge": true,
-  "major": {
-    "automerge": false
-  },
+  "extends": [
+    "github>the-guild-org/shared-config:renovate"
+  ],
+  "automerge": false,
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true
   },
   "packageRules": [
     {
-      "excludePackagePatterns": ["@changesets/*", "typescript", "typedoc*", "^@theguild/", "next"],
-      "matchPackagePatterns": ["*"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
+      "groupSlug": "all-minor-patch",
+      "matchPackageNames": [
+        "!/@changesets/*/",
+        "!/typescript/",
+        "!/typedoc*/",
+        "!/^@theguild//",
+        "!/next/",
+        "*"
+      ]
     }
   ]
 }

@@ -4,4 +4,3 @@ export default {
   ...config,
   proseWrap: 'always',
 };
-

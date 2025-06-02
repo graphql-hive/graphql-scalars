@@ -1,5 +1,35 @@
 ## CHANGELOG moved to [GitHub releases](https://github.com/Urigo/graphql-scalars/releases)
 
+## 1.24.2
+
+### Patch Changes
+
+- [#2791](https://github.com/graphql-hive/graphql-scalars/pull/2791)
+  [`3e1e924`](https://github.com/graphql-hive/graphql-scalars/commit/3e1e924b930bdbb73d99e5cd285f27f6bbfb318b)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Enable npm provenance
+
+## 1.24.1
+
+### Patch Changes
+
+- [`#2719`](https://github.com/Urigo/graphql-scalars/pull/2719) Thanks
+  [@nthombare-mdsol](https://github.com/nthombare-mdsol)! - Now the regex updated to support all
+  phone numbers compliant with the E.164 international format standard, which includes country code
+  (Optional), area codes, and local numbers and extension (optional). For more information on E.164
+  formatting, Regex: https://regex101.com/r/nol2F6/1
+
+  Ex. +62 (21) 9175 5194, 2191755194, +1 123-456-7890 12345, +1 (123) 456-7890
+
+## 1.24.0
+
+### Minor Changes
+
+- [`e5a3910`](https://github.com/Urigo/graphql-scalars/commit/e5a39101db92e9c3066d0045a4bf4e040e56c447)
+  Thanks [@ifeanyi-ugwu](https://github.com/ifeanyi-ugwu)! - add GeoJSON scalar
+
+- [`e5a3910`](https://github.com/Urigo/graphql-scalars/commit/e5a39101db92e9c3066d0045a4bf4e040e56c447)
+  Thanks [@ifeanyi-ugwu](https://github.com/ifeanyi-ugwu)! - Add \`CountryName\` scalar
+
 ## 1.23.0
 
 ### Minor Changes

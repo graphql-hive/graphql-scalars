@@ -2,7 +2,13 @@ import { withGuildDocs } from '@theguild/components/next.config';
 
 export default withGuildDocs({
   output: 'export',
-  redirects: () =>
+  env: {
+    SITE_URL: 'https://the-guild.dev/graphql/scalars',
+  },
+  nextraConfig: {
+    contentDirBasePath: '/docs',
+  },
+  redirects: async () =>
     Object.entries({
       '/docs/introduction': '/docs',
       '/docs/scalars': '/docs/scalars/account-number',

@@ -9,8 +9,11 @@
   },
   "devDependencies": {
     "bundlesize": "0.18.2",
-    "webpack": "5.96.1",
-    "webpack-cli": "5.1.4"
+    "webpack": "5.99.8",
+    "webpack-cli": "6.0.1"
+  },
+  "resolutions": {
+    "axios": "1.9.0"
   },
   "bundlesize": [
     {

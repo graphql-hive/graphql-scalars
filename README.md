@@ -1,7 +1,4 @@
-[![GraphQLConf 2024 Banner: September 10-12, San Francisco. Hosted by the GraphQL Foundation](https://github.com/user-attachments/assets/bdb8cd5d-5186-4ece-b06b-b00a499b7868)](https://graphql.org/conf/2024/?utm_source=github&utm_medium=graphql_scalars&utm_campaign=readme)
-
-<!-- Uncomment when we remove GraphQL Conf banner -->
-<!-- [![scalar](https://user-images.githubusercontent.com/25294569/63675022-87723c80-c7f0-11e9-87b9-22c78c9a17e2.gif)](https://www.graphql-scalars.dev) -->
+[![scalar](https://user-images.githubusercontent.com/25294569/63675022-87723c80-c7f0-11e9-87b9-22c78c9a17e2.gif)](https://www.graphql-scalars.dev)
 
 [![npm version](https://badge.fury.io/js/graphql-scalars.svg)](https://badge.fury.io/js/graphql-scalars)
 [![Discord Chat](https://img.shields.io/discord/625400653321076807)](https://discord.gg/xud7bH9)
