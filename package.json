@@ -64,7 +64,7 @@
     "@theguild/prettier-config": "3.0.1",
     "@types/jest": "29.5.14",
     "@types/mongodb": "4.0.7",
-    "@types/node": "22.15.30",
+    "@types/node": "22.15.31",
     "@typescript-eslint/eslint-plugin": "8.34.0",
     "@typescript-eslint/parser": "8.34.0",
     "bob-the-bundler": "7.0.1",
@@ -73,7 +73,7 @@
     "eslint-config-prettier": "10.1.5",
     "eslint-config-standard": "17.1.0",
     "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-n": "17.19.0",
+    "eslint-plugin-n": "17.20.0",
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-standard": "5.0.0",
     "graphql": "16.11.0",
@@ -85,7 +85,7 @@
     "mongodb": "6.17.0",
     "prettier": "3.5.3",
     "semver": "7.7.2",
-    "ts-jest": "29.3.4",
+    "ts-jest": "29.4.0",
     "typescript": "5.8.3"
   },
   "publishConfig": {
