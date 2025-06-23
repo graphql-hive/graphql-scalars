@@ -1,99 +1,65 @@
 // GeoJSON Types according to RFC 7946
 export type Position = [number, number] | [number, number, number];
-export type LineStringCoordinates = Position[];
-export type MultiLineStringCoordinates = LineStringCoordinates[];
-export type PolygonCoordinates = Position[][]; // Array of linear rings
-export type MultiPolygonCoordinates = PolygonCoordinates[];
+
 export type BBox =
   | [number, number, number, number]
   | [number, number, number, number, number, number];
 
-export type Point = {
+export interface Point {
   type: 'Point';
   coordinates: Position;
   bbox?: BBox;
-};
+}
 
-export type MultiPoint = {
+export interface MultiPoint {
   type: 'MultiPoint';
   coordinates: Position[];
   bbox?: BBox;
-};
+}
 
-export type LineString = {
+export interface LineString {
   type: 'LineString';
-  coordinates: LineStringCoordinates;
+  coordinates: Position[];
   bbox?: BBox;
-};
+}
 
-export type MultiLineString = {
+export interface MultiLineString {
   type: 'MultiLineString';
-  coordinates: MultiLineStringCoordinates;
+  coordinates: Position[][];
   bbox?: BBox;
-};
+}
 
-export type Polygon = {
+export interface Polygon {
   type: 'Polygon';
-  coordinates: PolygonCoordinates;
+  coordinates: Position[][];
   bbox?: BBox;
-};
+}
 
-export type MultiPolygon = {
+export interface MultiPolygon {
   type: 'MultiPolygon';
-  coordinates: MultiPolygonCoordinates;
+  coordinates: Position[][][];
   bbox?: BBox;
-};
+}
 
-/*type Geometry = {
-  type:
-    | 'Point'
-    | 'MultiPoint'
-    | 'LineString'
-    | 'MultiLineString'
-    | 'Polygon'
-    | 'MultiPolygon'
-    | 'GeometryCollection';
-  coordinates?: any;
-  geometries?: Geometry[];
-};*/
+export type Geometry = Point | MultiPoint | LineString | MultiLineString | Polygon | MultiPolygon;
 
-export type Geometry =
-  | Point
-  | MultiPoint
-  | LineString
-  | MultiLineString
-  | Polygon
-  | MultiPolygon
-  // eslint-disable-next-line no-use-before-define
-  | GeometryCollection;
-
-export type GeometryCollection = {
+export interface GeometryCollection {
   type: 'GeometryCollection';
   geometries: Geometry[];
   bbox?: BBox;
-};
+}
 
-export type Feature = {
+export interface Feature<G extends Geometry | null = Geometry | null> {
   type: 'Feature';
-  geometry: Geometry | null;
+  geometry: G;
   properties: { [key: string]: any } | null;
   bbox?: BBox;
-};
+}
 
-export type FeatureCollection = {
+export interface FeatureCollection<G extends Geometry | null = Geometry | null> {
   type: 'FeatureCollection';
-  features: Feature[];
+  features: Feature<G>[];
   bbox?: BBox;
-};
+}
 
-export type GeoJSONObject = Geometry | Feature | FeatureCollection;
-
-/*type GeoJSONObject = {
-  type: 'Feature' | 'FeatureCollection' | Geometry['type'];
-  geometry?: Geometry;
-  geometries?: Geometry[];
-  coordinates?: any;
-  properties?: { [key: string]: any } | null;
-  features?: GeoJSONObject[];
-  bbox?: [number, number, number, number] | [number, number, number, number, number, number];
-};*/
+export type GeoJSONObject = Geometry | GeometryCollection | Feature | FeatureCollection;
