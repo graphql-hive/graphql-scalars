@@ -5,13 +5,11 @@ import {
   Geometry,
   GeometryCollection,
   LineString,
-  LineStringCoordinates,
   MultiLineString,
   MultiPoint,
   MultiPolygon,
   Point,
   Polygon,
-  PolygonCoordinates,
   Position,
 } from './types';
 
@@ -107,7 +105,7 @@ const isValidMultiLineString = (geometry: unknown): geometry is MultiLineString 
     'coordinates' in geometry &&
     Array.isArray(geometry.coordinates) &&
     geometry.coordinates.every(
-      (line): line is LineStringCoordinates =>
+      (line): line is Position[] =>
         Array.isArray(line) &&
         line.length >= 2 &&
         line.every((pos): pos is Position => isValidPosition(pos)),
@@ -177,7 +175,7 @@ const isValidMultiPolygon = (geometry: unknown): geometry is MultiPolygon => {
     'coordinates' in geometry &&
     Array.isArray(geometry.coordinates) &&
     geometry.coordinates.every(
-      (polygon): polygon is PolygonCoordinates =>
+      (polygon): polygon is Position[][] =>
         Array.isArray(polygon) &&
         polygon.every(
           (ring): ring is Position[] =>
