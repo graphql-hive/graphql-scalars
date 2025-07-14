@@ -63,6 +63,7 @@ import {
   GraphQLTime,
   GraphQLTimestamp,
   GraphQLTimeZone,
+  GraphQLULID,
   GraphQLUnsignedFloat,
   GraphQLUnsignedInt,
   GraphQLURL,
@@ -275,6 +276,7 @@ export const resolvers: Record<string, GraphQLScalarType> = {
   Time: GraphQLTime,
   Timestamp: GraphQLTimestamp,
   TimeZone: GraphQLTimeZone,
+  ULID: GraphQLULID,
   UnsignedFloat: GraphQLUnsignedFloat,
   UnsignedInt: GraphQLUnsignedInt,
   URL: GraphQLURL,
@@ -434,9 +436,13 @@ export {
 
 export { GeoJSON as GeoJSONTypeDefinition } from './typeDefs.js';
 export { CountryName as CountryNameTypeDefinition } from './typeDefs.js';
+export { ULID as ULIDTypeDefinition } from './typeDefs.js';
 export { GraphQLCountryName as CountryNameResolver };
 export { GraphQLCountryName };
 export { CountryName as CountryNameMock } from './mocks.js';
 export { GraphQLGeoJSON as GeoJSONResolver };
+export { GraphQLULID as ULIDResolver };
 export { GraphQLGeoJSON };
+export { GraphQLULID };
 export { GeoJSON as GeoJSONMock } from './mocks.js';
+export { ULID as ULIDMock } from './mocks.js';
