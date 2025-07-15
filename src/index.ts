@@ -7,6 +7,7 @@ import {
   GraphQLCountryCode,
   GraphQLCountryName,
   GraphQLCuid,
+  GraphQLCuid2,
   GraphQLCurrency,
   GraphQLDate,
   GraphQLDateTime,
@@ -220,6 +221,7 @@ export const resolvers: Record<string, GraphQLScalarType> = {
   CountryCode: GraphQLCountryCode,
   CountryName: GraphQLCountryName,
   Cuid: GraphQLCuid,
+  Cuid2: GraphQLCuid2,
   Currency: GraphQLCurrency,
   Date: GraphQLDate,
   DateTime: GraphQLDateTime,
@@ -437,12 +439,15 @@ export {
 export { GeoJSON as GeoJSONTypeDefinition } from './typeDefs.js';
 export { CountryName as CountryNameTypeDefinition } from './typeDefs.js';
 export { ULID as ULIDTypeDefinition } from './typeDefs.js';
+export { Cuid2 as Cuid2TypeDefinition } from './typeDefs.js';
 export { GraphQLCountryName as CountryNameResolver };
 export { GraphQLCountryName };
 export { CountryName as CountryNameMock } from './mocks.js';
 export { GraphQLGeoJSON as GeoJSONResolver };
 export { GraphQLULID as ULIDResolver };
+export { GraphQLCuid2 as Cuid2Resolver };
 export { GraphQLGeoJSON };
 export { GraphQLULID };
 export { GeoJSON as GeoJSONMock } from './mocks.js';
+export { Cuid2 as Cuid2Mock } from './mocks.js';
 export { ULID as ULIDMock } from './mocks.js';
