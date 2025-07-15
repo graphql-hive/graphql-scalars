@@ -5,6 +5,7 @@ export default {
   'country-code': 'CountryCode',
   'country-name': 'CountryName',
   cuid: 'Cuid',
+  cuid2: 'Cuid2',
   currency: 'Currency',
   date: 'Date',
   'date-time': 'DateTime',

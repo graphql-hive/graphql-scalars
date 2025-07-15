@@ -1,3 +1,4 @@
+export const Cuid2 = 'scalar Cuid2';
 export const GeoJSON = 'scalar GeoJSON';
 export const CountryName = 'scalar CountryName';
 export const BigInt = 'scalar BigInt';
@@ -79,6 +80,7 @@ export const typeDefs = [
   CountryCode,
   CountryName,
   Cuid,
+  Cuid2,
   Currency,
   Date,
   DateTime,

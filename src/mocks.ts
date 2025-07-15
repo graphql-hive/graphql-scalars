@@ -1,3 +1,4 @@
+export const Cuid2 = () => 'dp71y53f6eykvl5g1393rmhl';
 export const GeoJSON = () => 'Example GeoJSON';
 export const CountryName = () => 'Example CountryName';
 const BigIntMock = () => BigInt(Number.MAX_SAFE_INTEGER);
