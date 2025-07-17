@@ -62,6 +62,7 @@ export default {
   time: 'Time',
   'time-zone': 'TimeZone',
   timestamp: 'Timestamp',
+  ulid: 'ULID',
   'unsigned-float': 'UnsignedFloat',
   'unsigned-int': 'UnsignedInt',
   url: 'URL',

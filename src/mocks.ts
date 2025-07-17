@@ -1,3 +1,4 @@
+export const ULID = () => '01J9GHQM8N5X4TQ3M1ZV9J6CBK';
 export const GeoJSON = () => 'Example GeoJSON';
 export const CountryName = () => 'Example CountryName';
 const BigIntMock = () => BigInt(Number.MAX_SAFE_INTEGER);

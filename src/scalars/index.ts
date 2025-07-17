@@ -67,3 +67,4 @@ export { GraphQLSESSN } from './ssn/SE.js';
 export { GraphQLDeweyDecimal } from './library/DeweyDecimal.js';
 export { GraphQLLCCSubclass } from './library/LCCSubclass.js';
 export { GraphQLIPCPatent } from './patent/IPCPatent.js';
+export { GraphQLULID } from './ULID.js';

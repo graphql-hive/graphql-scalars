@@ -1,3 +1,4 @@
+export const ULID = 'scalar ULID';
 export const GeoJSON = 'scalar GeoJSON';
 export const CountryName = 'scalar CountryName';
 export const BigInt = 'scalar BigInt';
@@ -135,6 +136,7 @@ export const typeDefs = [
   Time,
   Timestamp,
   TimeZone,
+  ULID,
   UnsignedFloat,
   UnsignedInt,
   URL,
