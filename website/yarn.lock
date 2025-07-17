@@ -1210,10 +1210,10 @@
   dependencies:
     "@types/unist" "*"
 
-"@types/node@22.15.31":
-  version "22.15.31"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.31.tgz#454f11e2061150135c8353d7f3b3b1823fca9f3f"
-  integrity sha512-jnVe5ULKl6tijxUhvQeNbQG/84fHfg+yMak02cT8QVhBx/F05rAVxCGBYYTh2EKz22D6JF5ktXuNwdx7b9iEGw==
+"@types/node@22.16.4":
+  version "22.16.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.16.4.tgz#00c763ad4d4e45f62d5a270c040ae1a799c7e38a"
+  integrity sha512-PYRhNtZdm2wH/NT2k/oAJ6/f2VD2N2Dag0lGlx2vWgMSJXGNmlce5MiTQzoWAiIJtso30mjnfQCOKVH+kAQC/g==
   dependencies:
     undici-types "~6.21.0"
 
@@ -3806,10 +3806,10 @@ points-on-path@^0.2.1:
     path-data-parser "0.1.0"
     points-on-curve "0.2.0"
 
-postcss-import@16.1.0:
-  version "16.1.0"
-  resolved "https://registry.yarnpkg.com/postcss-import/-/postcss-import-16.1.0.tgz#258732175518129667fe1e2e2a05b19b5654b96a"
-  integrity sha512-7hsAZ4xGXl4MW+OKEWCnF6T5jqBw80/EE9aXg1r2yyn1RsVEU8EtKXbijEODa+rg7iih4bKf7vlvTGYR4CnPNg==
+postcss-import@16.1.1:
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/postcss-import/-/postcss-import-16.1.1.tgz#cfbe79e6c9232b0dbbe1c18f35308825cfe8ff2a"
+  integrity sha512-2xVS1NCZAfjtVdvXiyegxzJ447GyqCeEI5V7ApgQVOWnros1p5lGNovJNapwPpMombyFBfqDwt7AD3n2l0KOfQ==
   dependencies:
     postcss-value-parser "^4.0.0"
     read-cache "^1.0.0"
