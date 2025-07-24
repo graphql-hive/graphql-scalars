@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@theguild/components": "9.8.0",
-    "next": "15.4.3",
+    "next": "15.4.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
