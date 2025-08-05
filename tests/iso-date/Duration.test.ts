@@ -198,9 +198,9 @@ describe('GraphQLISO8601Duration', () => {
 
     it('throws an error for all the invalid values', () => {
       INVALID_VALUES.forEach(value => {
-        expect(() =>
-          GraphQLISO8601Duration.parseLiteral({ value, kind: Kind.STRING }, {}),
-        ).toThrow(`Value is not a valid ISO Duration: ${value}`);
+        expect(() => GraphQLISO8601Duration.parseLiteral({ value, kind: Kind.STRING }, {})).toThrow(
+          `Value is not a valid ISO Duration: ${value}`,
+        );
       });
     });
 
