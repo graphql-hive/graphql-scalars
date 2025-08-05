@@ -135,7 +135,7 @@ describe('GraphQLTime', () => {
     ].forEach(literal => {
       it(`errors when parsing invalid literal ${stringify(literal)}`, () => {
         // @ts-expect-error - intentional invalid input
-        expect(() => GraphQLTime.parseLiteral(literal, {})).toThrowError();
+        expect(() => GraphQLTime.parseLiteral(literal, {})).toThrow();
       });
     });
   });

@@ -144,7 +144,7 @@ describe('GraphQLISO8601Duration', () => {
   describe('serialization', () => {
     it('throws an error when a non string is passed', () => {
       NON_STRING_VALUES.forEach(value => {
-        expect(() => GraphQLISO8601Duration.serialize(value)).toThrowError(
+        expect(() => GraphQLISO8601Duration.serialize(value)).toThrow(
           `Value is not string: ${value}`,
         );
       });
@@ -152,7 +152,7 @@ describe('GraphQLISO8601Duration', () => {
 
     it('throws an error for all the invalid values', () => {
       INVALID_VALUES.forEach(value => {
-        expect(() => GraphQLISO8601Duration.serialize(value)).toThrowError(
+        expect(() => GraphQLISO8601Duration.serialize(value)).toThrow(
           `Value is not a valid ISO Duration: ${value}`,
         );
       });
@@ -168,7 +168,7 @@ describe('GraphQLISO8601Duration', () => {
   describe('parseValue', () => {
     it('throws an error when a non string is passed', () => {
       NON_STRING_VALUES.forEach(value => {
-        expect(() => GraphQLISO8601Duration.parseValue(value)).toThrowError(
+        expect(() => GraphQLISO8601Duration.parseValue(value)).toThrow(
           `Value is not string: ${value}`,
         );
       });
@@ -176,7 +176,7 @@ describe('GraphQLISO8601Duration', () => {
 
     it('throws an error for all the invalid values', () => {
       INVALID_VALUES.forEach(value => {
-        expect(() => GraphQLISO8601Duration.parseValue(value)).toThrowError(
+        expect(() => GraphQLISO8601Duration.parseValue(value)).toThrow(
           `Value is not a valid ISO Duration: ${value}`,
         );
       });
@@ -200,7 +200,7 @@ describe('GraphQLISO8601Duration', () => {
       INVALID_VALUES.forEach(value => {
         expect(() =>
           GraphQLISO8601Duration.parseLiteral({ value, kind: Kind.STRING }, {}),
-        ).toThrowError(`Value is not a valid ISO Duration: ${value}`);
+        ).toThrow(`Value is not a valid ISO Duration: ${value}`);
       });
     });
 
