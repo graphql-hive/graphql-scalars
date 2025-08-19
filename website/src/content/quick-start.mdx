@@ -21,23 +21,23 @@ You can also import ready-to-use type definitions for scalars like below:
 
 ```ts
 // or import specific typeDefs only with ES6 Import
-import { ScalarNameTypeDefinition } from 'graphql-scalars';
+import { ScalarNameTypeDefinition } from 'graphql-scalars'
 // or import specific typeDefs only with CommonJS
-const { ScalarNameTypeDefinition } = require('graphql-scalars');
+const { ScalarNameTypeDefinition } = require('graphql-scalars')
 // or import all typeDefs once with ES6 Import
-import { typeDefs as scalarTypeDefs } from 'graphql-scalars';
+import { typeDefs as scalarTypeDefs } from 'graphql-scalars'
 // or import all typeDefs once with CommonJS
-const { typeDefs: scalarTypeDefs } = require('graphql-scalars');
+const { typeDefs: scalarTypeDefs } = require('graphql-scalars')
 
 const typeDefs = [
-  ...scalarTypeDefs,
+  ...scalarTypeDefs
   // other typeDefs
-];
+]
 // or
 const typeDefs = [
-  ScalarNameTypeDefinition,
+  ScalarNameTypeDefinition
   // other typeDefs
-];
+]
 ```
 
 ### Importing it into your Resolver Map
