@@ -1,8 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>the-guild-org/shared-config:renovate"
-  ],
+  "extends": ["github>the-guild-org/shared-config:renovate"],
   "automerge": false,
   "lockFileMaintenance": {
     "enabled": true,
@@ -10,10 +8,7 @@
   },
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
+      "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch",
       "matchPackageNames": [
