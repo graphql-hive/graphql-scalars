@@ -86,7 +86,7 @@
     "prettier": "3.6.2",
     "semver": "7.7.2",
     "ts-jest": "29.4.4",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "publishConfig": {
     "directory": "dist",
