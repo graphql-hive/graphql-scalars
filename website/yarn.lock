@@ -1226,17 +1226,17 @@
   dependencies:
     "@types/unist" "*"
 
-"@types/node@22.18.8":
-  version "22.18.8"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.18.8.tgz#738d9dafa38f6e0c467687c158f8e1ca2d7d8eaa"
-  integrity sha512-pAZSHMiagDR7cARo/cch1f3rXy0AEXwsVsVH09FcyeJVAzCnGgmYis7P3JidtTUjyadhTeSo8TgRPswstghDaw==
+"@types/node@22.18.10":
+  version "22.18.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.18.10.tgz#37f0ac8d2ec41af7bba06f162c85ff409e4e3420"
+  integrity sha512-anNG/V/Efn/YZY4pRzbACnKxNKoBng2VTFydVu8RRs5hQjikP8CQfaeAV59VFSCzKNp90mXiVXW2QzV56rwMrg==
   dependencies:
     undici-types "~6.21.0"
 
-"@types/react@19.2.1":
-  version "19.2.1"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.2.1.tgz#eeb3bf60854c4ffb1e88b6faa4bd4714891ec860"
-  integrity sha512-1U5NQWh/GylZQ50ZMnnPjkYHEaGhg6t5i/KI0LDDh3t4E3h3T3vzm+GLY2BRzMfIjSBwzm6tginoZl5z0O/qsA==
+"@types/react@19.2.2":
+  version "19.2.2"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.2.2.tgz#ba123a75d4c2a51158697160a4ea2ff70aa6bf36"
+  integrity sha512-6mDvHUFSjyT2B2yeNx2nUgMxh9LtOWvkhIU3uePn2I2oyNymUAX1NIsdgviM4CH+JSrp2D2hsMvJOkxY+0wNRA==
   dependencies:
     csstype "^3.0.2"
 

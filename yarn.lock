@@ -1703,10 +1703,10 @@
   dependencies:
     mongodb "*"
 
-"@types/node@*", "@types/node@22.18.8":
-  version "22.18.8"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.18.8.tgz#738d9dafa38f6e0c467687c158f8e1ca2d7d8eaa"
-  integrity sha512-pAZSHMiagDR7cARo/cch1f3rXy0AEXwsVsVH09FcyeJVAzCnGgmYis7P3JidtTUjyadhTeSo8TgRPswstghDaw==
+"@types/node@*", "@types/node@22.18.10":
+  version "22.18.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.18.10.tgz#37f0ac8d2ec41af7bba06f162c85ff409e4e3420"
+  integrity sha512-anNG/V/Efn/YZY4pRzbACnKxNKoBng2VTFydVu8RRs5hQjikP8CQfaeAV59VFSCzKNp90mXiVXW2QzV56rwMrg==
   dependencies:
     undici-types "~6.21.0"
 
@@ -4134,15 +4134,15 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
-lint-staged@16.2.3:
-  version "16.2.3"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-16.2.3.tgz#790866221d75602510507b5be40b2c7963715960"
-  integrity sha512-1OnJEESB9zZqsp61XHH2fvpS1es3hRCxMplF/AJUDa8Ho8VrscYDIuxGrj3m8KPXbcWZ8fT9XTMUhEQmOVKpKw==
+lint-staged@16.2.4:
+  version "16.2.4"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-16.2.4.tgz#1f166370e32d9b7eb10583e86d86e1117f7ab489"
+  integrity sha512-Pkyr/wd90oAyXk98i/2KwfkIhoYQUMtss769FIT9hFM5ogYZwrk+GRE46yKXSg2ZGhcJ1p38Gf5gmI5Ohjg2yg==
   dependencies:
     commander "^14.0.1"
     listr2 "^9.0.4"
     micromatch "^4.0.8"
-    nano-spawn "^1.0.3"
+    nano-spawn "^2.0.0"
     pidtree "^0.6.0"
     string-argv "^0.3.2"
     yaml "^2.8.1"
@@ -4334,10 +4334,10 @@ mvdan-sh@^0.10.1:
   resolved "https://registry.yarnpkg.com/mvdan-sh/-/mvdan-sh-0.10.1.tgz#5b3a4462a89cf20739b12d851589342c875f4d1f"
   integrity sha512-kMbrH0EObaKmK3nVRKUIIya1dpASHIEusM13S4V1ViHFuxuNxCo+arxoa6j/dbV22YBGjl7UKJm9QQKJ2Crzhg==
 
-nano-spawn@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/nano-spawn/-/nano-spawn-1.0.3.tgz#ef8d89a275eebc8657e67b95fc312a6527a05b8d"
-  integrity sha512-jtpsQDetTnvS2Ts1fiRdci5rx0VYws5jGyC+4IYOTnIQ/wwdf6JdomlHBwqC3bJYOvaKu0C2GSZ1A60anrYpaA==
+nano-spawn@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/nano-spawn/-/nano-spawn-2.0.0.tgz#f1250434c09ae18870d4f729fc54b406cf85a3e1"
+  integrity sha512-tacvGzUY5o2D8CBh2rrwxyNojUsZNU2zjNTzKQrkgGJQTbGAfArVWXSKMBokBeeg6C7OLRGUEyoFlYbfeWQIqw==
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -4879,10 +4879,10 @@ safe-regex-test@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-semver@7.7.2, semver@^7.5.2, semver@^7.5.3, semver@^7.5.4, semver@^7.6.0, semver@^7.6.3, semver@^7.7.2:
-  version "7.7.2"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.2.tgz#67d99fdcd35cec21e6f8b87a7fd515a33f982b58"
-  integrity sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==
+semver@7.7.3, semver@^7.5.2, semver@^7.5.3, semver@^7.5.4, semver@^7.6.0, semver@^7.6.3, semver@^7.7.3:
+  version "7.7.3"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.3.tgz#4b5f4143d007633a8dc671cd0a6ef9147b8bb946"
+  integrity sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==
 
 semver@^6.3.0, semver@^6.3.1:
   version "6.3.1"
@@ -5244,10 +5244,10 @@ ts-declaration-location@^1.0.6:
   dependencies:
     picomatch "^4.0.2"
 
-ts-jest@29.4.4:
-  version "29.4.4"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-29.4.4.tgz#fc6fefe28652ed81b8e1381ef8391901d9f81417"
-  integrity sha512-ccVcRABct5ZELCT5U0+DZwkXMCcOCLi2doHRrKy1nK/s7J7bch6TzJMsrY09WxgUUIP/ITfmcDS8D2yl63rnXw==
+ts-jest@29.4.5:
+  version "29.4.5"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-29.4.5.tgz#a6b0dc401e521515d5342234be87f1ca96390a6f"
+  integrity sha512-HO3GyiWn2qvTQA4kTgjDcXiMwYQt68a1Y8+JuLRVpdIzm+UOLSHgl/XqR4c6nzJkq5rOkjc02O2I7P7l/Yof0Q==
   dependencies:
     bs-logger "^0.2.6"
     fast-json-stable-stringify "^2.1.0"
@@ -5255,7 +5255,7 @@ ts-jest@29.4.4:
     json5 "^2.2.3"
     lodash.memoize "^4.1.2"
     make-error "^1.3.6"
-    semver "^7.7.2"
+    semver "^7.7.3"
     type-fest "^4.41.0"
     yargs-parser "^21.1.1"
 
