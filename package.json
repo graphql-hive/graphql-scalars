@@ -1,6 +1,6 @@
 {
   "name": "graphql-scalars",
-  "version": "1.24.2",
+  "version": "1.25.0",
   "type": "module",
   "description": "A collection of scalar types not included in base GraphQL.",
   "repository": {
