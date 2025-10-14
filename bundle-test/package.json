@@ -9,11 +9,11 @@
   },
   "devDependencies": {
     "bundlesize": "0.18.2",
-    "webpack": "5.101.3",
+    "webpack": "5.102.1",
     "webpack-cli": "6.0.1"
   },
   "resolutions": {
-    "axios": "1.11.0"
+    "axios": "1.12.2"
   },
   "bundlesize": [
     {
