@@ -4,7 +4,7 @@ import { Kind } from 'graphql/language';
 import { GraphQLPhoneNumber } from '../src/scalars/PhoneNumber.js';
 
 function PhoneNumberError(value: string) {
-  return `Invalid phone number: ${value}. Please ensure it's in a valid format. The country code is optional, and Spaces and dashes are allowed. Examples: +1 (123) 456-7890, +44 (20) 2121 2222, or 123 456-7890.`
+  return `Invalid phone number: ${value}. Please ensure it's in a valid format. The country code is optional, and Spaces and dashes are allowed. Examples: +1 (123) 456-7890, +44 (20) 2121 2222, or 123 456-7890.`;
 }
 
 describe('PhoneNumber', () => {
@@ -26,11 +26,11 @@ describe('PhoneNumber', () => {
     });
     describe('without country code', () => {
       test('serialize', () => {
-        expect(() => GraphQLPhoneNumber.serialize('7895551234')).not.toThrow()
+        expect(() => GraphQLPhoneNumber.serialize('7895551234')).not.toThrow();
       });
 
       test('parseValue', () => {
-        expect(() => GraphQLPhoneNumber.parseValue('123 456-7890')).not.toThrow()
+        expect(() => GraphQLPhoneNumber.parseValue('123 456-7890')).not.toThrow();
       });
 
       test('parseLiteral', () => {
@@ -41,15 +41,15 @@ describe('PhoneNumber', () => {
     });
     describe('different formatting', () => {
       test('serialize', () => {
-        expect(() => GraphQLPhoneNumber.serialize('62-(21)-9175-5194')).not.toThrow()
+        expect(() => GraphQLPhoneNumber.serialize('62-(21)-9175-5194')).not.toThrow();
       });
 
       test('serialize', () => {
-        expect(() => GraphQLPhoneNumber.serialize('+622191755194')).not.toThrow()
+        expect(() => GraphQLPhoneNumber.serialize('+622191755194')).not.toThrow();
       });
 
       test('parseValue', () => {
-        expect(() => GraphQLPhoneNumber.parseValue('+62 (21) 9175 5194')).not.toThrow()
+        expect(() => GraphQLPhoneNumber.parseValue('+62 (21) 9175 5194')).not.toThrow();
       });
 
       test('parseLiteral', () => {
@@ -63,19 +63,20 @@ describe('PhoneNumber', () => {
   describe('invalid case', () => {
     describe('contains Non-Numeric Characters', () => {
       test('serialize', () => {
-        expect(() => GraphQLPhoneNumber.serialize('98aaa333')).toThrow(PhoneNumberError('98aaa333'));
+        expect(() => GraphQLPhoneNumber.serialize('98aaa333')).toThrow(
+          PhoneNumberError('98aaa333'),
+        );
       });
 
       test('parseValue', () => {
-        expect(() => GraphQLPhoneNumber.parseValue('98aaa333ppp')).toThrow(PhoneNumberError('98aaa333ppp'));
+        expect(() => GraphQLPhoneNumber.parseValue('98aaa333ppp')).toThrow(
+          PhoneNumberError('98aaa333ppp'),
+        );
       });
 
       test('parseLiteral', () => {
         expect(() =>
-          GraphQLPhoneNumber.parseLiteral(
-            { value: '98aa', kind: Kind.STRING },
-            {},
-          ),
+          GraphQLPhoneNumber.parseLiteral({ value: '98aa', kind: Kind.STRING }, {}),
         ).toThrow(PhoneNumberError('98aa'));
       });
     });
@@ -98,19 +99,27 @@ describe('PhoneNumber', () => {
 
     describe('wrong formate', () => {
       test('serialize', () => {
-        expect(() => GraphQLPhoneNumber.serialize('+17 89- 5')).toThrow(PhoneNumberError('+17 89- 5'));
+        expect(() => GraphQLPhoneNumber.serialize('+17 89- 5')).toThrow(
+          PhoneNumberError('+17 89- 5'),
+        );
       });
 
       test('serialize', () => {
-        expect(() => GraphQLPhoneNumber.serialize('+1 ( 123 ) 456-7890')).toThrow(PhoneNumberError('+1 ( 123 ) 456-7890'));
+        expect(() => GraphQLPhoneNumber.serialize('+1 ( 123 ) 456-7890')).toThrow(
+          PhoneNumberError('+1 ( 123 ) 456-7890'),
+        );
       });
 
       test('serialize', () => {
-        expect(() => GraphQLPhoneNumber.serialize('+1[123]456 7890')).toThrow(PhoneNumberError('+1[123]456 7890'));
+        expect(() => GraphQLPhoneNumber.serialize('+1[123]456 7890')).toThrow(
+          PhoneNumberError('+1[123]456 7890'),
+        );
       });
 
       test('parseValue', () => {
-        expect(() => GraphQLPhoneNumber.parseValue('+(178)95 55 5678')).toThrow(PhoneNumberError('+(178)95 55 5678'));
+        expect(() => GraphQLPhoneNumber.parseValue('+(178)95 55 5678')).toThrow(
+          PhoneNumberError('+(178)95 55 5678'),
+        );
       });
 
       test('parseLiteral', () => {
