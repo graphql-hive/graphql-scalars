@@ -25,6 +25,20 @@ describe(`Currency`, () => {
     });
   });
 
+  describe(`new`, () => {
+    it(`parseValue`, () => {
+      expect(GraphQLCurrency.parseValue(`XCG`)).toEqual(`XCG`);
+    });
+
+    it(`parseValue`, () => {
+      expect(GraphQLCurrency.parseValue(`SLE`)).toEqual(`SLE`);
+    });
+
+    it(`parseValue`, () => {
+      expect(GraphQLCurrency.parseValue(`ZWG`)).toEqual(`ZWG`);
+    });
+  });
+
   describe(`invalid`, () => {
     describe(`not a valid currency value`, () => {
       it(`serialize`, () => {
