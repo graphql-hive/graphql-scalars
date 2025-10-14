@@ -1,5 +1,20 @@
 ## CHANGELOG moved to [GitHub releases](https://github.com/Urigo/graphql-scalars/releases)
 
+## 1.25.0
+
+### Minor Changes
+
+- [#2857](https://github.com/graphql-hive/graphql-scalars/pull/2857)
+  [`c0072ea`](https://github.com/graphql-hive/graphql-scalars/commit/c0072ea69bf3ee65cdac2190012e698303023ccc)
+  Thanks [@ifeanyi-ugwu](https://github.com/ifeanyi-ugwu)! - New CUID2 Scalar
+
+### Patch Changes
+
+- [#2923](https://github.com/graphql-hive/graphql-scalars/pull/2923)
+  [`ded0a29`](https://github.com/graphql-hive/graphql-scalars/commit/ded0a29544d3824260f9754acf68547f34235ff3)
+  Thanks [@praveenvinny](https://github.com/praveenvinny)! - Add `XCG`, `SLE` and `ZWG` currencies
+  matching ISO 4217 standard
+
 ## 1.24.2
 
 ### Patch Changes
