@@ -5,11 +5,11 @@
   "private": true,
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build",
-    "build": "next build",
-    "dev": "next --turbopack",
+    "build": "next build --webpack",
+    "dev": "next dev --webpack",
     "pagefind": "pagefind --site .next/server/app --output-path out/_pagefind",
     "postbuild": "next-sitemap && yarn pagefind",
-    "start": "next start"
+    "start": "next start --webpack"
   },
   "dependencies": {
     "@theguild/components": "9.11.1",
