@@ -1236,24 +1236,24 @@
     "@eslint/core" "^0.17.0"
     levn "^0.4.1"
 
-"@graphql-tools/merge@9.1.4", "@graphql-tools/merge@^9.1.4":
-  version "9.1.4"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-9.1.4.tgz#a540b83a61f9588306ea50a1cdeebddf66304db4"
-  integrity sha512-6khLMOOQ758DjVzT/9k19lCdNd1GxHDwOWsNBn79jwh2VaFa4+crAZrIrOa0WANCrI3RZTmU/FTcTwSk/cDkeA==
+"@graphql-tools/merge@9.1.5", "@graphql-tools/merge@^9.1.5":
+  version "9.1.5"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-9.1.5.tgz#db61fc3ee8f7cff4636fddded796037acad5e0c6"
+  integrity sha512-eVcir6nCcOC/Wzv7ZAng3xec3dj6FehE8+h9TvgvUyrDEKVMdFfrO6etRFZ2hucWVcY8S6drx7zQx04N4lPM8Q==
   dependencies:
-    "@graphql-tools/utils" "^10.10.2"
+    "@graphql-tools/utils" "^10.10.3"
     tslib "^2.4.0"
 
-"@graphql-tools/schema@10.0.28":
-  version "10.0.28"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-10.0.28.tgz#031b15a89869103131925643e097a4948c0ba860"
-  integrity sha512-lwm1TA+5sYZRcu6UiplRS9BXD2me1pFloEmPeC7mhPzcye/EfHM1LjVSyRKbJE/pxfc7Q/o/GKkBQYJ6JIqDkQ==
+"@graphql-tools/schema@10.0.29":
+  version "10.0.29"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-10.0.29.tgz#cbb0d0cdeb2c55559ace51e2ffadee39990d01c0"
+  integrity sha512-+Htiupnq6U/AWOEAJerIOGT1pAf4u43Q3n2JmFpqFfYJchz6sKWZ7L9Lpe/NusaaUQty/IOF+eQlNFypEaWxhg==
   dependencies:
-    "@graphql-tools/merge" "^9.1.4"
-    "@graphql-tools/utils" "^10.10.2"
+    "@graphql-tools/merge" "^9.1.5"
+    "@graphql-tools/utils" "^10.10.3"
     tslib "^2.4.0"
 
-"@graphql-tools/utils@^10.10.2":
+"@graphql-tools/utils@^10.10.3":
   version "10.10.3"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-10.10.3.tgz#1c6ad8d824ad3fd05571cd2bfdce863c497136d4"
   integrity sha512-2EdYiefeLLxsoeZTukSNZJ0E/Z5NnWBUGK2VJa0DQj1scDhVd93HeT1eW9TszJOYmIh3eWAKLv58ri/1XUmdsQ==
@@ -1783,10 +1783,10 @@
   dependencies:
     mongodb "*"
 
-"@types/node@*", "@types/node@24.10.0":
-  version "24.10.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.10.0.tgz#6b79086b0dfc54e775a34ba8114dcc4e0221f31f"
-  integrity sha512-qzQZRBqkFsYyaSWXuEHc2WR9c0a0CXwiE5FWUvn7ZM+vdy1uZLfCunD38UzhuB7YN/J11ndbDBcTmOdxJo9Q7A==
+"@types/node@*", "@types/node@24.10.1":
+  version "24.10.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.10.1.tgz#91e92182c93db8bd6224fca031e2370cef9a8f01"
+  integrity sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==
   dependencies:
     undici-types "~7.16.0"
 
@@ -4228,10 +4228,10 @@ jsesc@^3.0.2, jsesc@~3.1.0:
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-3.1.0.tgz#74d335a234f67ed19907fdadfac7ccf9d409825d"
   integrity sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==
 
-json-bigint-patch@0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/json-bigint-patch/-/json-bigint-patch-0.0.8.tgz#45d954da1f21c6d4f3ae9ef64c9ac227cd0ab0fe"
-  integrity sha512-xa0LTQsyaq8awYyZyuUsporWisZFiyqzxGW8CKM3t7oouf0GFAKYJnqAm6e9NLNBQOCtOLvy614DEiRX/rPbnA==
+json-bigint-patch@0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/json-bigint-patch/-/json-bigint-patch-0.0.9.tgz#71f351453e0c63555c7d637b11c75f44fc13ba4f"
+  integrity sha512-MEFOCz8t2akr/0UfKYlQUuZpufqWA+ZAbtBh7iRXztpRoyvDozejCJm6PNqO2Br4zgXrUJ+pdTG/jCXFf4ZTnQ==
 
 json-buffer@3.0.1:
   version "3.0.1"
