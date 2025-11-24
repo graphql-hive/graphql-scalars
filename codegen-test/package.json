@@ -1,7 +1,7 @@
 {
   "name": "codegen-scalars-test",
   "dependencies": {
-    "@graphql-codegen/cli": "6.0.2",
+    "@graphql-codegen/cli": "6.1.0",
     "@graphql-codegen/typescript": "5.0.5"
   }
 }

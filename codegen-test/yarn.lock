@@ -213,17 +213,17 @@
     "@graphql-codegen/plugin-helpers" "^6.0.0"
     tslib "~2.6.0"
 
-"@graphql-codegen/cli@6.0.2":
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-6.0.2.tgz#516330f5828630a0f83db3cbf810c164d00230ef"
-  integrity sha512-W+0ime0xMrCyG77q+5xiPkkqPLuXJcTx0Zr9TTOxF4zIqWKVsuImS3qVxtpeTx+GRbb8VWv9IedWMtt91JGzQg==
+"@graphql-codegen/cli@6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-6.1.0.tgz#3fa4c16a85863ffe8ee170d47655b4fe4b69de7b"
+  integrity sha512-7w3Zq5IFONVOBcyOiP01Nv9WRxGS/TEaBCAb/ALYA3xHq95dqKCpoGnxt/Ut9R18jiS+aMgT0gc8Tr8sHy44jA==
   dependencies:
     "@babel/generator" "^7.18.13"
     "@babel/template" "^7.18.10"
     "@babel/types" "^7.18.13"
-    "@graphql-codegen/client-preset" "^5.1.2"
+    "@graphql-codegen/client-preset" "^5.2.0"
     "@graphql-codegen/core" "^5.0.0"
-    "@graphql-codegen/plugin-helpers" "^6.0.0"
+    "@graphql-codegen/plugin-helpers" "^6.1.0"
     "@graphql-tools/apollo-engine-loader" "^8.0.0"
     "@graphql-tools/code-file-loader" "^8.0.0"
     "@graphql-tools/git-loader" "^8.0.0"
@@ -253,7 +253,7 @@
     yaml "^2.3.1"
     yargs "^17.0.0"
 
-"@graphql-codegen/client-preset@^5.1.2":
+"@graphql-codegen/client-preset@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/client-preset/-/client-preset-5.2.0.tgz#82df907e9b4afa9a866d8990c10725d2b6bf2b60"
   integrity sha512-I8mcyNmuEoQGaUGiJHl9lAgyqCkMD/3TyUU3W2DS/aF4pwCpys378ZyYIE/Tw0Ods/tdPUvq/6p+JRkPlxtk1A==
