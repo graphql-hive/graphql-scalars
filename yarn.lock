@@ -4860,10 +4860,10 @@ prettier-plugin-sh@^0.15.0:
     mvdan-sh "^0.10.1"
     sh-syntax "^0.4.2"
 
-prettier@3.7.3:
-  version "3.7.3"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.7.3.tgz#99a8891f6c990cfa54bcff2a0d276e6f845e59ab"
-  integrity sha512-QgODejq9K3OzoBbuyobZlUhznP5SKwPqp+6Q6xw6o8gnhr4O85L2U915iM2IDcfF2NPXVaM9zlo9tdwipnYwzg==
+prettier@3.7.4:
+  version "3.7.4"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.7.4.tgz#d2f8335d4b1cec47e1c8098645411b0c9dff9c0f"
+  integrity sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==
 
 prettier@^2.7.1:
   version "2.8.8"
@@ -5475,10 +5475,10 @@ ts-declaration-location@^1.0.6:
   dependencies:
     picomatch "^4.0.2"
 
-ts-jest@29.4.5:
-  version "29.4.5"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-29.4.5.tgz#a6b0dc401e521515d5342234be87f1ca96390a6f"
-  integrity sha512-HO3GyiWn2qvTQA4kTgjDcXiMwYQt68a1Y8+JuLRVpdIzm+UOLSHgl/XqR4c6nzJkq5rOkjc02O2I7P7l/Yof0Q==
+ts-jest@29.4.6:
+  version "29.4.6"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-29.4.6.tgz#51cb7c133f227396818b71297ad7409bb77106e9"
+  integrity sha512-fSpWtOO/1AjSNQguk43hb/JCo16oJDnMJf3CdEGNkqsEX3t0KX96xvyX1D7PfLCpVoKu4MfVrqUkFyblYoY4lA==
   dependencies:
     bs-logger "^0.2.6"
     fast-json-stable-stringify "^2.1.0"
