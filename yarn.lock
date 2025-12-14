@@ -1783,10 +1783,10 @@
   dependencies:
     mongodb "*"
 
-"@types/node@*", "@types/node@24.10.3":
-  version "24.10.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.10.3.tgz#e0bde7b6bfa2342e88bf158d177dc110e608520e"
-  integrity sha512-gqkrWUsS8hcm0r44yn7/xZeV1ERva/nLgrLxFRUGb7aoNMIJfZJ3AC261zDQuOAKC7MiXai1WCpYc48jAHoShQ==
+"@types/node@*", "@types/node@24.10.4":
+  version "24.10.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.10.4.tgz#9d27c032a1b2c42a4eab8fb65c5856a8b8e098c4"
+  integrity sha512-vnDVpYPMzs4wunl27jHrfmwojOGKya0xyM3sH+UE5iv5uPS6vX7UIoh6m+vQc5LGBq52HBKPIn/zcSZVzeDEZg==
   dependencies:
     undici-types "~7.16.0"
 
