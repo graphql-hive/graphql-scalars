@@ -19,7 +19,7 @@ jobs:
       nodeVersion: 22
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
-      npmToken: ${{ secrets.NODE_AUTH_TOKEN }}
+      npmToken: ${{ secrets.NPM_TOKEN }}
   dependencies:
     uses: the-guild-org/shared-config/.github/workflows/changesets-dependencies.yaml@main
     secrets:
