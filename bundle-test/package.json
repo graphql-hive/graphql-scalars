@@ -13,7 +13,7 @@
     "webpack-cli": "6.0.1"
   },
   "resolutions": {
-    "axios": "1.13.3"
+    "axios": "1.13.4"
   },
   "bundlesize": [
     {
