@@ -206,17 +206,17 @@
     "@graphql-codegen/plugin-helpers" "^6.0.0"
     tslib "~2.6.0"
 
-"@graphql-codegen/cli@6.1.3":
-  version "6.1.3"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-6.1.3.tgz#673256f490849c332436aeafdefcdeb10fd3ba88"
-  integrity sha512-fkPJiOEjHndK5hWH1O1vq8+Y0c2zYYzS79Mz/wVpcv9koz5hnkB0UsdXVtK2UYorh2gLvQfNr7NByX1TUmPibg==
+"@graphql-codegen/cli@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-6.2.1.tgz#c9f4e6ee180bafa433cd635d5e30d27ed9c0c900"
+  integrity sha512-E1B+5nBda2l89Pci5M0HcEj2Hmx2yhORFX+1T3rmwpQjdOiulo+h9JifWxKomUpjfbmU1YkBSd47CCGLFPU10A==
   dependencies:
     "@babel/generator" "^7.18.13"
     "@babel/template" "^7.18.10"
     "@babel/types" "^7.18.13"
     "@graphql-codegen/client-preset" "^5.2.4"
     "@graphql-codegen/core" "^5.0.1"
-    "@graphql-codegen/plugin-helpers" "^6.1.1"
+    "@graphql-codegen/plugin-helpers" "^6.2.0"
     "@graphql-tools/apollo-engine-loader" "^8.0.28"
     "@graphql-tools/code-file-loader" "^8.1.28"
     "@graphql-tools/git-loader" "^8.0.32"
@@ -224,6 +224,7 @@
     "@graphql-tools/graphql-file-loader" "^8.1.11"
     "@graphql-tools/json-file-loader" "^8.0.26"
     "@graphql-tools/load" "^8.1.8"
+    "@graphql-tools/merge" "^9.0.6"
     "@graphql-tools/url-loader" "^9.0.6"
     "@graphql-tools/utils" "^11.0.0"
     "@inquirer/prompts" "^7.8.2"
@@ -286,10 +287,10 @@
     auto-bind "~4.0.0"
     tslib "~2.6.0"
 
-"@graphql-codegen/plugin-helpers@^6.0.0", "@graphql-codegen/plugin-helpers@^6.1.1":
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-6.1.1.tgz#06a8516d9da2c6d30e6b060652713b9139579032"
-  integrity sha512-ipWZHA4ZG8PUdZWx87rvL6LCoIZVhrovVl+448FuxnKIGdzyLmL3+FJc/x96jsQZqKKrUcId9oEgssyh6p15eg==
+"@graphql-codegen/plugin-helpers@^6.0.0", "@graphql-codegen/plugin-helpers@^6.1.1", "@graphql-codegen/plugin-helpers@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-6.2.0.tgz#d10a56939c9341522e30c23aa2a83b10eafcd0c0"
+  integrity sha512-TKm0Q0+wRlg354Qt3PyXc+sy6dCKxmNofBsgmHoFZNVHtzMQSSgNT+rUWdwBwObQ9bFHiUVsDIv8QqxKMiKmpw==
   dependencies:
     "@graphql-tools/utils" "^11.0.0"
     change-case-all "1.0.15"
@@ -551,7 +552,7 @@
     p-limit "3.1.0"
     tslib "^2.4.0"
 
-"@graphql-tools/merge@^9.0.0", "@graphql-tools/merge@^9.1.7":
+"@graphql-tools/merge@^9.0.0", "@graphql-tools/merge@^9.0.6", "@graphql-tools/merge@^9.1.7":
   version "9.1.7"
   resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-9.1.7.tgz#8040553c19aeadf6df41060b811e9c5df8716be1"
   integrity sha512-Y5E1vTbTabvcXbkakdFUt4zUIzB1fyaEnVmIWN0l0GMed2gdD01TpZWLUm4RNAxpturvolrb24oGLQrBbPLSoQ==
