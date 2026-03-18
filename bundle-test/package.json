@@ -10,7 +10,7 @@
   "devDependencies": {
     "bundlesize": "0.18.2",
     "webpack": "5.105.4",
-    "webpack-cli": "7.0.0"
+    "webpack-cli": "7.0.2"
   },
   "resolutions": {
     "axios": "1.13.6"
