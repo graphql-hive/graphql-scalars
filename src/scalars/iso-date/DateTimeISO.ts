@@ -1,7 +1,7 @@
 import { GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
 import { GraphQLDateTimeConfig } from './DateTime.js';
 
-export const GraphQLDateTimeISOConfig: GraphQLScalarTypeConfig<Date, string> = /*#__PURE__*/ {
+export const GraphQLDateTimeISOConfig: GraphQLScalarTypeConfig<Date, string> = {
   ...GraphQLDateTimeConfig,
   name: 'DateTimeISO',
   description:

@@ -1,7 +1,7 @@
 import { GraphQLScalarType, Kind, ValueNode } from 'graphql';
 import { createGraphQLError } from '../error.js';
 
-const MONGODB_OBJECTID_REGEX = /*#__PURE__*/ /^[A-Fa-f0-9]{24}$/;
+const MONGODB_OBJECTID_REGEX = /^[A-Fa-f0-9]{24}$/;
 
 export const GraphQLObjectID = /*#__PURE__*/ new GraphQLScalarType({
   name: 'ObjectID',
