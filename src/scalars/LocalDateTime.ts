@@ -68,7 +68,10 @@ export const LocalDateTimeConfig: GraphQLScalarTypeConfig<string, string> = /*#_
     jsonSchema: {
       title: 'LocalDateTime',
       type: 'string',
-      format: 'date-time',
+      // Not format: 'date-time' — RFC 3339 date-time mandates a timezone offset,
+      // but a LocalDateTime is intentionally offset-less. Match what the scalar
+      // actually validates, like LocalDate/LocalTime do.
+      pattern: LOCAL_DATE_TIME_REGEX.source,
     },
   },
 };
