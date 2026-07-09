@@ -147,6 +147,22 @@ describe('USCurrency', () => {
     });
   });
 
+  it('should parse literal value with multiple thousands separators', () => {
+    const value = '$1,000,000.00';
+    const schema = createGraphQLSchema(noop, (source, { currencyValue }) => {
+      expect(currencyValue).toEqual(100000000);
+      return currencyValue;
+    });
+    const source = /* GraphQL */ `
+      mutation {
+        setCurrency(currencyValue:"${value}")
+      }
+    `;
+    return graphql({ schema, source }).then(result => {
+      expect(result.errors).toBeFalsy();
+    });
+  });
+
   it('should parse input string value', () => {
     const value = '$12.50';
     const schema = createGraphQLSchema(noop, (source, { currencyValue }) => {
