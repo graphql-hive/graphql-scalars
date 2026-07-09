@@ -25,7 +25,7 @@ const validate = (value: any, ast?: ASTNode) => {
   return parsed;
 };
 
-export const GraphQLPort = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLPort = /*#__PURE__*/ new GraphQLScalarType<number, number>({
   name: `Port`,
 
   description: `A field whose value is a valid TCP port within the range of 0 to 65535: https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_ports`,

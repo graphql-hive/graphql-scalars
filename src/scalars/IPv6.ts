@@ -18,7 +18,7 @@ const validate = (value: any, ast?: ASTNode) => {
   return value;
 };
 
-export const GraphQLIPv6 = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLIPv6 = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: `IPv6`,
 
   description: `A field whose value is a IPv6 address: https://en.wikipedia.org/wiki/IPv6.`,

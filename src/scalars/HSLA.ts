@@ -19,7 +19,7 @@ const validate = (value: any, ast?: ASTNode) => {
   return value;
 };
 
-export const GraphQLHSLA = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLHSLA = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: `HSLA`,
 
   description: `A field whose value is a CSS HSLA color: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla().`,

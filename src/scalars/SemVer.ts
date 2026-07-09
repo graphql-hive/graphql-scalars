@@ -19,7 +19,7 @@ const validate = (value: any, ast?: ASTNode) => {
   return value;
 };
 
-export const GraphQLSemVer = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLSemVer = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: `SemVer`,
 
   description: `A field whose value is a Semantic Version: https://semver.org`,

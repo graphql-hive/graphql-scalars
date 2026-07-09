@@ -41,7 +41,7 @@ function validateLocalDate(value: any, ast?: ASTNode) {
   return value;
 }
 
-export const GraphQLLocalDate = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLLocalDate = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: 'LocalDate',
   description:
     'A local date string (i.e., with no associated timezone) in `YYYY-MM-DD` format, e.g. `2020-01-01`.',

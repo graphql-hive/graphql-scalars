@@ -29,7 +29,7 @@ const validate = (value: any, ast?: ASTNode) => {
   return value;
 };
 
-export const GraphQLISBN = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLISBN = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: `ISBN`,
 
   description: `A field whose value is a ISBN-10 or ISBN-13 number: https://en.wikipedia.org/wiki/International_Standard_Book_Number.`,
