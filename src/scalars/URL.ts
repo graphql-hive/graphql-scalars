@@ -30,7 +30,7 @@ export const GraphQLURL = /*#__PURE__*/ new GraphQLScalarType<URL, string>({
     return value === null ? value : new URL(value.toString());
   },
   extensions: {
-    codegenScalarType: 'URL | string',
+    codegenScalarType: { input: 'URL', output: 'URL | string' },
     jsonSchema: {
       type: 'string',
       format: 'uri',

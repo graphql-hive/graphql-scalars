@@ -73,7 +73,7 @@ export const GraphQLLongitude = /*#__PURE__*/ new GraphQLScalarType<number, numb
     return validate(ast.value, ast);
   },
   extensions: {
-    codegenScalarType: 'string | number',
+    codegenScalarType: { input: 'number', output: 'string | number' },
     jsonSchema: {
       title: 'Longitude',
       type: 'number',

@@ -77,7 +77,7 @@ const config: GraphQLScalarTypeConfig<Date, string> = {
     });
   },
   extensions: {
-    codegenScalarType: 'Date | string',
+    codegenScalarType: { input: 'Date', output: 'Date | string' },
     jsonSchema: {
       type: 'string',
       format: 'time',

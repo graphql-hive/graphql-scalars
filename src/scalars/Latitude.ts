@@ -73,7 +73,7 @@ export const GraphQLLatitude = /*#__PURE__*/ new GraphQLScalarType<number, numbe
     return validate(ast.value, ast);
   },
   extensions: {
-    codegenScalarType: 'string | number',
+    codegenScalarType: { input: 'number', output: 'string | number' },
     jsonSchema: {
       title: 'Latitude',
       type: 'number',

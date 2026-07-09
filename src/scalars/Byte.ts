@@ -100,7 +100,7 @@ export const GraphQLByteConfig: GraphQLScalarTypeConfig<Buffer, Buffer> = /*#__P
     }
   },
   extensions: {
-    codegenScalarType: 'Buffer | string',
+    codegenScalarType: { input: 'Buffer', output: 'Buffer | string' },
     jsonSchema: {
       type: 'string',
       format: 'byte',

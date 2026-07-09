@@ -48,7 +48,7 @@ export const GraphQLPort = /*#__PURE__*/ new GraphQLScalarType<number, number>({
     return validate(ast.value, ast);
   },
   extensions: {
-    codegenScalarType: 'string | number',
+    codegenScalarType: { input: 'number', output: 'string | number' },
     jsonSchema: {
       title: 'Port',
       type: 'integer',
