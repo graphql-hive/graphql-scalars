@@ -101,7 +101,7 @@ export const GraphQLBigIntConfig: GraphQLScalarTypeConfig<
     return bigint;
   },
   extensions: {
-    codegenScalarType: 'bigint',
+    codegenScalarType: 'bigint | number | string',
     jsonSchema: {
       type: 'integer',
       format: 'int64',
