@@ -37,6 +37,7 @@
     "bundlesize": "yarn build && cd bundle-test/ && yarn && yarn test",
     "ci:lint": "cross-env \"ESLINT_USE_FLAT_CONFIG=false\" eslint --ext .ts \"./src/**/*.ts\" --output-file eslint_report.json --format json",
     "clean": "rm -rf dist",
+    "codegen-test": "yarn build && cd codegen-test/ && yarn && yarn test",
     "deploy:website": "cd website && yarn deploy",
     "lint": "cross-env \"ESLINT_USE_FLAT_CONFIG=false\" eslint --ext .ts \"./src/**/*.ts\"",
     "lint:prettier": "prettier --ignore-path .gitignore --ignore-path .prettierignore --cache --check .",
@@ -45,7 +46,7 @@
     "prettier": "yarn lint:prettier --write",
     "release": "changeset publish",
     "setup-scalar": "node ./scripts/setup-scalar.js",
-    "test": "jest --forceExit --no-watchman && yarn bundlesize"
+    "test": "jest --forceExit --no-watchman && yarn bundlesize && yarn codegen-test"
   },
   "peerDependencies": {
     "graphql": "^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0"

@@ -1,7 +1,15 @@
 {
   "name": "codegen-scalars-test",
+  "scripts": {
+    "codegen": "graphql-codegen --config codegen.yml",
+    "test": "yarn codegen && tsc --noEmit -p tsconfig.json"
+  },
   "dependencies": {
     "@graphql-codegen/cli": "6.2.1",
     "@graphql-codegen/typescript": "5.0.9"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
   }
 }
