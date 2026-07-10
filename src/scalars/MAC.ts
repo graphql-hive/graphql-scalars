@@ -19,7 +19,7 @@ const validate = (value: any, ast?: ASTNode) => {
   return value;
 };
 
-export const GraphQLMAC = /*#__PURE__*/ new GraphQLScalarType<string, string>({
+export const GraphQLMAC = /*#__PURE__*/ new GraphQLScalarType({
   name: `MAC`,
 
   description: `A field whose value is a IEEE 802 48-bit MAC address: https://en.wikipedia.org/wiki/MAC_address.`,

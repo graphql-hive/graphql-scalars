@@ -47,7 +47,7 @@ const validate = (value: any, ast?: ASTNode): number => {
   );
 };
 
-export const GraphQLLongitude = /*#__PURE__*/ new GraphQLScalarType<number, number>({
+export const GraphQLLongitude = /*#__PURE__*/ new GraphQLScalarType({
   name: `Longitude`,
 
   description: `A field whose value is a valid decimal degrees longitude number (53.471): https://en.wikipedia.org/wiki/Longitude`,

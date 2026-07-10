@@ -19,7 +19,7 @@ const validate = (value: any, ast?: ASTNode) => {
   return value;
 };
 
-export const GraphQLIPv4 = /*#__PURE__*/ new GraphQLScalarType<string, string>({
+export const GraphQLIPv4 = /*#__PURE__*/ new GraphQLScalarType({
   name: `IPv4`,
 
   description: `A field whose value is a IPv4 address: https://en.wikipedia.org/wiki/IPv4.`,

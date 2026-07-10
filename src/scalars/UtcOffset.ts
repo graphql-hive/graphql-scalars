@@ -17,7 +17,7 @@ const validate = (value: any, ast?: ASTNode) => {
   return value;
 };
 
-export const GraphQLUtcOffset = /*#__PURE__*/ new GraphQLScalarType<string, string>({
+export const GraphQLUtcOffset = /*#__PURE__*/ new GraphQLScalarType({
   name: 'UtcOffset',
 
   description:

@@ -2,7 +2,7 @@ import { GraphQLScalarType, Kind } from 'graphql';
 import { createGraphQLError } from '../error.js';
 import { processValue } from './utilities.js';
 
-export const GraphQLNonPositiveInt = /*#__PURE__*/ new GraphQLScalarType<number, number>({
+export const GraphQLNonPositiveInt = /*#__PURE__*/ new GraphQLScalarType({
   name: 'NonPositiveInt',
 
   description: 'Integers that will have a value of 0 or less.',

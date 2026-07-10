@@ -74,7 +74,7 @@ function _testPostalCode(postalCode: string) {
   return result;
 }
 
-export const GraphQLPostalCode = /*#__PURE__*/ new GraphQLScalarType<string, string>({
+export const GraphQLPostalCode = /*#__PURE__*/ new GraphQLScalarType({
   name: 'PostalCode',
 
   description:

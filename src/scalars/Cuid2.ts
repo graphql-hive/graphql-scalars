@@ -20,7 +20,7 @@ const validateCuid2 = (value: any, ast?: ValueNode) => {
 
 const specifiedByURL = 'https://github.com/paralleldrive/cuid2';
 
-export const GraphQLCuid2 = /*#__PURE__*/ new GraphQLScalarType<string, string>({
+export const GraphQLCuid2 = /*#__PURE__*/ new GraphQLScalarType({
   name: 'Cuid2',
   description: `A field whose value conforms to the cuid2 format, as specified in ${specifiedByURL}`,
 

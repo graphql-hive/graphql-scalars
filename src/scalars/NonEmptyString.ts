@@ -16,7 +16,7 @@ const validate = (value: any, ast?: ASTNode) => {
   return value;
 };
 
-export const GraphQLNonEmptyString = /*#__PURE__*/ new GraphQLScalarType<string, string>({
+export const GraphQLNonEmptyString = /*#__PURE__*/ new GraphQLScalarType({
   name: 'NonEmptyString',
 
   description: 'A string that cannot be passed as an empty value',

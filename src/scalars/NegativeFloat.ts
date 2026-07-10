@@ -2,7 +2,7 @@ import { GraphQLScalarType, Kind } from 'graphql';
 import { createGraphQLError } from '../error.js';
 import { processValue } from './utilities.js';
 
-export const GraphQLNegativeFloat = /*#__PURE__*/ new GraphQLScalarType<number, number>({
+export const GraphQLNegativeFloat = /*#__PURE__*/ new GraphQLScalarType({
   name: 'NegativeFloat',
 
   description: 'Floats that will have a value less than 0.',

@@ -35,7 +35,7 @@ function parseDateFromLiteral(ast: ValueNode) {
   return null;
 }
 
-export const GraphQLTimestamp = /*#__PURE__*/ new GraphQLScalarType<Date, number>({
+export const GraphQLTimestamp = /*#__PURE__*/ new GraphQLScalarType({
   name: 'Timestamp',
   description:
     'The javascript `Date` as integer. Type represents date and time ' +

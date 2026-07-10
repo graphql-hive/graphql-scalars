@@ -7,7 +7,7 @@ import { createGraphQLError } from '../error.js';
 // Ex. +62 (21) 9175 5194, 2191755194, +1 123-456-7890 12345, +1 (123) 456-7890
 const PHONE_NUMBER_REGEX = /^\+?\d{1,3}(\-|\x20)?\(?\d+\)?((\-|\x20)?\d+)+$/;
 
-export const GraphQLPhoneNumber = /*#__PURE__*/ new GraphQLScalarType<string, string>({
+export const GraphQLPhoneNumber = /*#__PURE__*/ new GraphQLScalarType({
   name: 'PhoneNumber',
 
   description:

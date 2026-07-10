@@ -274,7 +274,7 @@ const validate = (value: any, ast?: ValueNode) => {
   return normalizedValue as CountryName;
 };
 
-export const GraphQLCountryName = /*#__PURE__*/ new GraphQLScalarType<CountryName, CountryName>({
+export const GraphQLCountryName = /*#__PURE__*/ new GraphQLScalarType({
   name: 'CountryName',
   description: 'A country name (short name) as defined by ISO 3166-1',
   serialize(value) {

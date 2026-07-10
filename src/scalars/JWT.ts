@@ -19,7 +19,7 @@ const validate = (value: any, ast?: ASTNode) => {
   return value;
 };
 
-export const GraphQLJWT = /*#__PURE__*/ new GraphQLScalarType<string, string>({
+export const GraphQLJWT = /*#__PURE__*/ new GraphQLScalarType({
   name: `JWT`,
 
   description: `A field whose value is a JSON Web Token (JWT): https://jwt.io/introduction.`,

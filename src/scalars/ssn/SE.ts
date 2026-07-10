@@ -76,7 +76,7 @@ function _isValidChecksum(pno: string): boolean {
   return sum % 10 === 0;
 }
 
-function _checkString(value: unknown): asserts value is string {
+function _checkString(value: any): void {
   if (typeof value !== 'string') {
     throw createGraphQLError(`Value is not string: ${value}`);
   }
@@ -88,24 +88,21 @@ function _checkSSN(value: string): void {
   }
 }
 
-export const GraphQLSESSN: GraphQLScalarType<string, string> = /*#__PURE__*/ new GraphQLScalarType<
-  string,
-  string
->({
+export const GraphQLSESSN: GraphQLScalarType = /*#__PURE__*/ new GraphQLScalarType({
   name: 'SESSN',
   description:
     'A field whose value conforms to the standard personal number (personnummer) formats for Sweden',
 
   serialize(value) {
     _checkString(value);
-    _checkSSN(value);
+    _checkSSN(value as string);
 
     return value;
   },
 
   parseValue(value) {
     _checkString(value);
-    _checkSSN(value);
+    _checkSSN(value as string);
 
     return value;
   },

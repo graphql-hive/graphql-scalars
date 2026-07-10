@@ -39,7 +39,7 @@ const validateTimeZone = (str: string, ast?: ValueNode) => {
   }
 };
 
-export const GraphQLTimeZone = /*#__PURE__*/ new GraphQLScalarType<string, string>({
+export const GraphQLTimeZone = /*#__PURE__*/ new GraphQLScalarType({
   name: 'TimeZone',
 
   description:
