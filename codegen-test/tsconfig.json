@@ -11,5 +11,5 @@
       "graphql-scalars": ["../src/index.ts"]
     }
   },
-  "files": ["./types.ts"]
+  "include": ["./types.ts", "./fixtures/**/*.ts"]
 }
