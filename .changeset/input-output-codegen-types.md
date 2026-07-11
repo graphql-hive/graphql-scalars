@@ -1,5 +1,5 @@
 ---
-'graphql-scalars': minor
+'graphql-scalars': major
 ---
 
 Emit distinct input/output codegen types for scalars whose parsed and returned types differ
