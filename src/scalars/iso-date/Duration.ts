@@ -12,7 +12,7 @@ export type ISO8601Duration = string;
 const ISO_DURATION =
   /^(-|\+)?P(?!$)((-|\+)?\d+(?:(\.|,)\d+)?Y)?((-|\+)?\d+(?:(\.|,)\d+)?M)?((-|\+)?\d+(?:(\.|,)\d+)?W)?((-|\+)?\d+(?:(\.|,)\d+)?D)?(T(?=(-|\+)?\d)((-|\+)?\d+(?:(\.|,)\d+)?H)?((-|\+)?\d+(?:(\.|,)\d+)?M)?((-|\+)?\d+(?:(\.|,)\d+)?S)?)?$/;
 
-export const GraphQLDurationConfig: GraphQLScalarTypeConfig<string, string> = /*#__PURE__*/ {
+export const GraphQLDurationConfig: GraphQLScalarTypeConfig<string, string> = {
   name: 'Duration',
   description: `
     A string representing a duration conforming to the ISO8601 standard,

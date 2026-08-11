@@ -31,7 +31,7 @@ const validate = (value: any, ast?: ValueNode) => {
 
 const specifiedByURL = 'https://github.com/ericelliott/cuid#broken-down';
 
-export const GraphQLCuidConfig = /*#__PURE__*/ {
+export const GraphQLCuidConfig = {
   name: 'Cuid',
 
   description:

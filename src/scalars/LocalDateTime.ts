@@ -40,7 +40,7 @@ function validateLocalDateTime(value: any, ast?: ASTNode): string {
   return value;
 }
 
-export const LocalDateTimeConfig: GraphQLScalarTypeConfig<string, string> = /*#__PURE__*/ {
+export const LocalDateTimeConfig: GraphQLScalarTypeConfig<string, string> = {
   name: 'LocalDateTime',
   description:
     'A local date-time string (i.e., with no associated timezone) in `YYYY-MM-DDTHH:mm:ss` format, e.g. `2020-01-01T00:00:00`.',

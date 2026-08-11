@@ -35,7 +35,7 @@ function isBigIntSerializable() {
 export const GraphQLBigIntConfig: GraphQLScalarTypeConfig<
   bigint | number,
   bigint | string | number
-> = /*#__PURE__*/ {
+> = {
   name: 'BigInt',
   description: 'The `BigInt` scalar type represents non-fractional signed whole numeric values.',
   serialize(outputValue) {

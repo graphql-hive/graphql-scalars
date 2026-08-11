@@ -12,7 +12,7 @@ import { createGraphQLError } from '../../error.js';
 import { parseDate, serializeDate } from './formatter.js';
 import { validateDate, validateJSDate } from './validator.js';
 
-export const GraphQLDateConfig: GraphQLScalarTypeConfig<Date, string> = /*#__PURE__*/ {
+export const GraphQLDateConfig: GraphQLScalarTypeConfig<Date, string> = {
   name: 'Date',
   description:
     'A date string, such as 2007-12-03, compliant with the `full-date` ' +
