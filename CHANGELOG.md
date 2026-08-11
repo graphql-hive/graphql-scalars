@@ -1,5 +1,24 @@
 ## CHANGELOG moved to [GitHub releases](https://github.com/Urigo/graphql-scalars/releases)
 
+## 1.26.0
+
+### Minor Changes
+
+- [#3093](https://github.com/graphql-hive/graphql-scalars/pull/3093)
+  [`18d76c0`](https://github.com/graphql-hive/graphql-scalars/commit/18d76c062289215fd44667d27e018cc71fc82e21)
+  Thanks [@eddeee888](https://github.com/eddeee888)! - Update graphql peerDeps to ^17.0.0
+
+### Patch Changes
+
+- [#3093](https://github.com/graphql-hive/graphql-scalars/pull/3093)
+  [`18d76c0`](https://github.com/graphql-hive/graphql-scalars/commit/18d76c062289215fd44667d27e018cc71fc82e21)
+  Thanks [@eddeee888](https://github.com/eddeee888)! - dependencies updates:
+  - Updated dependency
+    [`graphql@^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0` ↗︎](https://www.npmjs.com/package/graphql/v/0.8.0)
+    (from
+    `^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0`,
+    in `peerDependencies`)
+
 ## 1.25.0
 
 ### Minor Changes
