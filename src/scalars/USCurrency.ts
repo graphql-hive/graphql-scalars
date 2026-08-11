@@ -16,7 +16,7 @@ function generateCurrency(value: any) {
 }
 
 function generateCents(value: string) {
-  const digits = value.replace('$', '').replace(',', '');
+  const digits = value.replace('$', '').replace(/,/g, '');
   const number = parseFloat(digits);
   return number * 100;
 }
