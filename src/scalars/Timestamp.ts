@@ -35,7 +35,7 @@ function parseDateFromLiteral(ast: ValueNode) {
   return null;
 }
 
-export const GraphQLTimestamp = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLTimestamp = /*#__PURE__*/ new GraphQLScalarType<Date, number>({
   name: 'Timestamp',
   description:
     'The javascript `Date` as integer. Type represents date and time ' +
@@ -44,9 +44,9 @@ export const GraphQLTimestamp = /*#__PURE__*/ new GraphQLScalarType({
   parseValue: parseDate,
   parseLiteral: parseDateFromLiteral,
   extensions: {
-    codegenScalarType: 'Date | string | number',
+    codegenScalarType: { input: 'Date', output: 'Date | string | number' },
     jsonSchema: {
-      type: 'string',
+      type: 'integer',
       format: 'unix-time',
     },
   },
