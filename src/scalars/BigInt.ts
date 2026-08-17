@@ -103,8 +103,10 @@ export const GraphQLBigIntConfig: GraphQLScalarTypeConfig<
   extensions: {
     codegenScalarType: 'bigint',
     jsonSchema: {
-      type: 'integer',
-      format: 'int64',
+      // Not format: 'int64' — a BigInt is arbitrary-precision, not 64-bit-bounded,
+      // and it serializes as a number when within the safe-integer range or as a
+      // decimal string when larger (to avoid precision loss).
+      oneOf: [{ type: 'integer' }, { type: 'string', pattern: '^-?\\d+$' }],
     },
   },
 };
