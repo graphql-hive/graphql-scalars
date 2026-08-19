@@ -20,7 +20,8 @@ export function createGraphQLError(message: string, options?: GraphQLErrorOption
       ? (options.nodes as ReadonlyArray<ASTNode>)
       : [options.nodes as ASTNode]
     : undefined;
-  return new GraphQLError(
+
+  return new (GraphQLError as any)(
     message,
     nodes,
     options?.source,
