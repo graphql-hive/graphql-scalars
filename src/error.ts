@@ -12,12 +12,17 @@ interface GraphQLErrorOptions {
 }
 
 export function createGraphQLError(message: string, options?: GraphQLErrorOptions): GraphQLError {
-  if (versionInfo.major >= 17) {
+  if (versionInfo?.major >= 17) {
     return new GraphQLError(message, options);
   }
+  const nodes: ReadonlyArray<ASTNode> | undefined = options?.nodes
+    ? Array.isArray(options.nodes)
+      ? (options.nodes as ReadonlyArray<ASTNode>)
+      : [options.nodes as ASTNode]
+    : undefined;
   return new GraphQLError(
     message,
-    options?.nodes,
+    nodes,
     options?.source,
     options?.positions,
     options?.path,
