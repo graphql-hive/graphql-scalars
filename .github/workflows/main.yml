@@ -15,6 +15,18 @@ jobs:
     with:
       script: yarn test
       nodeVersions: '[18,20,22]'
+
+  test-graphql-versions:
+    name: Testing against graphql-${{matrix.graphql-version}}
+    uses: the-guild-org/shared-config/.github/workflows/ci-node-matrix.yml@main
+    strategy:
+      fail-fast: false
+      matrix:
+        graphql-version: ['0.8', '0.9', '0.10', '0.11', '0.12', '0.13', '14', '15', '16']
+    with:
+      script: yarn vitest run --mode graphql-${{matrix.graphql-version}}
+      nodeVersions: '[20]'
+
   lint:
     uses: the-guild-org/shared-config/.github/workflows/lint.yml@main
     with:
