@@ -45,7 +45,7 @@
     "prettier": "yarn lint:prettier --write",
     "release": "changeset publish",
     "setup-scalar": "node ./scripts/setup-scalar.js",
-    "test": "jest --forceExit --no-watchman && yarn bundlesize"
+    "test": "vitest run && yarn bundlesize"
   },
   "peerDependencies": {
     "graphql": "^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
@@ -62,11 +62,11 @@
     "@graphql-tools/merge": "9.1.7",
     "@graphql-tools/schema": "10.0.31",
     "@theguild/prettier-config": "3.0.1",
-    "@types/jest": "30.0.0",
     "@types/mongodb": "4.0.7",
     "@types/node": "24.12.0",
     "@typescript-eslint/eslint-plugin": "8.57.1",
     "@typescript-eslint/parser": "8.57.1",
+    "@vitest/utils": "3.2.4",
     "bob-the-bundler": "7.0.1",
     "cross-env": "10.1.0",
     "eslint": "9.39.4",
@@ -76,15 +76,14 @@
     "eslint-plugin-promise": "7.2.1",
     "graphql": "16.13.1",
     "husky": "9.1.7",
-    "jest": "30.3.0",
     "json-bigint-patch": "0.0.9",
     "lint-staged": "16.4.0",
     "mockdate": "3.0.5",
     "mongodb": "7.1.0",
     "prettier": "3.8.1",
     "semver": "7.7.4",
-    "ts-jest": "29.4.6",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vitest": "3.2.4"
   },
   "publishConfig": {
     "directory": "dist",

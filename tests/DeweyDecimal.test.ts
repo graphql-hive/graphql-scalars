@@ -63,7 +63,7 @@ describe('DID', () => {
   });
 
   describe('invalid', () => {
-    describe('not a Dewey Decimal', () => {
+    test('not a Dewey Decimal', () => {
       expect(() => GraphQLDeweyDecimal.serialize('invaliddid')).toThrow(
         /Value is not a valid Dewey Decimal Number/,
       );

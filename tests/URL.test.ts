@@ -46,7 +46,7 @@ describe('URL', () => {
   });
 
   describe('invalid', () => {
-    describe('not a URL', () => {
+    test('not a URL', () => {
       expect(() => GraphQLURL.serialize('invalidurlexample')).toThrow(/Invalid URL/);
     });
 

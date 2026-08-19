@@ -1,4 +1,4 @@
-/* global jest, describe, test, expect */
+/* global vi, describe, test, expect */
 
 import { Kind } from 'graphql/language';
 import { RegularExpression } from '../src/RegularExpression.js';
@@ -42,7 +42,7 @@ describe('RegularExpression', () => {
         `This is a custom error message ${regex}: ${value}`;
 
       test('serialize', () => {
-        const errorMessage = jest.fn(errorMessageFn);
+        const errorMessage = vi.fn(errorMessageFn);
         const GraphQLAbcWithOptions = new RegularExpression('Abc', /^abc$/, {
           errorMessage,
         });
@@ -56,7 +56,7 @@ describe('RegularExpression', () => {
       });
 
       test('parseValue', () => {
-        const errorMessage = jest.fn(errorMessageFn);
+        const errorMessage = vi.fn(errorMessageFn);
         const GraphQLAbcWithOptions = new RegularExpression('Abc', /^abc$/, {
           errorMessage,
         });
@@ -70,7 +70,7 @@ describe('RegularExpression', () => {
       });
 
       test('parseLiteral', () => {
-        const errorMessage = jest.fn(errorMessageFn);
+        const errorMessage = vi.fn(errorMessageFn);
         const AbcWithOptions = new RegularExpression('Abc', /^abc$/, {
           errorMessage,
         });

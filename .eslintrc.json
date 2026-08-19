@@ -35,9 +35,14 @@
   },
   "overrides": [
     {
-      "files": ["**/test/**/*.{ts,js}", "*.spec.ts"],
-      "env": {
-        "jest": true
+      "files": ["tests/**/*.{ts,js}"],
+      "globals": {
+        "beforeEach": "readonly",
+        "describe": "readonly",
+        "expect": "readonly",
+        "it": "readonly",
+        "test": "readonly",
+        "vi": "readonly"
       },
       "rules": {
         "@typescript-eslint/no-unused-vars": "off"

@@ -1,55 +1,70 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`GraphQLTime has a description 1`] = `"A time string at UTC, such as 10:15:30Z, compliant with the \`full-time\` format outlined in section 5.6 of the RFC 3339profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."`;
+exports[`GraphQLTime > has a description 1`] = `"A time string at UTC, such as 10:15:30Z, compliant with the \`full-time\` format outlined in section 5.6 of the RFC 3339profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."`;
 
-exports[`GraphQLTime literal parsing errors when parsing invalid literal {"kind": "StringValue", "value": "00:00:00.45+01"} 1`] = `"Time cannot represent an invalid time-string 00:00:00.45+01."`;
+exports[`GraphQLTime > literal parsing > errors when parsing invalid literal Object {
+  "kind": "StringValue",
+  "value": "00:00:00.45+01",
+} 1`] = `[GraphQLError: Time cannot represent an invalid time-string 00:00:00.45+01.]`;
 
-exports[`GraphQLTime literal parsing errors when parsing invalid literal {"kind": "StringValue", "value": "00:00:00.45+0130"} 1`] = `"Time cannot represent an invalid time-string 00:00:00.45+0130."`;
+exports[`GraphQLTime > literal parsing > errors when parsing invalid literal Object {
+  "kind": "StringValue",
+  "value": "00:00:00.45+0130",
+} 1`] = `[GraphQLError: Time cannot represent an invalid time-string 00:00:00.45+0130.]`;
 
-exports[`GraphQLTime literal parsing errors when parsing invalid literal {"kind": "StringValue", "value": "10:30:02.Z"} 1`] = `"Time cannot represent an invalid time-string 10:30:02.Z."`;
+exports[`GraphQLTime > literal parsing > errors when parsing invalid literal Object {
+  "kind": "StringValue",
+  "value": "10:30:02.Z",
+} 1`] = `[GraphQLError: Time cannot represent an invalid time-string 10:30:02.Z.]`;
 
-exports[`GraphQLTime literal parsing errors when parsing invalid literal {"kind": "StringValue", "value": "2016-01-01T00:00:00.223Z"} 1`] = `"Time cannot represent an invalid time-string 2016-01-01T00:00:00.223Z."`;
+exports[`GraphQLTime > literal parsing > errors when parsing invalid literal Object {
+  "kind": "StringValue",
+  "value": "2016-01-01T00:00:00.223Z",
+} 1`] = `[GraphQLError: Time cannot represent an invalid time-string 2016-01-01T00:00:00.223Z.]`;
 
-exports[`GraphQLTime literal parsing errors when parsing invalid literal {"kind": "StringValue", "value": "Invalid date"} 1`] = `"Time cannot represent an invalid time-string Invalid date."`;
+exports[`GraphQLTime > literal parsing > errors when parsing invalid literal Object {
+  "kind": "StringValue",
+  "value": "Invalid date",
+} 1`] = `[GraphQLError: Time cannot represent an invalid time-string Invalid date.]`;
 
-exports[`GraphQLTime serialization throws an error when serializing an invalid date-string "00:00:00.45+01" 1`] = `"Time cannot represent an invalid time-string 00:00:00.45+01."`;
+exports[`GraphQLTime > serialization > throws an error when serializing an invalid date-string "00:00:00.45+01" 1`] = `[GraphQLError: Time cannot represent an invalid time-string 00:00:00.45+01.]`;
 
-exports[`GraphQLTime serialization throws an error when serializing an invalid date-string "00:00:00.45+0130" 1`] = `"Time cannot represent an invalid time-string 00:00:00.45+0130."`;
+exports[`GraphQLTime > serialization > throws an error when serializing an invalid date-string "00:00:00.45+0130" 1`] = `[GraphQLError: Time cannot represent an invalid time-string 00:00:00.45+0130.]`;
 
-exports[`GraphQLTime serialization throws an error when serializing an invalid date-string "10:30:02.Z" 1`] = `"Time cannot represent an invalid time-string 10:30:02.Z."`;
+exports[`GraphQLTime > serialization > throws an error when serializing an invalid date-string "10:30:02.Z" 1`] = `[GraphQLError: Time cannot represent an invalid time-string 10:30:02.Z.]`;
 
-exports[`GraphQLTime serialization throws an error when serializing an invalid date-string "2016-01-01T00:00:00.223Z" 1`] = `"Time cannot represent an invalid time-string 2016-01-01T00:00:00.223Z."`;
+exports[`GraphQLTime > serialization > throws an error when serializing an invalid date-string "2016-01-01T00:00:00.223Z" 1`] = `[GraphQLError: Time cannot represent an invalid time-string 2016-01-01T00:00:00.223Z.]`;
 
-exports[`GraphQLTime serialization throws an error when serializing an invalid date-string "Invalid date" 1`] = `"Time cannot represent an invalid time-string Invalid date."`;
+exports[`GraphQLTime > serialization > throws an error when serializing an invalid date-string "Invalid date" 1`] = `[GraphQLError: Time cannot represent an invalid time-string Invalid date.]`;
 
-exports[`GraphQLTime serialization throws error when serializing [] 1`] = `"Time cannot be serialized from a non string, or non Date type []"`;
+exports[`GraphQLTime > serialization > throws error when serializing Array [] 1`] = `[GraphQLError: Time cannot be serialized from a non string, or non Date type []]`;
 
-exports[`GraphQLTime serialization throws error when serializing {} 1`] = `"Time cannot be serialized from a non string, or non Date type {}"`;
+exports[`GraphQLTime > serialization > throws error when serializing Object {} 1`] = `[GraphQLError: Time cannot be serialized from a non string, or non Date type {}]`;
 
-exports[`GraphQLTime serialization throws error when serializing invalid date 1`] = `"Time cannot represent an invalid Date instance"`;
+exports[`GraphQLTime > serialization > throws error when serializing invalid date 1`] = `[GraphQLError: Time cannot represent an invalid Date instance]`;
 
-exports[`GraphQLTime serialization throws error when serializing null 1`] = `"Time cannot be serialized from a non string, or non Date type null"`;
+exports[`GraphQLTime > serialization > throws error when serializing null 1`] = `[GraphQLError: Time cannot be serialized from a non string, or non Date type null]`;
 
-exports[`GraphQLTime serialization throws error when serializing true 1`] = `"Time cannot be serialized from a non string, or non Date type true"`;
+exports[`GraphQLTime > serialization > throws error when serializing true 1`] = `[GraphQLError: Time cannot be serialized from a non string, or non Date type true]`;
 
-exports[`GraphQLTime serialization throws error when serializing undefined 1`] = `"Time cannot be serialized from a non string, or non Date type undefined"`;
+exports[`GraphQLTime > serialization > throws error when serializing undefined 1`] = `[GraphQLError: Time cannot be serialized from a non string, or non Date type undefined]`;
 
-exports[`GraphQLTime value parsing throws an error parsing an invalid time-string "00:00:00.45+01" 1`] = `"Time cannot represent an invalid time-string 00:00:00.45+01."`;
+exports[`GraphQLTime > value parsing > throws an error parsing an invalid time-string "00:00:00.45+01" 1`] = `[GraphQLError: Time cannot represent an invalid time-string 00:00:00.45+01.]`;
 
-exports[`GraphQLTime value parsing throws an error parsing an invalid time-string "00:00:00.45+0130" 1`] = `"Time cannot represent an invalid time-string 00:00:00.45+0130."`;
+exports[`GraphQLTime > value parsing > throws an error parsing an invalid time-string "00:00:00.45+0130" 1`] = `[GraphQLError: Time cannot represent an invalid time-string 00:00:00.45+0130.]`;
 
-exports[`GraphQLTime value parsing throws an error parsing an invalid time-string "10:30:02.Z" 1`] = `"Time cannot represent an invalid time-string 10:30:02.Z."`;
+exports[`GraphQLTime > value parsing > throws an error parsing an invalid time-string "10:30:02.Z" 1`] = `[GraphQLError: Time cannot represent an invalid time-string 10:30:02.Z.]`;
 
-exports[`GraphQLTime value parsing throws an error parsing an invalid time-string "2016-01-01T00:00:00.223Z" 1`] = `"Time cannot represent an invalid time-string 2016-01-01T00:00:00.223Z."`;
+exports[`GraphQLTime > value parsing > throws an error parsing an invalid time-string "2016-01-01T00:00:00.223Z" 1`] = `[GraphQLError: Time cannot represent an invalid time-string 2016-01-01T00:00:00.223Z.]`;
 
-exports[`GraphQLTime value parsing throws an error parsing an invalid time-string "Invalid date" 1`] = `"Time cannot represent an invalid time-string Invalid date."`;
+exports[`GraphQLTime > value parsing > throws an error parsing an invalid time-string "Invalid date" 1`] = `[GraphQLError: Time cannot represent an invalid time-string Invalid date.]`;
 
-exports[`GraphQLTime value parsing throws an error when parsing [] 1`] = `"Time cannot represent non string type []"`;
+exports[`GraphQLTime > value parsing > throws an error when parsing 4566 1`] = `[GraphQLError: Time cannot represent non string type 4566]`;
 
-exports[`GraphQLTime value parsing throws an error when parsing {} 1`] = `"Time cannot represent non string type {}"`;
+exports[`GraphQLTime > value parsing > throws an error when parsing Array [] 1`] = `[GraphQLError: Time cannot represent non string type []]`;
 
-exports[`GraphQLTime value parsing throws an error when parsing 4566 1`] = `"Time cannot represent non string type 4566"`;
+exports[`GraphQLTime > value parsing > throws an error when parsing Object {} 1`] = `[GraphQLError: Time cannot represent non string type {}]`;
 
-exports[`GraphQLTime value parsing throws an error when parsing null 1`] = `"Time cannot represent non string type null"`;
+exports[`GraphQLTime > value parsing > throws an error when parsing null 1`] = `[GraphQLError: Time cannot represent non string type null]`;
 
-exports[`GraphQLTime value parsing throws an error when parsing true 1`] = `"Time cannot represent non string type true"`;
+exports[`GraphQLTime > value parsing > throws an error when parsing true 1`] = `[GraphQLError: Time cannot represent non string type true]`;
