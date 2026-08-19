@@ -4,7 +4,7 @@ import { defineConfig } from 'vitest/config';
 const require = createRequire(import.meta.url);
 
 export default defineConfig(({ mode }) => {
-  const graphqlPackage = mode ?? 'graphql';
+  const graphqlPackage = mode && mode !== 'test' ? mode : 'graphql';
 
   return {
     resolve: {
