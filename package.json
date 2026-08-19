@@ -48,7 +48,7 @@
     "test": "vitest run && yarn bundlesize"
   },
   "peerDependencies": {
-    "graphql": "^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
+    "graphql": "^16.0.0 || ^17.0.0"
   },
   "dependencies": {
     "tslib": "^2.5.0"
@@ -75,14 +75,6 @@
     "eslint-plugin-n": "17.24.0",
     "eslint-plugin-promise": "7.2.1",
     "graphql": "17.0.2",
-    "graphql-0.10": "npm:graphql@0.10.5",
-    "graphql-0.11": "npm:graphql@0.11.7",
-    "graphql-0.12": "npm:graphql@0.12.3",
-    "graphql-0.13": "npm:graphql@0.13.2",
-    "graphql-0.8": "npm:graphql@0.8.2",
-    "graphql-0.9": "npm:graphql@0.9.6",
-    "graphql-14": "npm:graphql@14.7.0",
-    "graphql-15": "npm:graphql@15.10.2",
     "graphql-16": "npm:graphql@16.14.2",
     "husky": "9.1.7",
     "json-bigint-patch": "0.0.9",
