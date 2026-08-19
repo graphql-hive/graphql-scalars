@@ -1,4 +1,4 @@
-import { graphql, GraphQLObjectType, GraphQLSchema } from 'graphql';
+import { graphql, GraphQLObjectType, GraphQLSchema, versionInfo } from 'graphql';
 import { GraphQLSafeInt } from '../src/scalars/SafeInt.js';
 
 describe('SafeInt', () => {
@@ -177,12 +177,21 @@ describe('SafeInt', () => {
       });
 
       expect(errors).toHaveLength(2);
-      expect(errors[0].message).toEqual(
-        'Variable "$a" got invalid value 9007199254740992; SafeInt cannot represent unsafe integer value: 9007199254740992',
-      );
-      expect(errors[1].message).toEqual(
-        'Variable "$b" got invalid value -9007199254740992; SafeInt cannot represent unsafe integer value: -9007199254740992',
-      );
+      if (versionInfo?.major >= 17) {
+        expect(errors[0].message).toEqual(
+          'Variable "$a" has invalid value: SafeInt cannot represent unsafe integer value: 9007199254740992',
+        );
+        expect(errors[1].message).toEqual(
+          'Variable "$b" has invalid value: SafeInt cannot represent unsafe integer value: -9007199254740992',
+        );
+      } else {
+        expect(errors[0].message).toEqual(
+          'Variable "$a" got invalid value 9007199254740992; SafeInt cannot represent unsafe integer value: 9007199254740992',
+        );
+        expect(errors[1].message).toEqual(
+          'Variable "$b" got invalid value -9007199254740992; SafeInt cannot represent unsafe integer value: -9007199254740992',
+        );
+      }
     });
 
     test('parseLiteral', async () => {

@@ -7,7 +7,7 @@
  *
  */
 
-import { graphql, GraphQLObjectType, GraphQLSchema } from 'graphql';
+import { graphql, GraphQLObjectType, GraphQLSchema, versionInfo } from 'graphql';
 import { GraphQLDateTime } from '../../src/scalars/iso-date/DateTime.js';
 
 const schema = new GraphQLSchema({
@@ -174,13 +174,23 @@ it('errors if the variable value is not a valid date-time', async () => {
 
   const response = await graphql({ schema, source, variableValues: variables });
 
-  expect(response).toMatchInlineSnapshot(`
-    {
-      "errors": [
-        [GraphQLError: Variable "$date" got invalid value "2017-10-001T00:00:00Z"; DateTime cannot represent an invalid date-time-string 2017-10-001T00:00:00Z.],
-      ],
-    }
-  `);
+  if (versionInfo?.major >= 17) {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$date" has invalid value: DateTime cannot represent an invalid date-time-string 2017-10-001T00:00:00Z.],
+        ],
+      }
+    `);
+  } else {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$date" got invalid value "2017-10-001T00:00:00Z"; DateTime cannot represent an invalid date-time-string 2017-10-001T00:00:00Z.],
+        ],
+      }
+    `);
+  }
 });
 
 it('errors if the variable value is not of type string', async () => {
@@ -194,13 +204,23 @@ it('errors if the variable value is not of type string', async () => {
 
   const response = await graphql({ schema, source, variableValues: variables });
 
-  expect(response).toMatchInlineSnapshot(`
-    {
-      "errors": [
-        [GraphQLError: Variable "$date" got invalid value 4; DateTime cannot represent non string or Date type 4],
-      ],
-    }
-  `);
+  if (versionInfo?.major >= 17) {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$date" has invalid value: DateTime cannot represent non string or Date type 4],
+        ],
+      }
+    `);
+  } else {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$date" got invalid value 4; DateTime cannot represent non string or Date type 4],
+        ],
+      }
+    `);
+  }
 });
 
 it('errors if the literal input value is not a valid date-time', async () => {

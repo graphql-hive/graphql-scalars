@@ -7,7 +7,7 @@
  *
  */
 
-import { graphql, GraphQLObjectType, GraphQLSchema } from 'graphql';
+import { graphql, GraphQLObjectType, GraphQLSchema, versionInfo } from 'graphql';
 import { GraphQLDate } from '../../src/scalars/iso-date/Date.js';
 
 const schema = new GraphQLSchema({
@@ -144,13 +144,23 @@ it('errors if the variable value is not a valid date', async () => {
 
   const response = await graphql({ schema, source, variableValues: variables });
 
-  expect(response).toMatchInlineSnapshot(`
-    {
-      "errors": [
-        [GraphQLError: Variable "$date" got invalid value "2017-10-001"; Date cannot represent an invalid date-string 2017-10-001.],
-      ],
-    }
-  `);
+  if (versionInfo?.major >= 17) {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$date" has invalid value: Date cannot represent an invalid date-string 2017-10-001.],
+        ],
+      }
+    `);
+  } else {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$date" got invalid value "2017-10-001"; Date cannot represent an invalid date-string 2017-10-001.],
+        ],
+      }
+    `);
+  }
 });
 
 it('errors if the variable value is not of type string', async () => {
@@ -164,13 +174,23 @@ it('errors if the variable value is not of type string', async () => {
 
   const response = await graphql({ schema, source, variableValues: variables });
 
-  expect(response).toMatchInlineSnapshot(`
-    {
-      "errors": [
-        [GraphQLError: Variable "$date" got invalid value 4; Date cannot represent non string type 4],
-      ],
-    }
-  `);
+  if (versionInfo?.major >= 17) {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$date" has invalid value: Date cannot represent non string type 4],
+        ],
+      }
+    `);
+  } else {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$date" got invalid value 4; Date cannot represent non string type 4],
+        ],
+      }
+    `);
+  }
 });
 
 it('errors if the literal input value is not a valid date', async () => {
