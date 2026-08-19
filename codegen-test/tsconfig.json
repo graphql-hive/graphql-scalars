@@ -1,8 +1,15 @@
 {
   "compilerOptions": {
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "moduleResolution": "node",
+    "lib": ["ESNext", "DOM"],
+    "types": ["node"],
+    "baseUrl": ".",
     "paths": {
       "graphql-scalars": ["../src/index.ts"]
     }
   },
-  "files": ["./types.ts"]
+  "include": ["./types.ts", "./fixtures/**/*.ts"]
 }
