@@ -24,7 +24,7 @@ describe('DID', () => {
   });
 
   describe('invalid', () => {
-    describe('not an LCC Class A', () => {
+    test('not an LCC Class A', () => {
       expect(() => GraphQLLCCSubclass.serialize('invalidexample')).toThrow(
         /Value is not a valid LCC Subclass/,
       );

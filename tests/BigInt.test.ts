@@ -1,5 +1,10 @@
-import { graphql, GraphQLSchema } from 'graphql';
-import { GraphQLInputObjectType, GraphQLNonNull, GraphQLObjectType } from 'graphql/type/definition';
+import {
+  graphql,
+  GraphQLInputObjectType,
+  GraphQLNonNull,
+  GraphQLObjectType,
+  GraphQLSchema,
+} from 'graphql';
 import 'json-bigint-patch';
 import { GraphQLBigInt } from '../src/scalars/BigInt.js';
 

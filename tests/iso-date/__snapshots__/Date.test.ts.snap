@@ -1,47 +1,61 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`GraphQLDate has a description 1`] = `"A date string, such as 2007-12-03, compliant with the \`full-date\` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."`;
+exports[`GraphQLDate > has a description 1`] = `"A date string, such as 2007-12-03, compliant with the \`full-date\` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."`;
 
-exports[`GraphQLDate literal parsing errors when parsing invalid literal {"kind": "Document"} 1`] = `"Date cannot represent non string type false"`;
+exports[`GraphQLDate > literal parsing > errors when parsing invalid literal Object {
+  "kind": "Document",
+} 1`] = `[GraphQLError: Date cannot represent non string type false]`;
 
-exports[`GraphQLDate literal parsing errors when parsing invalid literal {"kind": "FloatValue", "value": "5"} 1`] = `"Date cannot represent non string type 5"`;
+exports[`GraphQLDate > literal parsing > errors when parsing invalid literal Object {
+  "kind": "FloatValue",
+  "value": "5",
+} 1`] = `[GraphQLError: Date cannot represent non string type 5]`;
 
-exports[`GraphQLDate literal parsing errors when parsing invalid literal {"kind": "StringValue", "value": "2015-02-29"} 1`] = `"Date cannot represent an invalid date-string 2015-02-29."`;
+exports[`GraphQLDate > literal parsing > errors when parsing invalid literal Object {
+  "kind": "StringValue",
+  "value": "2015-02-29",
+} 1`] = `[GraphQLError: Date cannot represent an invalid date-string 2015-02-29.]`;
 
-exports[`GraphQLDate literal parsing errors when parsing invalid literal {"kind": "StringValue", "value": "2021-07-32"} 1`] = `"Date cannot represent an invalid date-string 2021-07-32."`;
+exports[`GraphQLDate > literal parsing > errors when parsing invalid literal Object {
+  "kind": "StringValue",
+  "value": "2021-07-32",
+} 1`] = `[GraphQLError: Date cannot represent an invalid date-string 2021-07-32.]`;
 
-exports[`GraphQLDate literal parsing errors when parsing invalid literal {"kind": "StringValue", "value": "invalid date"} 1`] = `"Date cannot represent an invalid date-string invalid date."`;
+exports[`GraphQLDate > literal parsing > errors when parsing invalid literal Object {
+  "kind": "StringValue",
+  "value": "invalid date",
+} 1`] = `[GraphQLError: Date cannot represent an invalid date-string invalid date.]`;
 
-exports[`GraphQLDate serialization throws an error when serializing an invalid date-string "2015-02-29" 1`] = `"Date cannot represent an invalid date-string 2015-02-29."`;
+exports[`GraphQLDate > serialization > throws an error when serializing an invalid date-string "2015-02-29" 1`] = `[GraphQLError: Date cannot represent an invalid date-string 2015-02-29.]`;
 
-exports[`GraphQLDate serialization throws an error when serializing an invalid date-string "2021-07-32" 1`] = `"Date cannot represent an invalid date-string 2021-07-32."`;
+exports[`GraphQLDate > serialization > throws an error when serializing an invalid date-string "2021-07-32" 1`] = `[GraphQLError: Date cannot represent an invalid date-string 2021-07-32.]`;
 
-exports[`GraphQLDate serialization throws an error when serializing an invalid date-string "invalid date" 1`] = `"Date cannot represent an invalid date-string invalid date."`;
+exports[`GraphQLDate > serialization > throws an error when serializing an invalid date-string "invalid date" 1`] = `[GraphQLError: Date cannot represent an invalid date-string invalid date.]`;
 
-exports[`GraphQLDate serialization throws error when serializing [] 1`] = `"Date cannot represent a non string, or non Date type []"`;
+exports[`GraphQLDate > serialization > throws error when serializing Array [] 1`] = `[GraphQLError: Date cannot represent a non string, or non Date type []]`;
 
-exports[`GraphQLDate serialization throws error when serializing {} 1`] = `"Date cannot represent a non string, or non Date type {}"`;
+exports[`GraphQLDate > serialization > throws error when serializing Object {} 1`] = `[GraphQLError: Date cannot represent a non string, or non Date type {}]`;
 
-exports[`GraphQLDate serialization throws error when serializing invalid javascript Date 1`] = `"Date cannot represent an invalid Date instance"`;
+exports[`GraphQLDate > serialization > throws error when serializing invalid javascript Date 1`] = `[GraphQLError: Date cannot represent an invalid Date instance]`;
 
-exports[`GraphQLDate serialization throws error when serializing null 1`] = `"Date cannot represent a non string, or non Date type null"`;
+exports[`GraphQLDate > serialization > throws error when serializing null 1`] = `[GraphQLError: Date cannot represent a non string, or non Date type null]`;
 
-exports[`GraphQLDate serialization throws error when serializing true 1`] = `"Date cannot represent a non string, or non Date type true"`;
+exports[`GraphQLDate > serialization > throws error when serializing true 1`] = `[GraphQLError: Date cannot represent a non string, or non Date type true]`;
 
-exports[`GraphQLDate serialization throws error when serializing undefined 1`] = `"Date cannot represent a non string, or non Date type undefined"`;
+exports[`GraphQLDate > serialization > throws error when serializing undefined 1`] = `[GraphQLError: Date cannot represent a non string, or non Date type undefined]`;
 
-exports[`GraphQLDate value parsing throws an error parsing an invalid datetime-string "2015-02-29" 1`] = `"Date cannot represent an invalid date-string 2015-02-29."`;
+exports[`GraphQLDate > value parsing > throws an error parsing an invalid datetime-string "2015-02-29" 1`] = `[GraphQLError: Date cannot represent an invalid date-string 2015-02-29.]`;
 
-exports[`GraphQLDate value parsing throws an error parsing an invalid datetime-string "2021-07-32" 1`] = `"Date cannot represent an invalid date-string 2021-07-32."`;
+exports[`GraphQLDate > value parsing > throws an error parsing an invalid datetime-string "2021-07-32" 1`] = `[GraphQLError: Date cannot represent an invalid date-string 2021-07-32.]`;
 
-exports[`GraphQLDate value parsing throws an error parsing an invalid datetime-string "invalid date" 1`] = `"Date cannot represent an invalid date-string invalid date."`;
+exports[`GraphQLDate > value parsing > throws an error parsing an invalid datetime-string "invalid date" 1`] = `[GraphQLError: Date cannot represent an invalid date-string invalid date.]`;
 
-exports[`GraphQLDate value parsing throws an error when parsing [] 1`] = `"Date cannot represent non string type []"`;
+exports[`GraphQLDate > value parsing > throws an error when parsing 4566 1`] = `[GraphQLError: Date cannot represent non string type 4566]`;
 
-exports[`GraphQLDate value parsing throws an error when parsing {} 1`] = `"Date cannot represent non string type {}"`;
+exports[`GraphQLDate > value parsing > throws an error when parsing Array [] 1`] = `[GraphQLError: Date cannot represent non string type []]`;
 
-exports[`GraphQLDate value parsing throws an error when parsing 4566 1`] = `"Date cannot represent non string type 4566"`;
+exports[`GraphQLDate > value parsing > throws an error when parsing Object {} 1`] = `[GraphQLError: Date cannot represent non string type {}]`;
 
-exports[`GraphQLDate value parsing throws an error when parsing null 1`] = `"Date cannot represent non string type null"`;
+exports[`GraphQLDate > value parsing > throws an error when parsing null 1`] = `[GraphQLError: Date cannot represent non string type null]`;
 
-exports[`GraphQLDate value parsing throws an error when parsing true 1`] = `"Date cannot represent non string type true"`;
+exports[`GraphQLDate > value parsing > throws an error when parsing true 1`] = `[GraphQLError: Date cannot represent non string type true]`;

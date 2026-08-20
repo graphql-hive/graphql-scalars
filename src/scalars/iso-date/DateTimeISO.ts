@@ -2,7 +2,10 @@ import { GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
 import { GraphQLDateTimeConfig } from './DateTime.js';
 
 export const GraphQLDateTimeISOConfig: GraphQLScalarTypeConfig<Date, string> = /*#__PURE__*/ {
-  ...GraphQLDateTimeConfig,
+  ...(GraphQLDateTimeConfig as Omit<
+    typeof GraphQLDateTimeConfig,
+    'serialize' | 'coerceOutputValue'
+  >),
   name: 'DateTimeISO',
   description:
     'A date-time string at UTC, such as 2007-12-03T10:15:30Z, ' +

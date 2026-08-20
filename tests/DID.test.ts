@@ -50,7 +50,7 @@ describe('DID', () => {
   });
 
   describe('invalid', () => {
-    describe('not a DID', () => {
+    test('not a DID', () => {
       expect(() => GraphQLDID.serialize('invaliddid')).toThrow(/Value is not a valid DID/);
     });
 

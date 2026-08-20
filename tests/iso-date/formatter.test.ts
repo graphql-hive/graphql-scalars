@@ -7,8 +7,8 @@
  *
  */
 
-import { stringify } from 'jest-matcher-utils';
 import MockDate from 'mockdate';
+import { stringify } from '@vitest/utils';
 import {
   parseDate,
   parseDateTime,

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`GraphQLJSONObject parseLiteral should reject string literal 1`] = `
+exports[`GraphQLJSONObject > parseLiteral > should reject string literal 1`] = `
 [
   [GraphQLError: JSONObject cannot represent non-object value: "foo"],
 ]

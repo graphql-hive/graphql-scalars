@@ -8,7 +8,7 @@
  */
 
 import { Kind } from 'graphql';
-import { stringify } from 'jest-matcher-utils';
+import { stringify } from '@vitest/utils';
 import { GraphQLDateTime } from '../../src/scalars/iso-date/DateTime.js';
 
 const invalidDates = [

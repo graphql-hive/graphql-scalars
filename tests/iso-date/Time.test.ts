@@ -8,8 +8,8 @@
  */
 
 import { Kind } from 'graphql';
-import { stringify } from 'jest-matcher-utils';
 import MockDate from 'mockdate';
+import { stringify } from '@vitest/utils';
 import { GraphQLTime } from '../../src/scalars/iso-date/Time.js';
 
 // Mock the new Date() call so it always returns 2017-01-01T00:00:00.000Z

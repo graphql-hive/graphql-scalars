@@ -7,7 +7,7 @@
  *
  */
 
-import { graphql, GraphQLObjectType, GraphQLSchema } from 'graphql';
+import { graphql, GraphQLObjectType, GraphQLSchema, versionInfo } from 'graphql';
 import MockDate from 'mockdate';
 import { GraphQLTime } from '../../src/scalars/iso-date/Time.js';
 
@@ -173,13 +173,23 @@ it('errors if the variable value is not a valid time', async () => {
 
   const response = await graphql({ schema, source, variableValues: variables });
 
-  expect(response).toMatchInlineSnapshot(`
-    {
-      "errors": [
-        [GraphQLError: Variable "$time" got invalid value "__2222"; Time cannot represent an invalid time-string __2222.],
-      ],
-    }
-  `);
+  if (versionInfo?.major >= 17) {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$time" has invalid value: Time cannot represent an invalid time-string __2222.],
+        ],
+      }
+    `);
+  } else {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$time" got invalid value "__2222"; Time cannot represent an invalid time-string __2222.],
+        ],
+      }
+    `);
+  }
 });
 
 it('errors if the variable value is not of type string', async () => {
@@ -193,13 +203,23 @@ it('errors if the variable value is not of type string', async () => {
 
   const response = await graphql({ schema, source, variableValues: variables });
 
-  expect(response).toMatchInlineSnapshot(`
-    {
-      "errors": [
-        [GraphQLError: Variable "$time" got invalid value 4; Time cannot represent non string type 4],
-      ],
-    }
-  `);
+  if (versionInfo?.major >= 17) {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$time" has invalid value: Time cannot represent non string type 4],
+        ],
+      }
+    `);
+  } else {
+    expect(response).toMatchInlineSnapshot(`
+      {
+        "errors": [
+          [GraphQLError: Variable "$time" got invalid value 4; Time cannot represent non string type 4],
+        ],
+      }
+    `);
+  }
 });
 
 it('errors if the literal input value is not a valid time', async () => {
