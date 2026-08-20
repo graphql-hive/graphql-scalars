@@ -1,5 +1,25 @@
 ## CHANGELOG moved to [GitHub releases](https://github.com/Urigo/graphql-scalars/releases)
 
+## 2.0.0
+
+### Major Changes
+
+- [#3096](https://github.com/graphql-hive/graphql-scalars/pull/3096)
+  [`b29c5c0`](https://github.com/graphql-hive/graphql-scalars/commit/b29c5c075b462bb3f8ed76b9173c4e0c3df5fdc8)
+  Thanks [@n1ru4l](https://github.com/n1ru4l)! - **BREAKING** Drop support for `graphql-js<16.0.0`.
+
+  **BREAKING** Drop support for Node.js 20
+
+### Patch Changes
+
+- [#3096](https://github.com/graphql-hive/graphql-scalars/pull/3096)
+  [`b29c5c0`](https://github.com/graphql-hive/graphql-scalars/commit/b29c5c075b462bb3f8ed76b9173c4e0c3df5fdc8)
+  Thanks [@n1ru4l](https://github.com/n1ru4l)! - dependencies updates:
+  - Updated dependency
+    [`graphql@^16.0.0 || ^17.0.0` ↗︎](https://www.npmjs.com/package/graphql/v/16.0.0) (from
+    `^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0`,
+    in `peerDependencies`)
+
 ## 1.26.0
 
 ### Minor Changes
