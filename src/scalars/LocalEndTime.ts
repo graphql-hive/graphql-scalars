@@ -14,7 +14,7 @@ function validateLocalEndTime(value: any) {
   return validateLocalTime(value);
 }
 
-export const GraphQLLocalEndTime = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLLocalEndTime = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: 'LocalEndTime',
   description:
     'A local time string (i.e., with no associated timezone) in 24-hr `HH:mm[:ss[.SSS]]` format, e.g. `14:25` or `14:25:06` or `14:25:06.123`.  This scalar is very similar to the `LocalTime`, with the only difference being that `LocalEndTime` also allows `24:00` as a valid value to indicate midnight of the following day.  This is useful when using the scalar to represent the exclusive upper bound of a time block.',

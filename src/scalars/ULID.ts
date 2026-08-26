@@ -39,7 +39,7 @@ const validate = (value: unknown, ast?: ValueNode): string => {
   return value.toUpperCase();
 };
 
-export const GraphQLULID = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLULID = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: 'ULID',
   description:
     'A ULID (Universally Unique Lexicographically Sortable Identifier) is a 26-character ' +

@@ -47,7 +47,7 @@ const validate = (value: any, ast?: ASTNode): number => {
   );
 };
 
-export const GraphQLLatitude = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLLatitude = /*#__PURE__*/ new GraphQLScalarType<number, number>({
   name: `Latitude`,
 
   description: `A field whose value is a valid decimal degrees latitude number (53.471): https://en.wikipedia.org/wiki/Latitude`,
@@ -73,7 +73,7 @@ export const GraphQLLatitude = /*#__PURE__*/ new GraphQLScalarType({
     return validate(ast.value, ast);
   },
   extensions: {
-    codegenScalarType: 'string | number',
+    codegenScalarType: { input: 'number', output: 'string | number' },
     jsonSchema: {
       title: 'Latitude',
       type: 'number',

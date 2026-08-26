@@ -3,7 +3,7 @@ import { createGraphQLError } from '../error.js';
 
 const MONGODB_OBJECTID_REGEX = /*#__PURE__*/ /^[A-Fa-f0-9]{24}$/;
 
-export const GraphQLObjectID = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLObjectID = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: 'ObjectID',
 
   description:

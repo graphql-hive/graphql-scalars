@@ -21,7 +21,7 @@ function validate(value: string, ast?: ASTNode) {
   return value;
 }
 
-export const GraphQLLocale = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLLocale = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: 'Locale',
   description: 'The locale in the format of a BCP 47 (RFC 5646) standard string',
   serialize: validate,

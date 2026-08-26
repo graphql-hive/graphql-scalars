@@ -387,7 +387,7 @@ function validate(iban: string): boolean {
   return !!countryStructure && _testIBAN(iban, countryCode, countryStructure);
 }
 
-export const GraphQLIBAN = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLIBAN = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: `IBAN`,
   description: `A field whose value is an International Bank Account Number (IBAN): https://en.wikipedia.org/wiki/International_Bank_Account_Number.`,
   serialize(value: string) {

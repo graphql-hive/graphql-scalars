@@ -19,7 +19,7 @@ const validate = (value: any, ast?: ASTNode) => {
   return value;
 };
 
-export const GraphQLRGB = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLRGB = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: `RGB`,
 
   description: `A field whose value is a CSS RGB color: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba().`,

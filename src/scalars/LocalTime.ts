@@ -20,7 +20,7 @@ export function validateLocalTime(value: any, ast?: ASTNode) {
   return value;
 }
 
-export const GraphQLLocalTime = /*#__PURE__*/ new GraphQLScalarType({
+export const GraphQLLocalTime = /*#__PURE__*/ new GraphQLScalarType<string, string>({
   name: 'LocalTime',
   description:
     'A local time string (i.e., with no associated timezone) in 24-hr `HH:mm[:ss[.SSS]]` format, e.g. `14:25` or `14:25:06` or `14:25:06.123`.',
