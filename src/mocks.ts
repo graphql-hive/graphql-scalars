@@ -1,7 +1,30 @@
 export const ULID = () => '01J9GHQM8N5X4TQ3M1ZV9J6CBK';
 export const Cuid2 = () => 'dp71y53f6eykvl5g1393rmhl';
-export const GeoJSON = () => 'Example GeoJSON';
-export const CountryName = () => 'Example CountryName';
+export const GeoJSON = () => ({
+  type: 'FeatureCollection',
+  features: [
+    {
+      type: 'Feature',
+      properties: { name: 'Sample Point' },
+      geometry: {
+        type: 'Point',
+        coordinates: [12.4924, 41.8902], // e.g. near the Colosseum in Rome
+      },
+    },
+    {
+      type: 'Feature',
+      properties: { name: 'Sample Line' },
+      geometry: {
+        type: 'LineString',
+        coordinates: [
+          [12.4924, 41.8902],
+          [12.4964, 41.9028], // simple line segment
+        ],
+      },
+    },
+  ],
+});
+export const CountryName = () => 'United States of America';
 const BigIntMock = () => BigInt(Number.MAX_SAFE_INTEGER);
 const ByteMock = () => new Uint8Array([1988, 1981, 1965, 1963, 1959, 1955]);
 const DateMock = () => '2007-12-03';
