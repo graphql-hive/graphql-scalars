@@ -1,5 +1,7 @@
-// Helper function to generate Position type
-const generatePositionType = () => `[number, number] | [number, number, number]`;
+// Helper function to generate Position type.
+// Parenthesized so that array usages (`${generatePositionType()}[]`) apply `[]`
+// to the whole union rather than only the second member.
+const generatePositionType = () => `([number, number] | [number, number, number])`;
 
 // Helper function to generate BBox type
 const generateBBoxType = () =>
