@@ -6,7 +6,14 @@ import { createGraphQLError } from '../../error.js';
 // Algorithm:
 // https://swedish.identityinfo.net/personalidentitynumber
 
-const SESSN_PATTERNS = ['YYYYMMDDXXXX', 'YYMMDDXXXX'];
+// Structural patterns for the two accepted personnummer forms. Full validation
+// (date + Luhn checksum) lives in _isValidSwedishPersonalNumber; these only
+// describe the string shape for the jsonSchema. An optional -/+ separator is
+// allowed since non-digits are stripped before validation.
+const SESSN_PATTERNS = [
+  /^\d{8}[-+]?\d{4}$/, // YYYYMMDD(-)XXXX — 12 digits
+  /^\d{6}[-+]?\d{4}$/, // YYMMDD(-)XXXX   — 10 digits
+];
 
 function _isValidSwedishPersonalNumber(value: string): boolean {
   // Remove any non-digit characters
@@ -128,10 +135,9 @@ export const GraphQLSESSN: GraphQLScalarType = /*#__PURE__*/ new GraphQLScalarTy
     codegenScalarType: 'string',
     jsonSchema: {
       title: 'SESSN',
-      oneOf: SESSN_PATTERNS.map((pattern: string) => ({
-        type: 'string',
-        length: pattern.length,
-        pattern,
+      type: 'string',
+      anyOf: SESSN_PATTERNS.map(pattern => ({
+        pattern: pattern.source,
       })),
     },
   },

@@ -121,8 +121,11 @@ export const GraphQLPostalCode = /*#__PURE__*/ new GraphQLScalarType({
     codegenScalarType: 'string',
     jsonSchema: {
       title: 'PostalCode',
-      oneOf: POSTAL_CODE_REGEXES.map(regex => ({
-        type: 'string',
+      type: 'string',
+      // anyOf, not oneOf: postal-code formats overlap across countries (e.g. a
+      // 5-digit code matches US, DE, FR, IT, ES, ... at once), so a valid code
+      // matches several patterns — oneOf would require it to match exactly one.
+      anyOf: POSTAL_CODE_REGEXES.map(regex => ({
         pattern: regex.source,
       })),
     },

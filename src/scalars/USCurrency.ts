@@ -64,7 +64,9 @@ export const GraphQLUSCurrency = /*#__PURE__*/ new GraphQLScalarType({
     jsonSchema: {
       title: 'USCurrency',
       type: 'string',
-      pattern: '^\\$[0-9]+(\\.[0-9]{2})?$',
+      // Matches the serialized toLocaleString form: optional leading minus, '$',
+      // grouped thousands and always two decimals — e.g. $21.25 or -$1,000.00.
+      pattern: '^-?\\$[0-9]{1,3}(,[0-9]{3})*\\.[0-9]{2}$',
     },
   },
 });

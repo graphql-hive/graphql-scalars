@@ -46,8 +46,8 @@ export const GraphQLTimestamp = /*#__PURE__*/ new GraphQLScalarType({
   extensions: {
     codegenScalarType: 'Date | string | number',
     jsonSchema: {
-      type: 'string',
-      format: 'unix-time',
+      // serialize() returns a number of milliseconds (Date#getTime), not a string.
+      type: 'integer',
     },
   },
 });
