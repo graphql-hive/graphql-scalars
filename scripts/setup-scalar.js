@@ -492,7 +492,7 @@ export { GraphQL${this.scalarName} };`;
   }*/
 
   async updateDocsMeta() {
-    const metaPath = path.join(this.baseDir, 'website/src/pages/docs/scalars/_meta.ts');
+    const metaPath = path.join(this.baseDir, 'website/src/content/scalars/_meta.ts');
     const metaEntry = this.formatMetaEntry(this.scalarName);
     await this.updateOrInsertContent(metaPath, 'export default', metaEntry, 'object');
   }
@@ -500,7 +500,7 @@ export { GraphQL${this.scalarName} };`;
   async createDocumentation() {
     const mdxPath = path.join(
       this.baseDir,
-      `website/src/pages/docs/scalars/${this.toKebabCase(this.scalarName)}.mdx`,
+      `website/src/content/scalars/${this.toKebabCase(this.scalarName)}.mdx`,
     );
 
     const mdxContent = `# ${this.scalarName}
