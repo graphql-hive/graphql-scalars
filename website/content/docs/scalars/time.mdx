@@ -1,0 +1,26 @@
+---
+title: Time
+---
+
+A time string at UTC, such as `10:15:30Z`, is compliant with the `full-time` format outlined in
+section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times
+using the Gregorian calendar.
+
+This scalar is a description of a time instant such as the opening bell of the New York Stock
+Exchange for example. It cannot represent an exact instant on the timeline.
+
+This scalar ignores leap seconds (thereby assuming that a minute constitutes 59 seconds), in this
+respect, it diverges from the RFC 3339 profile.
+
+Where an RFC 3339 compliant time string has a time zone other than UTC, it is shifted to UTC. For
+example, the time string `14:10:20+01:00` is shifted to `13:10:20Z`.
+
+## Result Coercion
+
+Javascript Date instances are coerced to an RFC 3339 compliant time string by extracting the UTC
+time part. Invalid Date instances raise a field error.
+
+## Input Coercion
+
+When expected as an input type, only RFC 3339 compliant time strings are accepted. All other input
+values raise a query error indicating an incorrect type.

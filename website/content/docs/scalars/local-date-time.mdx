@@ -1,0 +1,8 @@
+---
+title: LocalDateTime
+---
+
+A local date-time string (i.e., with no associated timezone) in `YYYY-MM-DDTHH:mm:ss` format, e.g.
+`2020-01-01T00:00:00`. The value is serialized and deserialized as a string as a signal to both
+clients and resolvers that special care must be taken with the value when converting it to any
+date/time type that includes a timezone, e.g., a JavaScript `Date`.

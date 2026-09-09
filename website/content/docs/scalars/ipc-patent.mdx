@@ -1,0 +1,23 @@
+---
+title: IPCPatent
+---
+
+The 'IPCPatent' scalar type represents a single International Patent Classification, as defined by
+the parameters outlined by the
+[World Intellectual Property Organization](https://www.wipo.int/classifications/ipc/en/)
+
+Any IPC Patent can be broken down into a hierarchical structure of four subsections
+
+- **Section** designates the eight bodies of knowledge (labeled from A-H) which a patent generally
+  belongs to. For patent _B01D 17/032_, **B** would be the Section designator.
+- **Class** specifies a specific body of knowledge within a section, and is represented by two
+  digits. For patent _B62D 21/00_, **62** would be the Class designator.
+- **Subclass** specifies a specific body of knowledge within a class, and is represented by any
+  character from A-Z. For patent _H04M 11/00_, **M** would be the Subclass designator.
+- **Subgroup** specifies a specific body of knowledge within a subclass. It is separated from the
+  sub class by a space and is represented by a sequence of characters consisting of two groups of
+  digits separated by a "/" character. In a patent with the label _A61K 31/495_, **31/495** would be
+  the Subgroup designator.
+  - **Subgroup Part A** A sequence of 1 to 2 digits. For patent _A61K 31/495_, this would be **31**.
+  - **Subgroup Part B** A sequence of 2 to 4 digits. For patent _A61K 31/495_, this would be
+    **495**.

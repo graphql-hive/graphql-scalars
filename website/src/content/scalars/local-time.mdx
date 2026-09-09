@@ -1,7 +1,0 @@
-# LocalTime
-
-A local time string (i.e., with no associated timezone) in 24-hr `HH:mm[:ss[.SSS]]` format, e.g.
-`14:25` or `14:25:06` or `14:25:06.123`. The seconds and milliseconds portions are optional. Like
-the `LocalDate` scalar, the value is serialized and deserialized as a string as a signal to both
-clients and resolvers that special care must be taken with the value when converting it to any
-date/time type that includes a date or timezone, e.g., a JavaScript `Date`.
