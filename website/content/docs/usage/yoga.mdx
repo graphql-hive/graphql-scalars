@@ -1,0 +1,30 @@
+---
+title: Usage with GraphQL-Yoga
+sidebarTitle: GraphQL-Yoga
+---
+
+To use `graphql-scalars` with GraphQL-Yoga, just add the scalars you need to the GraphQL schema, and
+provide that schema to Yoga. No additional setup is needed.
+
+```js
+import { DateTimeResolver, DateTimeTypeDefinition } from 'graphql-scalars'
+import { createSchema, createYoga } from 'graphql-yoga'
+
+export const schema = createSchema({
+  typeDefs: /* GraphQL */ `
+    ${DateTimeTypeDefinition}
+    type Query {
+      time: DateTime
+    }
+  `,
+  resolvers: {
+    DateTime: DateTimeResolver
+  }
+})
+
+// Create a Yoga instance with a GraphQL schema.
+const yoga = createYoga({ schema })
+```
+
+You can find more information about GraphQL-Yoga in the
+[documentation](https://www.the-guild.dev/graphql/yoga-server/v3).

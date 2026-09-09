@@ -1,0 +1,73 @@
+---
+title: Usage
+sidebarTitle: Usage Example
+---
+
+`graphql-scalars` provides generic `scalar` definition for JavaScript/TypeScript, that means you can
+use it with any GraphQL server implementation.
+
+To use your scalars, start by importing the scalar the you wish to use, and add it to your GraphQL
+schema.
+
+Each scalar provides a separate implementation (based on `GraphQLScalar` class of `graphql-js`), so
+you can use it with both schema-first and code-first approaches.
+
+### Schema-first approach
+
+Start by adding the scalar to your GraphQL SDL:
+
+```graphql title="schema.graphql"
+scalar ScalarName
+```
+
+Note that you can also import ready-to-use type definitions for scalars like below:
+
+```ts
+// or import specific typeDefs only with ES6 Import
+import { ScalarNameTypeDefinition } from 'graphql-scalars'
+
+// or import specific typeDefs only with CommonJS
+const { ScalarNameTypeDefinition } = require('graphql-scalars')
+
+const typeDefs = [
+  ScalarNameTypeDefinition
+  // other typeDefs
+]
+```
+
+Then, you can import the specific scalar's resolver:
+
+```ts
+// or import specific resolvers only with ES6 Import
+import { ScalarNameResolver } from 'graphql-scalars'
+
+// or import specific resolvers only with CommonJS
+const { ScalarNameResolver } = require('graphql-scalars')
+```
+
+And add it to your resolver map:
+
+```ts
+const myResolverMap = {
+  ScalarName: ScalarNameResolver,
+
+  Query: {
+    // more stuff here
+  },
+
+  Mutation: {
+    // more stuff here
+  }
+}
+```
+
+### Code-first
+
+With most code-first implementation, you can just import the scalar directly and add it to your
+schema as type.
+
+```ts
+import { GraphQLScalarName } from 'graphql-scalars'
+
+// Now, use GraphQLScalarName as a type within your GraphQL Schema.
+```

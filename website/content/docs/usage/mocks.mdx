@@ -1,0 +1,92 @@
+---
+title: Using Mocks
+sidebarTitle: Mocks
+---
+
+GraphQL Scalars provides mock implementations out-of-box that is compatible with
+[GraphQL Tools Mocking](https://graphql-tools.com/docs/mocking). It can be used with `ApolloServer`
+like below as well.
+
+## Using mocks with GraphQL Tools
+
+<Tabs items={["Import all scalars with all mocks","Import individual scalars with their mocks"]}>
+  <Tabs.Tab>
+```ts
+import { addMocksToSchema } from '@graphql-tools/mock'
+import { typeDefs as scalarsTypeDefs, resolvers as scalarsResolvers, mocks as scalarsMocks } from 'graphql-scalars'
+const schema = makeExecutableSchema({
+  typeDefs: [
+    ...scalarsTypeDefs
+    // all others typeDefs
+  ],
+  resolvers: {
+    ...scalarsResolvers
+    // all others resolvers
+  }
+})
+const mockedSchema = addMocksToSchema({
+  schema,
+  mocks: {
+    ...scalarsMocks
+    // others mocks
+  }
+})
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+```ts
+import { addMocksToSchema } from '@graphql-tools/mock'
+import { DateTimeTypeDefinition, DateTimeResolver, DateTimeMock } from 'graphql-scalars'
+const schema = makeExecutableSchema({
+  typeDefs: [
+    DateTimeTypeDefinition
+    // all others typeDefs
+  ],
+  resolvers: {
+    DateTime: DateTimeResolver
+    // all others resolvers
+  }
+})
+const mockedSchema = addMocksToSchema({
+  schema,
+  mocks: {
+    DateTime: DateTimeMock
+    // others mocks
+  }
+})
+```
+  </Tabs.Tab>
+</Tabs>
+
+## Using mocks with Apollo Server
+
+```ts
+import { ApolloServer } from 'apollo-server'
+// import all scalars and resolvers
+import { mocks, resolvers, typeDefs } from 'graphql-scalars'
+import { makeExecutableSchema } from '@graphql-tools/schema'
+
+// Alternatively, import individual scalars and resolvers
+// import { DateTimeResolver, DateTimeTypeDefinition, DateTimeMock, ... } from 'graphql-scalars'
+
+const server = new ApolloServer({
+  typeDefs: [
+    // use spread syntax to add scalar definitions to your schema
+    ...typeDefs
+    // DateTimeTypeDefinition,
+    // ... other type definitions
+  ],
+  resolvers: {
+    // use spread syntax to add scalar resolvers to your resolver map
+    ...resolvers
+    // DateTimeResolver,
+    // ... the remainder of the resolver map
+  },
+  mocks: {
+    // use spread syntax to add scalar resolvers to your resolver map
+    ...mocks
+    // DateTimeMock,
+    // ... other mocks
+  }
+})
+```

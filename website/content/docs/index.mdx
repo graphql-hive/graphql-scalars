@@ -1,0 +1,85 @@
+---
+title: Introduction
+---
+
+## What's this All About?
+
+GraphQL is a wonderful new approach to application data and API layers that's gaining momentum. If
+you have not heard of it, start [here](http://graphql.org/learn/) and check out GraphQL Tools docs
+about [Custom scalars](https://www.graphql-tools.com/docs/scalars) as well.
+
+However, for all of GraphQL's greatness, it is missing a couple of things that we have (and you
+might) find very useful in defining your schemas. Namely GraphQL has a
+[limited set of scalar types](http://graphql.org/learn/schema/#scalar-types), and we have found
+there are some additional scalar types that are useful in being more precise in our schemas.
+Thankfully, those sharp GraphQL folks provided a simple way to add new custom scalar types if
+needed. That's what this package does.
+
+GraphQL Scalars is a library of custom GraphQL scalar types for creating precise type-safe GraphQL
+schemas.
+
+The GraphQL Specification has the `Int`, `Float`, `String`, `Boolean` and `ID` Scalar types by
+default. Those scalar types help you identify the data and validate it before transferring it
+between client and server. But you might need more specific scalars for your GraphQL application, to
+help you better describe and validate your app’s data.
+
+<Callout type="warning">
+  We don't fault the GraphQL folks for these omissions. They have kept the core small and clean.
+  Arguably not every project needs these additional scalar types. But _we_ have, and now _you_ can
+  use them too if needed.
+</Callout>
+
+## Why?
+
+The primary purposes these scalars, really of _all_ types are to:
+
+1.  Communicate to users of your schema exactly what they can expect or to at least _reduce_
+    ambiguity in cases where that's possible. For example if you have a `Person` type in your schema
+    and that type has as field like `ageInYears`, the value of that can only be null or a positive
+    integer (or float, depending on how you want your schema to work). It should never be zero or
+    negative.
+1.  Run-time type checking. GraphQL helps to tighten up the contract between client and server. It
+    does this with strong typing of the _interface_ (or _schema_). This helps us have greater
+    confidence about what we're receiving from the server and what the server is receiving from the
+    client.
+
+This package adds to the base options available in GraphQL to support types that are reasonably
+common in defining schemas or interfaces to data.
+
+## Validation Using Scalars
+
+For example, you have a `String` field, but you need to validate upcoming or ongoing string data
+using regular expressions. So you should have this validation on each end; one in the client, the
+other one in the server and maybe there is another on a source. Instead of duplicating the same
+logic in different parts of the project, you can use `EmailAddress` scalar type that does the
+validation inside GraphQL for you.
+
+## Serialization and Parsing
+
+The other benefit of using GraphQL scalar types is parsing and serializing while transferring data.
+For example, you have `DateTime` data, but it is transferred as `String` due to restrictions of
+JSON, and each time you receive and pass the data, you have to parse the string and create a
+JavaScript `Date` instance while also serializing it to string before passing it to the client.
+Instead of having that logic in your implementation, you can just use `DateTime` scalar, and you
+would work with native JavaScript `Date` instances directly like it is one of primitive types such
+as string, number and boolean.
+
+## Thanks
+
+This library was originally published as `@okgrow/graphql-scalars`. It was created and maintained by
+the company `ok-grow`. We, The Guild, took over the maintenance of that library
+[later on](https://the-guild.dev/blog/taking-over-merge-graphql-schemas).
+
+We also like to say thank you to [@adriano-di-giovanni](https://github.com/adriano-di-giovanni) for
+being extremely generous and giving us the `graphql-scalars` name on npm which was previously owned
+by his own [library](https://github.com/adriano-di-giovanni/graphql-scalars).
+
+And thanks to [excitement-engineer](https://github.com/excitement-engineer) for
+[graphql-iso-date](https://github.com/excitement-engineer/graphql-iso-date),
+[stems](https://github.com/stems) for [graphql-bigint](https://github.com/stems/graphql-bigint),
+[taion](https://github.com/taion) for
+[graphql-type-json](https://github.com/taion/graphql-type-json),
+[langpavel](https://github.com/langpavel) for
+[GraphQLTimestamp.js](https://gist.github.com/langpavel/b30f3d507a47713b0c6e89016e4e9eb7),
+[vespertilian](https://github.com/vespertilian) for Duration scalar,
+[maxwellsmart84](https://github.com/maxwellsmart84) for `NonEmptyString` scalar.
