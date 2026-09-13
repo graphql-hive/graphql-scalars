@@ -19,6 +19,9 @@ const validate = (value: any, ast?: ASTNode) => {
   return value;
 };
 
+const specifiedByURL =
+  'https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla()';
+
 export const GraphQLHSLA = /*#__PURE__*/ new GraphQLScalarType({
   name: `HSLA`,
 
@@ -41,6 +44,9 @@ export const GraphQLHSLA = /*#__PURE__*/ new GraphQLScalarType({
 
     return validate(ast.value, ast);
   },
+
+  specifiedByURL,
+  specifiedByUrl: specifiedByURL,
   extensions: {
     codegenScalarType: 'string',
     jsonSchema: {

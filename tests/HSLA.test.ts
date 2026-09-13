@@ -56,4 +56,10 @@ describe(`HSLA`, () => {
       });
     });
   });
+
+  it(`exposes a specifiedByURL like the HSL scalar`, () => {
+    expect(GraphQLHSLA.specifiedByURL).toBe(
+      `https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla()`,
+    );
+  });
 });
