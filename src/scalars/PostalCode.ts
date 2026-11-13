@@ -28,6 +28,7 @@ import { createGraphQLError } from '../error.js';
 // IR - Iran
 // JP - Japan
 // UA - Ukraine
+// PL - Poland
 //
 // This is really a practical decision of weight (of the package) vs. completeness.
 //
@@ -56,6 +57,7 @@ const POSTAL_CODE_REGEXES = [
   /* IR */ /*#__PURE__*//^[1,3-9]{10}$/,
   /* JP */ /*#__PURE__*//^\d{3}-\d{4}$/,
   /* UA */ /*#__PURE__*//^\d{5}$/,
+  /* PL */ /*#__PURE__*//^\d{2}-\d{3}$/,
 ];
 
 function _testPostalCode(postalCode: string) {
@@ -78,7 +80,7 @@ export const GraphQLPostalCode = /*#__PURE__*/ new GraphQLScalarType({
   name: 'PostalCode',
 
   description:
-    'A field whose value conforms to the standard postal code formats for United States, United Kingdom, Germany, Canada, France, Italy, Australia, Netherlands, Spain, Denmark, Sweden, Belgium, India, Austria, Portugal, Switzerland or Luxembourg.',
+    'A field whose value conforms to the standard postal code formats for United States, United Kingdom, Germany, Canada, France, Italy, Australia, Netherlands, Spain, Denmark, Sweden, Belgium, India, Austria, Portugal, Switzerland, Luxembourg, Iran, Japan, Ukraine or Poland.',
 
   serialize(value) {
     if (typeof value !== 'string') {

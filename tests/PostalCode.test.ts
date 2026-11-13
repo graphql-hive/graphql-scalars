@@ -282,6 +282,22 @@ describe('PostalCode', () => {
         );
       });
     });
+
+    describe('Poland', () => {
+      test('serialize', () => {
+        expect(GraphQLPostalCode.serialize('00-950')).toBe('00-950');
+      });
+
+      test('parseValue', () => {
+        expect(GraphQLPostalCode.parseValue('00-950')).toBe('00-950');
+      });
+
+      test('parseLiteral', () => {
+        expect(GraphQLPostalCode.parseLiteral({ value: '00-950', kind: Kind.STRING }, {})).toBe(
+          '00-950',
+        );
+      });
+    });
   });
 
   describe('invalid', () => {
