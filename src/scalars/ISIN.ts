@@ -1,5 +1,5 @@
-import { GraphQLScalarType, Kind } from 'graphql/index';
-import { createGraphQLError } from '../error';
+import { GraphQLScalarType, Kind } from 'graphql';
+import { createGraphQLError } from '../error.js';
 
 // All ISO 3166-1 alpha-2 codes valid for ISIN, plus common supranationals
 const ISIN_COUNTRY_CODES = new Set([
