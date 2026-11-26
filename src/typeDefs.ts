@@ -73,6 +73,7 @@ export const DeweyDecimal = 'scalar DeweyDecimal';
 export const LCCSubclass = 'scalar LCCSubclass';
 
 export const IPCPatent = 'scalar IPCPatent';
+export const ISIN = 'scalar ISIN';
 
 export const typeDefs = [
   AccountNumber,
@@ -102,6 +103,7 @@ export const typeDefs = [
   IPv4,
   IPv6,
   ISBN,
+  ISIN,
   ISO8601Duration,
   JSON,
   JSONObject,

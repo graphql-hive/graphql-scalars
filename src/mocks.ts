@@ -39,7 +39,7 @@ export const UUID = () => {
   }
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
     // tslint:disable-next-line: no-bitwise
-    const r = (d + Math.random() * 16) % 16 | 0;
+    const r = ((d + Math.random() * 16) % 16) | 0;
     d = Math.floor(d / 16);
     // tslint:disable-next-line: no-bitwise
     return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
@@ -119,6 +119,7 @@ export const SESSN = () => '194907011813';
 export const DeweyDecimal = () => '435.4357';
 export const LCCSubclass = () => 'KBM';
 export const IPCPatent = () => 'G06F 12/803';
+export const ISIN = () => 'US0378331005';
 
 export {
   DateMock as Date,

@@ -69,3 +69,4 @@ export { GraphQLLCCSubclass } from './library/LCCSubclass.js';
 export { GraphQLIPCPatent } from './patent/IPCPatent.js';
 export { GraphQLULID } from './ULID.js';
 export { GraphQLCuid2 } from './Cuid2.js';
+export { GraphQLISIN } from './ISIN.js';

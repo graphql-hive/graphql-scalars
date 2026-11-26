@@ -1,0 +1,39 @@
+---
+title: ISIN
+---
+
+A field whose value is a valid
+[International Securities Identification Number (ISIN)](https://en.wikipedia.org/wiki/International_Securities_Identification_Number)
+as defined by ISO 6166.
+
+### Format
+
+An ISIN is always exactly 12 characters:
+
+| Part         | Length | Description                                           |
+| ------------ | ------ | ----------------------------------------------------- |
+| Country code | 2      | ISO 3166-1 alpha-2 code (e.g. `US`, `DE`, `GB`)       |
+| NSIN         | 9      | National Securities Identifying Number (alphanumeric) |
+| Check digit  | 1      | Luhn algorithm check digit (numeric)                  |
+
+Examples of valid ISINs:
+
+- `US0378331005`
+- `DE0007664039`
+- `XS2057861614`
+
+### Validation
+
+The scalar performs three checks in order:
+
+1. **Format**: must match `/^[A-Z]{2}[A-Z0-9]{9}[0-9]$/`
+2. **Country code**: must be a valid ISO 3166-1 alpha-2 code or a recognised supranational code
+   (`XS`, `EU`, `XC`, `XB`, `XF`, `XR`, `XL`, `XT`)
+3. **Check digit**: must satisfy the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm)
+   after letters are expanded to digits (A=10, B=11, ... Z=35)
+
+Input is normalized before validation: it is uppercased and whitespace and dashes are removed, so
+`US-0378331005` and `us0378331005` are accepted.
+
+> This scalar validates the format and check digit only. It does not verify that the ISIN is
+> registered or refers to an existing security.

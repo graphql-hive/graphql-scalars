@@ -28,6 +28,7 @@ import {
   GraphQLIPv4,
   GraphQLIPv6,
   GraphQLISBN,
+  GraphQLISIN,
   GraphQLISO8601Duration,
   GraphQLJSON,
   GraphQLJSONObject,
@@ -127,6 +128,7 @@ export {
   JSON as JSONDefinition,
   JSONObject as JSONObjectDefinition,
   IBAN as IBANTypeDefinition,
+  ISIN as ISINDefinition,
   ObjectID as ObjectIDTypeDefinition,
   Void as VoidTypeDefinition,
   DID as DIDDefinition,
@@ -200,6 +202,7 @@ export {
   GraphQLJSON as JSONResolver,
   GraphQLJSONObject as JSONObjectResolver,
   GraphQLIBAN as IBANResolver,
+  GraphQLISIN as ISINResolver,
   GraphQLObjectID as ObjectIDResolver,
   GraphQLVoid as VoidResolver,
   GraphQLDID as DIDResolver,
@@ -242,6 +245,7 @@ export const resolvers: Record<string, GraphQLScalarType> = {
   IPv4: GraphQLIPv4,
   IPv6: GraphQLIPv6,
   ISBN: GraphQLISBN,
+  ISIN: GraphQLISIN,
   ISO8601Duration: GraphQLISO8601Duration,
   JSON: GraphQLJSON,
   JSONObject: GraphQLJSONObject,
@@ -434,6 +438,7 @@ export {
   GraphQLDeweyDecimal,
   GraphQLLCCSubclass,
   GraphQLIPCPatent,
+  GraphQLISIN,
 };
 
 export { GeoJSON as GeoJSONTypeDefinition } from './typeDefs.js';
