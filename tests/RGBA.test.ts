@@ -26,6 +26,17 @@ describe(`RGBA`, () => {
   });
 
   describe(`invalid`, () => {
+    it(`rejects a character other than "." as the decimal point`, () => {
+      expect(() => GraphQLRGBA.parseValue(`rgba(1, 2, 3, 1a5)`)).toThrow(
+        /Value is not a valid RGBA color/,
+      );
+      expect(() => GraphQLRGBA.parseValue(`rgba(1, 2, 3, 0-5)`)).toThrow(
+        /Value is not a valid RGBA color/,
+      );
+      expect(GraphQLRGBA.parseValue(`rgba(1, 2, 3, 0.5)`)).toEqual(`rgba(1, 2, 3, 0.5)`);
+      expect(GraphQLRGBA.parseValue(`rgba(1, 2, 3, .5)`)).toEqual(`rgba(1, 2, 3, .5)`);
+    });
+
     describe(`not a valid RGBA color`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLRGBA.serialize(123)).toThrow(/Value is not string/);

@@ -26,6 +26,17 @@ describe(`HSL`, () => {
   });
 
   describe(`invalid`, () => {
+    it(`rejects a character other than "." as the decimal point`, () => {
+      expect(() => GraphQLHSL.parseValue(`hsl(1a5, 50%, 50%)`)).toThrow(
+        /Value is not a valid HSL color/,
+      );
+      expect(() => GraphQLHSL.parseValue(`hsl(4507, 6-8%, 4%)`)).toThrow(
+        /Value is not a valid HSL color/,
+      );
+      expect(GraphQLHSL.parseValue(`hsl(270.5, 60.5%, 70%)`)).toEqual(`hsl(270.5, 60.5%, 70%)`);
+      expect(GraphQLHSL.parseValue(`hsl(.5, 60%, 70%)`)).toEqual(`hsl(.5, 60%, 70%)`);
+    });
+
     describe(`not a valid HSL color`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLHSL.serialize(123)).toThrow(/Value is not string/);
