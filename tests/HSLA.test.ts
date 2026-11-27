@@ -30,6 +30,19 @@ describe(`HSLA`, () => {
   });
 
   describe(`invalid`, () => {
+    it(`rejects a character other than "." as the decimal point`, () => {
+      expect(() => GraphQLHSLA.parseValue(`hsla(1a5, 50%, 50%, 1)`)).toThrow(
+        /Value is not a valid HSLA color/,
+      );
+      expect(() => GraphQLHSLA.parseValue(`hsla(0, 50%, 50%, 1x5)`)).toThrow(
+        /Value is not a valid HSLA color/,
+      );
+      expect(GraphQLHSLA.parseValue(`hsla(270.5, 60.5%, 70%, 0.5)`)).toEqual(
+        `hsla(270.5, 60.5%, 70%, 0.5)`,
+      );
+      expect(GraphQLHSLA.parseValue(`hsla(270, 60%, 70%, .5)`)).toEqual(`hsla(270, 60%, 70%, .5)`);
+    });
+
     describe(`not a valid HSLA color`, () => {
       it(`serialize`, () => {
         expect(() => GraphQLHSLA.serialize(123)).toThrow(/Value is not string/);

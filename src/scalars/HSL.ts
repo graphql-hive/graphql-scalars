@@ -2,7 +2,7 @@ import { ASTNode, GraphQLScalarType, GraphQLScalarTypeConfig, Kind } from 'graph
 import { createGraphQLError } from '../error.js';
 
 const HSL_REGEX =
-  /^hsl\(\s*(-?\d+|-?\d*.\d+)\s*,\s*(-?\d+|-?\d*.\d+)%\s*,\s*(-?\d+|-?\d*.\d+)%\s*\)$/;
+  /^hsl\(\s*(-?\d+|-?\d*\.\d+)\s*,\s*(-?\d+|-?\d*\.\d+)%\s*,\s*(-?\d+|-?\d*\.\d+)%\s*\)$/;
 
 const validate = (value: any, ast?: ASTNode) => {
   if (typeof value !== 'string') {
